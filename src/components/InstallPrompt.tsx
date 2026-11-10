@@ -24,10 +24,10 @@ export default function InstallPrompt() {
       if (isStandalone) return;
 
       // 2. 이미 설치 완료된 이력이 있는지 확인
-      if (localStorage.getItem("language_master_pwa_installed") === "true") return;
+      if (localStorage.getItem("bible_master_pwa_installed") === "true") return;
 
       // 3. 7일 이내에 닫기를 눌렀는지 확인
-      const dismissedTime = localStorage.getItem("language_master_pwa_dismissed");
+      const dismissedTime = localStorage.getItem("bible_master_pwa_dismissed");
       if (dismissedTime) {
         const diffDays = (Date.now() - parseInt(dismissedTime, 10)) / (1000 * 60 * 60 * 24);
         if (diffDays < 7) return;
@@ -47,7 +47,7 @@ export default function InstallPrompt() {
     const handleAppInstalled = () => {
       setIsVisible(false);
       try {
-        localStorage.setItem("language_master_pwa_installed", "true");
+        localStorage.setItem("bible_master_pwa_installed", "true");
       } catch {}
     };
     window.addEventListener("appinstalled", handleAppInstalled);
@@ -97,7 +97,7 @@ export default function InstallPrompt() {
         if (choice.outcome === "accepted") {
           setIsVisible(false);
           try {
-            localStorage.setItem("language_master_pwa_installed", "true");
+            localStorage.setItem("bible_master_pwa_installed", "true");
           } catch {}
         }
         setDeferredPrompt(null);
@@ -114,7 +114,7 @@ export default function InstallPrompt() {
     e.stopPropagation();
     setIsVisible(false);
     try {
-      localStorage.setItem("language_master_pwa_dismissed", Date.now().toString());
+      localStorage.setItem("bible_master_pwa_dismissed", Date.now().toString());
     } catch {}
   };
 
@@ -136,7 +136,7 @@ export default function InstallPrompt() {
             <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-xl border border-[#D4AF37]/60 shadow-md">
               <Image
                 src="/icon-192x192.png"
-                alt="어학 마스터 앱 아이콘"
+                alt="성경 마스터 앱 아이콘"
                 width={48}
                 height={48}
                 priority
@@ -145,7 +145,7 @@ export default function InstallPrompt() {
             </div>
             <div>
               <div className="flex items-center gap-1.5">
-                <span className="text-sm font-bold text-white">어학 마스터</span>
+                <span className="text-sm font-bold text-white">성경 통독 마스터</span>
                 <span className="rounded bg-[#D4AF37]/20 px-1.5 py-0.5 text-[10px] font-semibold text-[#FDE68A]">
                   앱으로 추가
                 </span>
@@ -153,7 +153,7 @@ export default function InstallPrompt() {
               <p className="text-xs text-zinc-300">
                 {isKakao
                   ? "크롬/사파리로 열어 홈 화면에 추가하세요"
-                  : "홈 화면에 설치하고 매일 1초 만에 학습!"}
+                  : "홈 화면에 설치하고 매일 1초 만에 말씀 통독!"}
               </p>
             </div>
           </div>
@@ -238,7 +238,7 @@ export default function InstallPrompt() {
             ) : isIOS ? (
               <div className="space-y-4">
                 <p className="text-sm text-zinc-300 leading-relaxed">
-                  사파리(Safari) 브라우저에서 아래 3단계만 누르시면 스마트폰 첫 화면에 어학 마스터 앱 아이콘이 바로 생성됩니다:
+                  사파리(Safari) 브라우저에서 아래 3단계만 누르시면 스마트폰 첫 화면에 성경 마스터 앱 아이콘이 바로 생성됩니다:
                 </p>
                 <div className="space-y-3 rounded-2xl bg-[#0e0e12] p-4 border border-white/10 text-sm">
                   <div className="flex items-center gap-3">

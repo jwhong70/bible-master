@@ -1,6 +1,5 @@
-import DashboardClient from '@/components/DashboardClient';
+import BibleDashboardClient from '@/components/BibleDashboardClient';
 
 export default function HomePage() {
-  return <DashboardClient />;
+  return <BibleDashboardClient />;
 }
-

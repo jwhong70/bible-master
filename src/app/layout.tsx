@@ -5,14 +5,14 @@ import InstallPrompt from '@/components/InstallPrompt';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'LANGUAGE MASTER | 어학 마스터 (영어 120과 · 일본어 90과)',
+  title: 'BIBLE MASTER | 성경 통독 마스터 (신약 277일 · 시가서 239일 · 구약 292일)',
   description:
-    '영어 120과 · 일본어 90과 누적 복습 To-Do 진도표 및 문단·문장·반복 섀도잉 트레이닝 웹',
+    '신약 277일 · 시가서 239일 · 구약 292일 3대 트랙 누적 복습 슬라이딩 진도표 및 송태근 목사 강해 연동 성경 읽기 웹',
   manifest: '/manifest.json',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'black-translucent',
-    title: '어학 마스터',
+    title: '성경 마스터',
   },
   icons: {
     icon: '/icon-192x192.png',
@@ -66,4 +66,3 @@ export default function RootLayout({
     </html>
   );
 }
-
