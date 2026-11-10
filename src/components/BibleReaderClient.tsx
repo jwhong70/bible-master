@@ -207,7 +207,7 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
   return (
     <div className="min-h-screen pb-36">
       {/* 1. 상단 고정 헤더: 모바일 2행 분리 (줄바꿈 원천 차단) */}
-      <header className="sticky top-0 z-30 border-b border-white/10 bg-[#0a0a0c]/95 backdrop-blur-md px-4 py-2.5 sm:px-6">
+      <header className="sticky top-0 z-30 border-b border-white/10 bg-[#0a0a0c]/95 backdrop-blur-md px-2.5 py-2 sm:px-6">
         <div className="mx-auto flex max-w-4xl flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5">
           {/* 1행: 진도표 뒤로가기 & 트랙/일차 배지 */}
           <div className="flex items-center justify-between w-full sm:w-auto">
@@ -265,10 +265,10 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
         </div>
       </header>
 
-      {/* 2. 본문 컨테이너 */}
-      <main className="mx-auto max-w-4xl px-4 py-6 sm:px-6 space-y-6">
+      {/* 2. 본문 컨테이너 (모바일 좌우 여백 최소화로 가로폭 극대화) */}
+      <main className="mx-auto max-w-4xl px-2.5 sm:px-6 py-4 sm:py-6 space-y-4 sm:space-y-6">
         {/* 말씀 카드 대제목 */}
-        <div className="rounded-3xl border border-[#D4AF37]/30 bg-gradient-to-b from-[#181820] to-[#111116] p-5 sm:p-8 shadow-xl space-y-4">
+        <div className="rounded-3xl border border-[#D4AF37]/30 bg-gradient-to-b from-[#181820] to-[#111116] p-4 sm:p-8 shadow-xl space-y-3 sm:space-y-4">
           <div className="space-y-1.5 w-full">
             <div className="flex items-center gap-2 text-xs font-mono text-zinc-400">
               <span className="text-[#D4AF37] font-bold">{trackInfo.shortName} 통독</span>
@@ -277,11 +277,11 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
               <span>•</span>
               <span>총 {plan.verse_count}개 절</span>
             </div>
-            <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white select-none">
+            <h1 className="text-xl sm:text-3xl font-black tracking-tight text-white select-none">
               {plan.title}
             </h1>
             {plan.sermon_title && (
-              <p className="text-sm font-semibold text-[#FDE68A]">
+              <p className="text-xs sm:text-sm font-semibold text-[#FDE68A]">
                 📖 {plan.sermon_title}
               </p>
             )}
@@ -314,14 +314,14 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
         </div>
 
         {/* 4. 성경 본문 렌더링 (단락별) */}
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6">
           {groupedVerses.map(([pTitle, verses], pIndex) => (
             <section
               key={`paragraph-${pIndex}`}
-              className="rounded-3xl border border-white/10 bg-[#121217] p-5 sm:p-7 shadow-lg space-y-4"
+              className="rounded-3xl border border-white/10 bg-[#121217] p-3.5 sm:p-7 shadow-lg space-y-3.5"
             >
               {/* 단락 소제목: 모바일 1행 분리 */}
-              <div className="pb-3 border-b border-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5">
+              <div className="pb-2.5 border-b border-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
                 <h3 className="text-sm sm:text-base font-bold text-[#FDE68A] flex items-center gap-2">
                   <span className="inline-block h-2 w-2 rounded-full bg-[#D4AF37] shrink-0" />
                   <span>{pTitle}</span>
@@ -329,7 +329,7 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
                 <span className="text-xs font-mono text-zinc-500">{verses.length}절</span>
               </div>
 
-              {/* 구절 목록 */}
+              {/* 구절 목록: 모바일 절 번호 1행 분리 및 본문·버튼 좌우 100% 전폭 최대화 */}
               <div className="space-y-3">
                 {verses.map((verse) => {
                   const globalIdx = plan.verses.findIndex((v) => v.id === verse.id);
@@ -340,106 +340,104 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
                   return (
                     <div
                       key={verse.id}
-                      className={`group rounded-2xl p-3.5 sm:p-4 transition-all ${
+                      className={`group rounded-2xl p-3 sm:p-4.5 transition-all space-y-2.5 ${
                         isCurrentTTS
                           ? 'bg-[#D4AF37]/15 border border-[#D4AF37]'
                           : 'bg-[#17171e]/70 border border-white/5 hover:border-white/20'
                       }`}
                     >
-                      <div className="flex items-start gap-3">
-                        {/* 절 번호 */}
-                        <span className="mt-0.5 shrink-0 min-w-[24px] text-center text-xs font-bold font-mono text-[#D4AF37] select-none bg-[#D4AF37]/10 rounded-md py-0.5 px-1 border border-[#D4AF37]/20">
-                          {verse.num}
+                      {/* 1행: 작은 글씨 절 번호 뱃지 (단독 1줄 배치) */}
+                      <div className="flex items-center justify-between">
+                        <span className="inline-block text-[11px] font-bold font-mono text-[#D4AF37] select-none bg-[#D4AF37]/10 rounded px-1.5 py-0.5 border border-[#D4AF37]/20">
+                          {verse.num}절
                         </span>
+                      </div>
 
-                        {/* 본문 텍스트 (순수 성경 말씀) */}
-                        <div className="flex-1 space-y-2">
-                          <p className={`font-normal text-zinc-100 ${fontSizeClasses}`}>
-                            {verse.text}
-                          </p>
+                      {/* 2행: 성경 본문 말씀 (좌우 100% 전폭 최대화) */}
+                      <p className={`w-full block font-normal text-zinc-100 leading-relaxed sm:leading-loose ${fontSizeClasses}`}>
+                        {verse.text}
+                      </p>
 
-                          {/* 구절별 송태근 목사님 설교 듣기 버튼 */}
-                          {verse.sermon_url && (
-                            <div className="pt-1">
-                              <button
-                                onClick={() => {
-                                  if (activeSermon?.url === verse.sermon_url) {
-                                    setActiveSermon(null);
-                                  } else {
-                                    setActiveSermon({
-                                      title: formatSermonTitle(verse.sermon_title),
-                                      url: verse.sermon_url!,
-                                    });
-                                  }
-                                }}
-                                className={`inline-flex items-center gap-1.5 rounded-xl px-3 py-1.5 text-xs font-bold transition-all shadow-sm cursor-pointer ${
-                                  activeSermon?.url === verse.sermon_url
-                                    ? 'bg-[#D4AF37] text-black shadow-[#D4AF37]/30 ring-2 ring-[#D4AF37]'
-                                    : 'border border-[#D4AF37]/40 bg-[#D4AF37]/10 text-[#FDE68A] hover:bg-[#D4AF37] hover:text-black'
-                                }`}
-                              >
-                                <Headphones className="h-3.5 w-3.5 shrink-0" />
-                                <span>
-                                  {activeSermon?.url === verse.sermon_url
-                                    ? '🎙️ 설교 재생 중 (클릭 시 닫기)'
-                                    : `🎙️ 송태근 목사님 설교 듣기: ${formatSermonTitle(verse.sermon_title)}`}
-                                </span>
-                              </button>
-                            </div>
-                          )}
+                      {/* 3행: 송태근 목사님 설교 버튼 (모바일 100% 전폭 전개) */}
+                      {verse.sermon_url && (
+                        <div className="pt-0.5">
+                          <button
+                            onClick={() => {
+                              if (activeSermon?.url === verse.sermon_url) {
+                                setActiveSermon(null);
+                              } else {
+                                setActiveSermon({
+                                  title: formatSermonTitle(verse.sermon_title),
+                                  url: verse.sermon_url!,
+                                });
+                              }
+                            }}
+                            className={`w-full sm:w-auto inline-flex items-center justify-center sm:justify-start gap-1.5 rounded-xl px-3 py-2 text-xs font-bold transition-all shadow-sm cursor-pointer ${
+                              activeSermon?.url === verse.sermon_url
+                                ? 'bg-[#D4AF37] text-black shadow-[#D4AF37]/30 ring-2 ring-[#D4AF37]'
+                                : 'border border-[#D4AF37]/40 bg-[#D4AF37]/10 text-[#FDE68A] hover:bg-[#D4AF37] hover:text-black'
+                            }`}
+                          >
+                            <Headphones className="h-3.5 w-3.5 shrink-0" />
+                            <span className="truncate">
+                              {activeSermon?.url === verse.sermon_url
+                                ? '🎙️ 설교 재생 중 (클릭 시 닫기)'
+                                : `🎙️ 송태근 목사님 설교 듣기: ${formatSermonTitle(verse.sermon_title)}`}
+                            </span>
+                          </button>
+                        </div>
+                      )}
 
-                          {/* 말씀 강해(NOTE) 아코디언 토글 버튼 */}
-                          {hasNotes && (
-                            <div>
-                              <button
-                                onClick={() => toggleNote(verse.id)}
-                                className={`inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-semibold transition-all cursor-pointer ${
-                                  isNoteOpen
-                                    ? 'bg-[#D4AF37]/20 text-[#FDE68A] border border-[#D4AF37]/40'
-                                    : 'bg-white/5 text-zinc-400 hover:text-zinc-200 hover:bg-white/10'
-                                }`}
-                              >
-                                <Sparkles className="h-3 w-3 text-[#D4AF37] shrink-0" />
-                                <span>말씀 강해 ({verse.notes.length}개)</span>
-                                {isNoteOpen ? (
-                                  <ChevronUp className="h-3 w-3 shrink-0" />
-                                ) : (
-                                  <ChevronDown className="h-3 w-3 shrink-0" />
-                                )}
-                              </button>
+                      {/* 4행: 말씀 강해(NOTE) 토글 버튼 (모바일 100% 전폭 전개) */}
+                      {hasNotes && (
+                        <div className="pt-0.5 space-y-2">
+                          <button
+                            onClick={() => toggleNote(verse.id)}
+                            className={`w-full sm:w-auto inline-flex items-center justify-center sm:justify-start gap-1.5 rounded-xl px-3 py-1.5 text-xs font-semibold transition-all cursor-pointer ${
+                              isNoteOpen
+                                ? 'bg-[#D4AF37]/20 text-[#FDE68A] border border-[#D4AF37]/40'
+                                : 'bg-white/5 text-zinc-400 hover:text-zinc-200 hover:bg-white/10 border border-white/5'
+                            }`}
+                          >
+                            <Sparkles className="h-3 w-3 text-[#D4AF37] shrink-0" />
+                            <span>말씀 강해 ({verse.notes.length}개)</span>
+                            {isNoteOpen ? (
+                              <ChevronUp className="h-3 w-3 shrink-0 ml-auto sm:ml-0" />
+                            ) : (
+                              <ChevronDown className="h-3 w-3 shrink-0 ml-auto sm:ml-0" />
+                            )}
+                          </button>
 
-                              {/* 펼쳐진 강해(NOTE) 아코디언 */}
-                              {isNoteOpen && (
-                                <div className="mt-2.5 rounded-xl border border-[#D4AF37]/20 bg-[#1b1b24] p-3.5 space-y-2 text-xs sm:text-sm text-zinc-300 animate-in fade-in slide-in-from-top-1 duration-150">
-                                  {verse.notes.map((note, nIdx) => {
-                                    // Markdown 볼드체 구문 파싱: - **주제**: 내용
-                                    const match = note.match(/^-\s*\*\*(.*?)\*\*:\s*(.*)$/);
-                                    if (match) {
-                                      const [, topic, body] = match;
-                                      return (
-                                        <div key={nIdx} className="leading-relaxed flex items-start gap-2">
-                                          <span className="text-[#D4AF37] mt-1 shrink-0">✦</span>
-                                          <div>
-                                            <strong className="text-[#FDE68A] font-bold">
-                                              {topic}
-                                            </strong>
-                                            : <span className="text-zinc-200">{body}</span>
-                                          </div>
-                                        </div>
-                                      );
-                                    }
-                                    return (
-                                      <div key={nIdx} className="leading-relaxed text-zinc-200">
-                                        {note}
+                          {/* 펼쳐진 강해(NOTE) 아코디언 */}
+                          {isNoteOpen && (
+                            <div className="rounded-xl border border-[#D4AF37]/20 bg-[#1b1b24] p-3 sm:p-4 space-y-2 text-xs sm:text-sm text-zinc-300 animate-in fade-in slide-in-from-top-1 duration-150">
+                              {verse.notes.map((note, nIdx) => {
+                                // Markdown 볼드체 구문 파싱: - **주제**: 내용
+                                const match = note.match(/^-\s*\*\*(.*?)\*\*:\s*(.*)$/);
+                                if (match) {
+                                  const [, topic, body] = match;
+                                  return (
+                                    <div key={nIdx} className="leading-relaxed flex items-start gap-2">
+                                      <span className="text-[#D4AF37] mt-1 shrink-0">✦</span>
+                                      <div className="flex-1">
+                                        <strong className="text-[#FDE68A] font-bold">
+                                          {topic}
+                                        </strong>
+                                        : <span className="text-zinc-200">{body}</span>
                                       </div>
-                                    );
-                                  })}
-                                </div>
-                              )}
+                                    </div>
+                                  );
+                                }
+                                return (
+                                  <div key={nIdx} className="leading-relaxed text-zinc-200">
+                                    {note}
+                                  </div>
+                                );
+                              })}
                             </div>
                           )}
                         </div>
-                      </div>
+                      )}
                     </div>
                   );
                 })}
