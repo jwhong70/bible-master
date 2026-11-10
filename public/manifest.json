@@ -1,7 +1,7 @@
 {
-  "name": "BIBLE MASTER | 성경읽기 마스터",
-  "short_name": "성경 마스터",
-  "description": "신약 · 시가서 · 구약 3대 트랙 슬라이딩 통독 & 말씀 강해 웹",
+  "name": "BIBLE MASTER | 성경 마스터 (1년 1독 통독)",
+  "short_name": "성경 통독",
+  "description": "구약·신약·시가서 1년 1독 말씀 통독, 송태근 목사 강해 해설 및 순수 성경 낭독 웹 앱",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0a0a0c",
