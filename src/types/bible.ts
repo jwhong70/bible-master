@@ -20,6 +20,7 @@ export interface BiblePlanItem {
   title: string;
   sermon_title?: string;
   sermon_url?: string;
+  sermon_audio_url?: string; // MP3 설교 오디오 URL (/audio/sermons/{id}.mp3)
   audio_url?: string; // MP3 순수 음성 파일 URL (Supabase CDN)
   paragraph_count: number;
   verse_count: number;

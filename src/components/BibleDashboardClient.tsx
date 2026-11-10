@@ -368,9 +368,9 @@ export default function BibleDashboardClient() {
                     <span className="text-xs font-mono font-semibold text-zinc-300 bg-white/5 px-2 py-0.5 rounded-md">
                       {plan.week}주차 {plan.day}일차 ({dayKo})
                     </span>
-                    {plan.sermon_url && (
-                      <span className="inline-flex items-center gap-1 rounded-md bg-red-500/10 px-1.5 py-0.5 text-[10px] font-semibold text-red-400 border border-red-500/20">
-                        🎙️ 송태근 목사 강해
+                    {(plan.sermon_audio_url || plan.sermon_title) && (
+                      <span className="inline-flex items-center gap-1 rounded-md bg-[#D4AF37]/10 px-1.5 py-0.5 text-[10px] font-semibold text-[#FDE68A] border border-[#D4AF37]/20">
+                        🎙️ 송태근 목사 설교
                       </span>
                     )}
                   </div>
@@ -520,8 +520,8 @@ export default function BibleDashboardClient() {
                               <span className="text-xs sm:text-sm font-semibold text-white group-hover:text-[#FDE68A] truncate transition-colors">
                                 {plan.title}
                               </span>
-                              {plan.sermon_url && (
-                                <span className="text-[10px] text-red-400 shrink-0">🎙️ 강해</span>
+                              {(plan.sermon_audio_url || plan.sermon_title) && (
+                                <span className="text-[10px] text-[#FDE68A] shrink-0 font-medium">🎙️ 설교</span>
                               )}
                             </Link>
 
