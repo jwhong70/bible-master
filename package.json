@@ -6,7 +6,8 @@
     "dev": "next dev --port 3001",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "sync-md": "python ../scripts/sync_bible_md.py"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.4",
