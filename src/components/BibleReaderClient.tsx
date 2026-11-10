@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import {
@@ -17,13 +17,16 @@ import {
   Sparkles,
   ChevronDown,
   ChevronUp,
-  Bookmark,
-  Share2,
+  BookmarkCheck,
+  Check,
+  Headphones,
+  X,
 } from 'lucide-react';
 import { toast } from 'sonner';
 import { BibleCategory, BiblePlanItem, BibleVerse } from '@/types/bible';
 import {
   buildAllBiblePlans,
+  DAY_OF_WEEK_KO,
   getAdjacentPlans,
   loadLocalBibleProgress,
   loadLocalBibleSettings,
@@ -35,6 +38,12 @@ interface BibleReaderClientProps {
   plan: BiblePlanItem;
 }
 
+function extractYouTubeVideoId(url?: string): string | null {
+  if (!url) return null;
+  const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([a-zA-Z0-9_-]{11})/);
+  return match ? match[1] : null;
+}
+
 export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClientProps) {
   const router = useRouter();
   const [plan, setPlan] = useState<BiblePlanItem>(initialPlan);
@@ -43,6 +52,10 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
   const [allNotesExpanded, setAllNotesExpanded] = useState(false);
   const [isPlayingTTS, setIsPlayingTTS] = useState(false);
   const [currentSpeechVerseIndex, setCurrentSpeechVerseIndex] = useState<number | null>(null);
+
+  // 인앱 강해 플레이어 상태 (화면 이탈 방지)
+  const [showSermonPlayer, setShowSermonPlayer] = useState(false);
+  const sermonVideoId = useMemo(() => extractYouTubeVideoId(plan.sermon_url), [plan.sermon_url]);
 
   // 진행 상태 동기화
   useEffect(() => {
@@ -55,10 +68,9 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
     });
   }, [initialPlan]);
 
-  const settings = useMemo(() => loadLocalBibleSettings(), []);
-  const totalRequired = 1 + Math.max(0, settings.review_count);
-
+  const isCompleted = (plan.completed_count || 0) >= 1;
   const trackInfo = TRACK_INFO[plan.category];
+  const dayKo = DAY_OF_WEEK_KO[plan.day]?.dayName || `${plan.day}일`;
 
   // 인접 플랜 (이전 / 다음)
   const adjacent = useMemo(() => {
@@ -79,24 +91,20 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
     return Array.from(map.entries());
   }, [plan.verses]);
 
-  // 통독 1회 완료 버튼
-  const handleMarkComplete = () => {
-    const nextProg = updatePlanCompletion(plan.id, 1);
-    const updatedCount = nextProg[plan.id]?.completed_count || 1;
+  // 1회독 완독 토글 (복습 제거)
+  const handleToggleComplete = () => {
+    const nextState = !isCompleted;
+    const nextProg = updatePlanCompletion(plan.id, nextState);
     setPlan((prev) => ({
       ...prev,
-      completed_count: updatedCount,
-      last_read_at: new Date().toISOString(),
+      completed_count: nextState ? 1 : 0,
+      last_read_at: nextState ? new Date().toISOString() : null,
     }));
 
-    if (updatedCount >= totalRequired) {
-      toast.success(
-        `🎉 축하합니다! '${plan.title}' 완독 목표(${totalRequired}회독)를 완수했습니다!`
-      );
+    if (nextState) {
+      toast.success(`🎉 축하합니다! '${plan.title}' 통독을 완료했습니다!`);
     } else {
-      toast.success(
-        `📖 '${plan.title}' ${updatedCount}회독 통독을 완료했습니다! (${updatedCount}/${totalRequired}회)`
-      );
+      toast.info(`'${plan.title}' 통독 완료를 취소했습니다.`);
     }
   };
 
@@ -121,7 +129,7 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
     setOpenNotes(nextMap);
   };
 
-  // TTS 한국어 낭독 (Web Speech API)
+  // TTS 한국어 성경 말씀 낭독 (Web Speech API)
   const handleToggleTTS = () => {
     if (typeof window === 'undefined' || !window.speechSynthesis) {
       toast.error('이 브라우저에서는 음성 낭독(TTS)을 지원하지 않습니다.');
@@ -145,13 +153,13 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
       if (idx >= verses.length) {
         setIsPlayingTTS(false);
         setCurrentSpeechVerseIndex(null);
-        toast.info('오늘 분량 음성 낭독을 마쳤습니다.');
+        toast.info('오늘 분량 말씀 낭독을 완료했습니다.');
         return;
       }
 
       setCurrentSpeechVerseIndex(idx);
       const targetVerse = verses[idx];
-      // 순수 텍스트만 낭독 ([], () 제외된 순수 본문)
+      // 대괄호[], 소괄호()가 완전히 제외된 순수 본문만 낭독
       const utterance = new SpeechSynthesisUtterance(
         `${targetVerse.num}절. ${targetVerse.text}`
       );
@@ -192,51 +200,54 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
   }[fontSize];
 
   return (
-    <div className="min-h-screen pb-32">
-      {/* 1. 상단 고정 헤더 */}
-      <header className="sticky top-0 z-30 border-b border-white/10 bg-[#0a0a0c]/90 backdrop-blur-md px-4 py-3 sm:px-6">
-        <div className="mx-auto flex max-w-4xl items-center justify-between gap-3">
-          <Link
-            href="/"
-            className="flex items-center gap-1.5 rounded-xl border border-white/10 bg-[#141419] px-3 py-1.5 text-xs font-semibold text-zinc-300 hover:border-[#D4AF37]/50 hover:text-white transition-all cursor-pointer"
-          >
-            <ArrowLeft className="h-3.5 w-3.5" />
-            <span>진도표</span>
-          </Link>
-
-          <div className="flex items-center gap-2">
-            <span
-              className="rounded-lg px-2 py-0.5 text-xs font-bold"
-              style={{
-                backgroundColor: `${trackInfo.color}20`,
-                color: trackInfo.color,
-                border: `1px solid ${trackInfo.color}40`,
-              }}
+    <div className="min-h-screen pb-36">
+      {/* 1. 상단 고정 헤더: 모바일 2행 분리 (줄바꿈 원천 차단) */}
+      <header className="sticky top-0 z-30 border-b border-white/10 bg-[#0a0a0c]/95 backdrop-blur-md px-4 py-2.5 sm:px-6">
+        <div className="mx-auto flex max-w-4xl flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5">
+          {/* 1행: 진도표 뒤로가기 & 트랙/일차 배지 */}
+          <div className="flex items-center justify-between w-full sm:w-auto">
+            <Link
+              href="/"
+              className="flex items-center gap-1.5 rounded-xl border border-white/10 bg-[#141419] px-3 py-1.5 text-xs font-semibold text-zinc-300 hover:border-[#D4AF37]/50 hover:text-white transition-all cursor-pointer"
             >
-              {trackInfo.icon} {trackInfo.shortName}
-            </span>
-            <span className="text-xs font-semibold text-zinc-400">
-              {plan.week}주차 {plan.day}일차
-            </span>
+              <ArrowLeft className="h-3.5 w-3.5" />
+              <span>진도표</span>
+            </Link>
+
+            <div className="flex items-center gap-2">
+              <span
+                className="rounded-lg px-2 py-0.5 text-xs font-bold"
+                style={{
+                  backgroundColor: `${trackInfo.color}20`,
+                  color: trackInfo.color,
+                  border: `1px solid ${trackInfo.color}40`,
+                }}
+              >
+                {trackInfo.icon} {trackInfo.shortName}
+              </span>
+              <span className="text-xs font-semibold text-zinc-300 bg-white/5 px-2 py-0.5 rounded-md">
+                {plan.week}주 {plan.day}일 ({dayKo})
+              </span>
+            </div>
           </div>
 
-          {/* 폰트 크기 및 전체 강해 토글 */}
-          <div className="flex items-center gap-1.5">
+          {/* 2행: 글자 크기 & 강해 일괄 펼침 */}
+          <div className="flex items-center justify-between sm:justify-end gap-2 w-full sm:w-auto pt-1 sm:pt-0 border-t sm:border-t-0 border-white/5">
             <button
               onClick={() => {
                 const sizes: Array<'sm' | 'md' | 'lg' | 'xl'> = ['sm', 'md', 'lg', 'xl'];
                 const nextIdx = (sizes.indexOf(fontSize) + 1) % sizes.length;
                 setFontSize(sizes[nextIdx]);
               }}
-              className="rounded-xl border border-white/10 bg-[#141419] px-2.5 py-1.5 text-xs font-semibold text-zinc-300 hover:text-white cursor-pointer"
+              className="flex-1 sm:flex-none inline-flex items-center justify-center rounded-xl border border-white/10 bg-[#141419] px-3 py-1.5 text-xs font-semibold text-zinc-300 hover:text-white cursor-pointer"
               title="글자 크기 변경"
             >
-              글자 <span className="font-bold text-[#FDE68A] uppercase">{fontSize}</span>
+              글자 크기 <span className="ml-1 font-bold text-[#FDE68A] uppercase">{fontSize}</span>
             </button>
 
             <button
               onClick={toggleAllNotes}
-              className={`rounded-xl border px-2.5 py-1.5 text-xs font-semibold transition-all cursor-pointer ${
+              className={`flex-1 sm:flex-none inline-flex items-center justify-center rounded-xl border px-3 py-1.5 text-xs font-semibold transition-all cursor-pointer ${
                 allNotesExpanded
                   ? 'border-[#D4AF37] bg-[#D4AF37]/20 text-[#FDE68A]'
                   : 'border-white/10 bg-[#141419] text-zinc-400 hover:text-white'
@@ -251,121 +262,122 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
 
       {/* 2. 본문 컨테이너 */}
       <main className="mx-auto max-w-4xl px-4 py-6 sm:px-6 space-y-6">
-        {/* 말씀 카드 헤더 */}
-        <div className="rounded-3xl border border-[#D4AF37]/30 bg-gradient-to-b from-[#181820] to-[#111116] p-6 sm:p-8 shadow-xl">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-            <div>
-              <div className="flex items-center gap-2 mb-2 text-xs font-mono text-zinc-400">
-                <span>PLN ID: {plan.id}</span>
-                <span>•</span>
-                <span>{plan.verse_count}개 절</span>
-                <span>•</span>
-                <span>{plan.paragraph_count}개 단락</span>
-              </div>
-              <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
-                {plan.title}
-              </h1>
-              {plan.sermon_title && (
-                <p className="mt-2 text-sm font-semibold text-[#D4AF37]">
-                  📖 {plan.sermon_title}
-                </p>
-              )}
+        {/* 말씀 카드 대제목 */}
+        <div className="rounded-3xl border border-[#D4AF37]/30 bg-gradient-to-b from-[#181820] to-[#111116] p-5 sm:p-8 shadow-xl space-y-4">
+          <div className="space-y-1.5 w-full">
+            <div className="flex items-center gap-2 text-xs font-mono text-zinc-400">
+              <span className="text-[#D4AF37] font-bold">{trackInfo.shortName} 통독</span>
+              <span>•</span>
+              <span>{plan.week}주차 {plan.day}일차 ({dayKo})</span>
+              <span>•</span>
+              <span>총 {plan.verse_count}개 절</span>
             </div>
-
-            {/* 통독 현황 배지 */}
-            <div className="flex sm:flex-col items-center sm:items-end justify-between gap-2 border-t sm:border-t-0 pt-3 sm:pt-0 border-white/10">
-              <span
-                className={`px-3 py-1 rounded-full text-xs font-bold ${
-                  plan.completed_count >= totalRequired
-                    ? 'bg-[#10B981]/20 text-[#10B981] border border-[#10B981]/40'
-                    : plan.completed_count > 0
-                    ? 'bg-[#38BDF8]/20 text-[#38BDF8] border border-[#38BDF8]/40'
-                    : 'bg-[#D4AF37]/20 text-[#FDE68A] border border-[#D4AF37]/40'
-                }`}
-              >
-                {plan.completed_count >= totalRequired
-                  ? '완독 완수 🎉'
-                  : plan.completed_count > 0
-                  ? `${plan.completed_count}/${totalRequired}회독 진행 중`
-                  : '신규 읽기'}
-              </span>
-
-              {/* TTS 낭독 버튼 */}
-              <button
-                onClick={handleToggleTTS}
-                className={`inline-flex items-center gap-1.5 rounded-xl border px-3 py-1.5 text-xs font-semibold transition-all cursor-pointer ${
-                  isPlayingTTS
-                    ? 'border-red-500 bg-red-500/20 text-red-300 animate-pulse'
-                    : 'border-white/10 bg-[#1f1f28] text-zinc-300 hover:text-white hover:border-[#D4AF37]/50'
-                }`}
-              >
-                {isPlayingTTS ? (
-                  <>
-                    <Pause className="h-3.5 w-3.5" />
-                    <span>낭독 일시정지</span>
-                  </>
-                ) : (
-                  <>
-                    <Volume2 className="h-3.5 w-3.5 text-[#D4AF37]" />
-                    <span>본문 자동 낭독</span>
-                  </>
-                )}
-              </button>
-            </div>
+            <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white select-none">
+              {plan.title}
+            </h1>
+            {plan.sermon_title && (
+              <p className="text-sm font-semibold text-[#FDE68A]">
+                📖 {plan.sermon_title}
+              </p>
+            )}
           </div>
 
-          {/* 3. 송태근 목사 강해 유튜브 바로가기 배너 (있을 경우) */}
-          {plan.sermon_url && (
-            <div className="mt-6 rounded-2xl border border-red-500/30 bg-red-950/20 p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-red-600/30 text-red-400 border border-red-500/40 text-lg">
-                  ▶
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold text-white flex items-center gap-2">
-                    송태근 목사 말씀 강해
-                    <span className="text-[10px] rounded bg-red-500/20 px-1.5 py-0.2 text-red-300">
-                      YouTube
-                    </span>
+          {/* 상단 컨트롤 버튼 바 (모바일 1줄에 1버튼씩 완전 분리) */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 pt-2 border-t border-white/5">
+            {/* 🎙️ 송태근 목사 강해 듣기 (인앱 플레이어) */}
+            {plan.sermon_url && (
+              <button
+                onClick={() => setShowSermonPlayer((prev) => !prev)}
+                className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-xs sm:text-sm font-bold transition-all shadow-md cursor-pointer ${
+                  showSermonPlayer
+                    ? 'bg-red-600 text-white'
+                    : 'border border-red-500/40 bg-red-950/30 text-red-300 hover:bg-red-600 hover:text-white'
+                }`}
+              >
+                <Headphones className="h-4 w-4 shrink-0" />
+                <span>{showSermonPlayer ? '송태근 목사 강해 닫기' : '🎙️ 송태근 목사 강해 본문 보며 듣기'}</span>
+              </button>
+            )}
+
+            {/* 🔊 본문 순수 말씀 낭독 (TTS) */}
+            <button
+              onClick={handleToggleTTS}
+              className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl border px-4 py-2.5 text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
+                isPlayingTTS
+                  ? 'border-[#D4AF37] bg-[#D4AF37]/20 text-[#FDE68A] animate-pulse'
+                  : 'border-white/10 bg-[#1f1f28] text-zinc-300 hover:text-white hover:border-[#D4AF37]/50'
+              }`}
+            >
+              {isPlayingTTS ? (
+                <>
+                  <Pause className="h-4 w-4 shrink-0" />
+                  <span>말씀 낭독 일시정지</span>
+                </>
+              ) : (
+                <>
+                  <Volume2 className="h-4 w-4 text-[#D4AF37] shrink-0" />
+                  <span>성경 본문 자동 낭독 듣기</span>
+                </>
+              )}
+            </button>
+          </div>
+
+          {/* 3. 인앱 송태근 목사 강해 플레이어 (화면 이탈 없이 본문 보며 재생) */}
+          {showSermonPlayer && sermonVideoId && (
+            <div className="rounded-2xl border border-red-500/40 bg-[#0d0d12] p-4 space-y-3 animate-in fade-in zoom-in-95 duration-200">
+              <div className="flex items-center justify-between border-b border-white/10 pb-2">
+                <div className="flex items-center gap-2">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-red-600 text-white text-xs">
+                    ▶
+                  </span>
+                  <h4 className="text-xs sm:text-sm font-bold text-white truncate max-w-xs sm:max-w-md">
+                    송태근 목사 강해 · {plan.sermon_title || plan.title}
                   </h4>
-                  <p className="text-xs text-zinc-400 mt-0.5 truncate max-w-md">
-                    {plan.sermon_title || '삼일교회 송태근 목사 성경 강해 듣기'}
-                  </p>
                 </div>
+                <button
+                  onClick={() => setShowSermonPlayer(false)}
+                  className="text-zinc-400 hover:text-white p-1 cursor-pointer"
+                >
+                  <X className="h-4 w-4" />
+                </button>
               </div>
 
-              <a
-                href={plan.sermon_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-red-600 px-4 py-2 text-xs font-bold text-white hover:bg-red-500 transition-colors shadow-lg cursor-pointer"
-              >
-                <span>강해 영상/음성 듣기</span>
-                <ExternalLink className="h-3.5 w-3.5" />
-              </a>
+              {/* 플레이어 영역: 모바일 playsinline 적용으로 본문 화면 안에서 소리 재생 */}
+              <div className="relative aspect-video w-full max-h-56 sm:max-h-72 overflow-hidden rounded-xl border border-white/10 bg-black">
+                <iframe
+                  src={`https://www.youtube.com/embed/${sermonVideoId}?autoplay=1&playsinline=1`}
+                  title="송태근 목사 강해 플레이어"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="h-full w-full border-0"
+                />
+              </div>
+              <p className="text-[11px] text-zinc-400">
+                💡 영상을 재생해 두신 채로 아래 성경 본문과 강해 노트를 스크롤하며 읽으실 수 있습니다.
+              </p>
             </div>
           )}
         </div>
 
         {/* 4. 성경 본문 렌더링 (단락별) */}
-        <div className="space-y-8">
+        <div className="space-y-6">
           {groupedVerses.map(([pTitle, verses], pIndex) => (
             <section
               key={`paragraph-${pIndex}`}
-              className="rounded-3xl border border-white/10 bg-[#121217] p-5 sm:p-7 shadow-lg"
+              className="rounded-3xl border border-white/10 bg-[#121217] p-5 sm:p-7 shadow-lg space-y-4"
             >
-              {/* 단락 소제목 */}
-              <div className="mb-5 pb-3 border-b border-white/10 flex items-center justify-between">
+              {/* 단락 소제목: 모바일 1행 분리 */}
+              <div className="pb-3 border-b border-white/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5">
                 <h3 className="text-sm sm:text-base font-bold text-[#FDE68A] flex items-center gap-2">
-                  <span className="inline-block h-2 w-2 rounded-full bg-[#D4AF37]" />
-                  {pTitle}
+                  <span className="inline-block h-2 w-2 rounded-full bg-[#D4AF37] shrink-0" />
+                  <span>{pTitle}</span>
                 </h3>
                 <span className="text-xs font-mono text-zinc-500">{verses.length}절</span>
               </div>
 
               {/* 구절 목록 */}
-              <div className="space-y-4">
-                {verses.map((verse, vIdx) => {
+              <div className="space-y-3">
+                {verses.map((verse) => {
                   const globalIdx = plan.verses.findIndex((v) => v.id === verse.id);
                   const isCurrentTTS = currentSpeechVerseIndex === globalIdx;
                   const hasNotes = verse.notes && verse.notes.length > 0;
@@ -374,7 +386,7 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
                   return (
                     <div
                       key={verse.id}
-                      className={`group rounded-2xl p-3 sm:p-4 transition-all ${
+                      className={`group rounded-2xl p-3.5 sm:p-4 transition-all ${
                         isCurrentTTS
                           ? 'bg-[#D4AF37]/15 border border-[#D4AF37]'
                           : 'bg-[#17171e]/70 border border-white/5 hover:border-white/20'
@@ -387,14 +399,14 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
                         </span>
 
                         {/* 본문 텍스트 (순수 성경 말씀) */}
-                        <div className="flex-1">
+                        <div className="flex-1 space-y-2">
                           <p className={`font-normal text-zinc-100 ${fontSizeClasses}`}>
                             {verse.text}
                           </p>
 
-                          {/* 말씀 강해(NOTE) 토글 버튼 */}
+                          {/* 말씀 강해(NOTE) 아코디언 토글 버튼 */}
                           {hasNotes && (
-                            <div className="mt-3">
+                            <div>
                               <button
                                 onClick={() => toggleNote(verse.id)}
                                 className={`inline-flex items-center gap-1.5 rounded-lg px-2.5 py-1 text-xs font-semibold transition-all cursor-pointer ${
@@ -403,12 +415,12 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
                                     : 'bg-white/5 text-zinc-400 hover:text-zinc-200 hover:bg-white/10'
                                 }`}
                               >
-                                <Sparkles className="h-3 w-3 text-[#D4AF37]" />
+                                <Sparkles className="h-3 w-3 text-[#D4AF37] shrink-0" />
                                 <span>말씀 강해 ({verse.notes.length}개)</span>
                                 {isNoteOpen ? (
-                                  <ChevronUp className="h-3 w-3" />
+                                  <ChevronUp className="h-3 w-3 shrink-0" />
                                 ) : (
-                                  <ChevronDown className="h-3 w-3" />
+                                  <ChevronDown className="h-3 w-3 shrink-0" />
                                 )}
                               </button>
 
@@ -453,46 +465,50 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
         </div>
       </main>
 
-      {/* 5. 하단 고정 플로팅 액션 바 */}
-      <footer className="fixed bottom-0 inset-x-0 z-40 border-t border-white/10 bg-[#0a0a0c]/95 backdrop-blur-md px-4 py-3 sm:px-6 shadow-2xl">
-        <div className="mx-auto flex max-w-4xl items-center justify-between gap-2 sm:gap-4">
-          {/* 이전 플랜 버튼 */}
-          {adjacent.prev ? (
-            <Link
-              href={`/plan/${adjacent.prev.category}/${adjacent.prev.week}/${adjacent.prev.day}`}
-              className="inline-flex items-center gap-1 rounded-xl border border-white/10 bg-[#16161c] px-3 py-2.5 text-xs font-semibold text-zinc-300 hover:text-white hover:border-[#D4AF37]/50 transition-all cursor-pointer"
-            >
-              <ChevronLeft className="h-4 w-4" />
-              <span className="hidden sm:inline">이전 말씀</span>
-            </Link>
-          ) : (
-            <div className="w-10 sm:w-20" />
-          )}
+      {/* 5. 하단 고정 플로팅 액션 바: 모바일 1줄 전폭 분리 */}
+      <footer className="fixed bottom-0 inset-x-0 z-40 border-t border-white/10 bg-[#0a0a0c]/95 backdrop-blur-md px-4 py-2.5 sm:px-6 shadow-2xl">
+        <div className="mx-auto flex max-w-4xl flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5">
+          {/* 이전/다음 말씀 네비게이션 */}
+          <div className="flex items-center justify-between sm:justify-start gap-2 w-full sm:w-auto">
+            {adjacent.prev ? (
+              <Link
+                href={`/plan/${adjacent.prev.category}/${adjacent.prev.week}/${adjacent.prev.day}`}
+                className="inline-flex items-center gap-1 rounded-xl border border-white/10 bg-[#16161c] px-3 py-2 text-xs font-semibold text-zinc-300 hover:text-white hover:border-[#D4AF37]/50 transition-all cursor-pointer"
+              >
+                <ChevronLeft className="h-4 w-4" />
+                <span>이전 말씀</span>
+              </Link>
+            ) : (
+              <div className="w-16" />
+            )}
 
-          {/* 중앙: 오늘 통독 완료 버튼 */}
+            {adjacent.next ? (
+              <Link
+                href={`/plan/${adjacent.next.category}/${adjacent.next.week}/${adjacent.next.day}`}
+                className="inline-flex items-center gap-1 rounded-xl border border-white/10 bg-[#16161c] px-3 py-2 text-xs font-semibold text-zinc-300 hover:text-white hover:border-[#D4AF37]/50 transition-all cursor-pointer"
+              >
+                <span>다음 말씀</span>
+                <ChevronRight className="h-4 w-4" />
+              </Link>
+            ) : (
+              <div className="w-16" />
+            )}
+          </div>
+
+          {/* 중앙: 오늘 통독 완료 토글 버튼 (모바일 100% 전폭 단독 점유) */}
           <button
-            onClick={handleMarkComplete}
-            className="flex-1 max-w-sm inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-[#D4AF37] via-[#F59E0B] to-[#D4AF37] px-4 py-3 text-sm font-extrabold text-black shadow-xl hover:brightness-110 active:scale-98 transition-all cursor-pointer"
+            onClick={handleToggleComplete}
+            className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 text-sm font-extrabold shadow-xl transition-all cursor-pointer ${
+              isCompleted
+                ? 'bg-[#10B981] text-black hover:bg-[#059669]'
+                : 'bg-gradient-to-r from-[#D4AF37] via-[#F59E0B] to-[#D4AF37] text-black hover:brightness-110'
+            }`}
           >
-            <CheckCircle2 className="h-5 w-5" />
-            <span>오늘 말씀 통독 완료 ({plan.completed_count}/{totalRequired}회)</span>
+            <CheckCircle2 className="h-5 w-5 shrink-0" />
+            <span>{isCompleted ? '✓ 오늘 말씀 통독 완료됨' : '오늘 말씀 통독 완료 체크'}</span>
           </button>
-
-          {/* 다음 플랜 버튼 */}
-          {adjacent.next ? (
-            <Link
-              href={`/plan/${adjacent.next.category}/${adjacent.next.week}/${adjacent.next.day}`}
-              className="inline-flex items-center gap-1 rounded-xl border border-white/10 bg-[#16161c] px-3 py-2.5 text-xs font-semibold text-zinc-300 hover:text-white hover:border-[#D4AF37]/50 transition-all cursor-pointer"
-            >
-              <span className="hidden sm:inline">다음 말씀</span>
-              <ChevronRight className="h-4 w-4" />
-            </Link>
-          ) : (
-            <div className="w-10 sm:w-20" />
-          )}
         </div>
       </footer>
     </div>
   );
 }
-

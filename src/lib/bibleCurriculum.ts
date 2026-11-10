@@ -1,5 +1,5 @@
 import seedRaw from '@/data/bible_seed.json';
-import { BibleCategory, BiblePlanItem, BibleStudySettings } from '@/types/bible';
+import { BibleCategory, BiblePlanItem, BibleStudySettings, WeeklyBiblePlanGroup } from '@/types/bible';
 
 const STORAGE_PROGRESS_KEY = 'bible_master_progress_v1';
 const STORAGE_SETTINGS_KEY = 'bible_master_settings_v1';
@@ -8,7 +8,6 @@ export const DEFAULT_BIBLE_SETTINGS: BibleStudySettings = {
   daily_nt_count: 1,
   daily_wd_count: 1,
   daily_ot_count: 1,
-  review_count: 1, // 기본 본학습 1회 + 복습 1회 = 총 2회 완독 시 졸업
   active_track: 'all',
   start_date: new Date().toISOString().slice(0, 10),
 };
@@ -41,6 +40,16 @@ export const TRACK_INFO: Record<
     description: '모세오경, 역사서, 예언서',
     color: '#A78BFA', // Purple
   },
+};
+
+export const DAY_OF_WEEK_KO: Record<number, { dayName: string; full: string }> = {
+  1: { dayName: '월', full: '월요일' },
+  2: { dayName: '화', full: '화요일' },
+  3: { dayName: '수', full: '수요일' },
+  4: { dayName: '목', full: '목요일' },
+  5: { dayName: '금', full: '금요일' },
+  6: { dayName: '토', full: '토요일' },
+  7: { dayName: '주일', full: '주일 (일요일)' },
 };
 
 export function getSeedPlans(): BiblePlanItem[] {
@@ -101,25 +110,23 @@ export function buildAllBiblePlans(
   });
 }
 
-export function computeBibleSlidingTodo(
+/**
+ * 복습 제거: 1회독 완료 시 즉시 완독(졸업) 처리
+ */
+export function computeBibleDailyTodo(
   allPlans: BiblePlanItem[],
   settings: BibleStudySettings,
   category: BibleCategory
 ): {
   todoPlans: BiblePlanItem[];
-  graduatedCount: number;
-  inReviewCount: number;
+  completedCount: number;
   totalPlans: number;
 } {
   const categoryPlans = allPlans
     .filter((p) => p.category === category)
     .sort((a, b) => a.week * 10 + a.day - (b.week * 10 + b.day));
 
-  const totalRequired = 1 + Math.max(0, settings.review_count);
-  const graduatedCount = categoryPlans.filter((p) => p.completed_count >= totalRequired).length;
-  const inReviewCount = categoryPlans.filter(
-    (p) => p.completed_count > 0 && p.completed_count < totalRequired
-  ).length;
+  const completedCount = categoryPlans.filter((p) => p.completed_count >= 1).length;
 
   const quota =
     category === 'new_testament'
@@ -128,37 +135,69 @@ export function computeBibleSlidingTodo(
       ? settings.daily_wd_count
       : settings.daily_ot_count;
 
-  const ungraduated = categoryPlans.filter((p) => p.completed_count < totalRequired);
-  const reviewing = ungraduated.filter((p) => p.completed_count > 0);
-  const freshNew = ungraduated.filter((p) => p.completed_count === 0).slice(0, Math.max(1, quota));
-
-  const todoMap = new Map<string, BiblePlanItem>();
-  for (const item of [...reviewing, ...freshNew]) {
-    todoMap.set(item.id, item);
-  }
-
-  const todoPlans = Array.from(todoMap.values()).sort(
-    (a, b) => a.week * 10 + a.day - (b.week * 10 + b.day)
-  );
+  // 아직 안 읽은 분량 중에서 오늘의 목표 개수(quota)만큼 추천
+  const unreadPlans = categoryPlans.filter((p) => p.completed_count === 0);
+  const todoPlans = unreadPlans.slice(0, Math.max(1, quota));
 
   return {
     todoPlans,
-    graduatedCount,
-    inReviewCount,
+    completedCount,
     totalPlans: categoryPlans.length,
   };
 }
 
+/**
+ * 주간 단위 (1~52주차별) 그룹화
+ */
+export function buildWeeklyBibleGroups(
+  allPlans: BiblePlanItem[],
+  category?: BibleCategory
+): WeeklyBiblePlanGroup[] {
+  let targetPlans = allPlans;
+  if (category) {
+    targetPlans = targetPlans.filter((p) => p.category === category);
+  }
+
+  const weekMap = new Map<number, BiblePlanItem[]>();
+  for (const p of targetPlans) {
+    if (!weekMap.has(p.week)) {
+      weekMap.set(p.week, []);
+    }
+    weekMap.get(p.week)!.push(p);
+  }
+
+  const sortedWeeks = Array.from(weekMap.keys()).sort((a, b) => a - b);
+  return sortedWeeks.map((week) => {
+    const plans = weekMap.get(week)!.sort((a, b) => a.day - b.day);
+    const completedCount = plans.filter((p) => p.completed_count >= 1).length;
+    return {
+      week,
+      plans,
+      completedCount,
+      totalCount: plans.length,
+      isAllCompleted: completedCount === plans.length && plans.length > 0,
+    };
+  });
+}
+
 export function updatePlanCompletion(
   planId: string,
-  delta: number = 1
+  targetCompletedState?: boolean
 ): Record<string, { completed_count: number; last_read_at?: string | null }> {
   const current = loadLocalBibleProgress();
   const existing = current[planId] || { completed_count: 0 };
-  const nextCount = Math.max(0, (existing.completed_count || 0) + delta);
+  
+  let nextCount = 1;
+  if (targetCompletedState !== undefined) {
+    nextCount = targetCompletedState ? 1 : 0;
+  } else {
+    // 토글: 이미 1 이상이면 0으로, 0이면 1로
+    nextCount = existing.completed_count >= 1 ? 0 : 1;
+  }
+
   current[planId] = {
     completed_count: nextCount,
-    last_read_at: new Date().toISOString(),
+    last_read_at: nextCount > 0 ? new Date().toISOString() : null,
   };
   saveLocalBibleProgress(current);
   return current;
