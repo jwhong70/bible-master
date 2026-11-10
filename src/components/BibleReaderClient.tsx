@@ -165,9 +165,7 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
  setCurrentSpeechVerseIndex(idx);
  const targetVerse = verses[idx];
  // 대괄호[], 소괄호()가 완전히 제외된 순수 본문만 낭독
- const utterance = new SpeechSynthesisUtterance(
- `${targetVerse.num}절. ${targetVerse.text}`
- );
+		const utterance = new SpeechSynthesisUtterance(targetVerse.text);
  utterance.lang = 'ko-KR';
  utterance.rate = 0.95;
 
