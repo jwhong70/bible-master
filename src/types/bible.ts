@@ -5,6 +5,7 @@ export interface BibleVerse {
   num: string;
   paragraph_index: number;
   paragraph_title: string;
+  sermon_title?: string;
   sermon_url?: string;
   audio_url?: string;
   text: string;

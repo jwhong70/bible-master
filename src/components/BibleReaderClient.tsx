@@ -38,6 +38,17 @@ interface BibleReaderClientProps {
   plan: BiblePlanItem;
 }
 
+function extractYouTubeVideoId(url?: string): string | null {
+  if (!url) return null;
+  const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([a-zA-Z0-9_-]{11})/);
+  return match ? match[1] : null;
+}
+
+function formatSermonTitle(title?: string): string {
+  if (!title) return '본문 강해';
+  return title.replace(/\[강해\(송태근\s*목사\)\]\s*/, '').trim();
+}
+
 export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClientProps) {
   const router = useRouter();
   const [plan, setPlan] = useState<BiblePlanItem>(initialPlan);
@@ -47,9 +58,9 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
   const [isPlayingTTS, setIsPlayingTTS] = useState(false);
   const [currentSpeechVerseIndex, setCurrentSpeechVerseIndex] = useState<number | null>(null);
 
-  // 인앱 송태근 목사님 설교 오디오 플레이어 상태
-  const [showSermonPlayer, setShowSermonPlayer] = useState(false);
-  const hasSermon = Boolean(plan.sermon_audio_url || plan.sermon_title);
+  // 구절별 송태근 목사님 설교 오디오 재생 상태
+  const [activeSermon, setActiveSermon] = useState<{ title: string; url: string } | null>(null);
+  const sermonVideoId = useMemo(() => extractYouTubeVideoId(activeSermon?.url), [activeSermon?.url]);
 
   // 진행 상태 동기화
   useEffect(() => {
@@ -278,21 +289,6 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
 
           {/* 상단 컨트롤 버튼 바 (모바일 1줄에 1버튼씩 완전 분리) */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 pt-2 border-t border-white/5">
-            {/* 🎙️ 송태근 목사님 설교 듣기 (인앱 오디오 플레이어) */}
-            {hasSermon && (
-              <button
-                onClick={() => setShowSermonPlayer((prev) => !prev)}
-                className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-xs sm:text-sm font-bold transition-all shadow-md cursor-pointer ${
-                  showSermonPlayer
-                    ? 'bg-[#D4AF37] text-black shadow-[#D4AF37]/20'
-                    : 'border border-[#D4AF37]/50 bg-[#D4AF37]/10 text-[#FDE68A] hover:bg-[#D4AF37] hover:text-black'
-                }`}
-              >
-                <Headphones className="h-4 w-4 shrink-0" />
-                <span>{showSermonPlayer ? '송태근 목사님 설교 닫기' : '🎙️ 송태근 목사님 설교 듣기'}</span>
-              </button>
-            )}
-
             {/* 🔊 본문 순수 말씀 낭독 (TTS) */}
             <button
               onClick={handleToggleTTS}
@@ -315,42 +311,6 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
               )}
             </button>
           </div>
-
-          {/* 3. 인앱 송태근 목사님 설교 순수 오디오 플레이어 (영상/유튜브/광고 완전 배제) */}
-          {showSermonPlayer && (
-            <div className="rounded-2xl border border-[#D4AF37]/40 bg-[#0d0d14] p-4 space-y-3 animate-in fade-in zoom-in-95 duration-200 shadow-2xl">
-              <div className="flex items-center justify-between border-b border-white/10 pb-2">
-                <div className="flex items-center gap-2">
-                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#D4AF37] text-black text-xs font-bold">
-                    🎙️
-                  </span>
-                  <h4 className="text-xs sm:text-sm font-bold text-white truncate max-w-xs sm:max-w-md">
-                    송태근 목사님 설교 · {plan.sermon_title || plan.title}
-                  </h4>
-                </div>
-                <button
-                  onClick={() => setShowSermonPlayer(false)}
-                  className="text-zinc-400 hover:text-white p-1 cursor-pointer"
-                  title="닫기"
-                >
-                  <X className="h-4 w-4" />
-                </button>
-              </div>
-
-              {/* 오디오 플레이어: 광고 없는 순수 MP3 오디오 */}
-              <div className="rounded-xl bg-black/60 p-3 border border-white/10">
-                <audio
-                  controls
-                  autoPlay
-                  src={plan.sermon_audio_url || `/audio/sermons/${plan.id}.mp3`}
-                  className="w-full h-10 accent-[#D4AF37]"
-                />
-              </div>
-              <p className="text-[11px] text-zinc-400">
-                💡 설교 음성을 들으시면서 아래 성경 본문 말씀과 노트를 편안하게 읽으실 수 있습니다.
-              </p>
-            </div>
-          )}
         </div>
 
         {/* 4. 성경 본문 렌더링 (단락별) */}
@@ -397,6 +357,36 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
                           <p className={`font-normal text-zinc-100 ${fontSizeClasses}`}>
                             {verse.text}
                           </p>
+
+                          {/* 구절별 송태근 목사님 설교 듣기 버튼 */}
+                          {verse.sermon_url && (
+                            <div className="pt-1">
+                              <button
+                                onClick={() => {
+                                  if (activeSermon?.url === verse.sermon_url) {
+                                    setActiveSermon(null);
+                                  } else {
+                                    setActiveSermon({
+                                      title: formatSermonTitle(verse.sermon_title),
+                                      url: verse.sermon_url!,
+                                    });
+                                  }
+                                }}
+                                className={`inline-flex items-center gap-1.5 rounded-xl px-3 py-1.5 text-xs font-bold transition-all shadow-sm cursor-pointer ${
+                                  activeSermon?.url === verse.sermon_url
+                                    ? 'bg-[#D4AF37] text-black shadow-[#D4AF37]/30 ring-2 ring-[#D4AF37]'
+                                    : 'border border-[#D4AF37]/40 bg-[#D4AF37]/10 text-[#FDE68A] hover:bg-[#D4AF37] hover:text-black'
+                                }`}
+                              >
+                                <Headphones className="h-3.5 w-3.5 shrink-0" />
+                                <span>
+                                  {activeSermon?.url === verse.sermon_url
+                                    ? '🎙️ 설교 재생 중 (클릭 시 닫기)'
+                                    : `🎙️ 송태근 목사님 설교 듣기: ${formatSermonTitle(verse.sermon_title)}`}
+                                </span>
+                              </button>
+                            </div>
+                          )}
 
                           {/* 말씀 강해(NOTE) 아코디언 토글 버튼 */}
                           {hasNotes && (
@@ -459,7 +449,58 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
         </div>
       </main>
 
-      {/* 5. 하단 고정 플로팅 액션 바: 모바일 1줄 전폭 분리 */}
+      {/* 5. 화면 하단 고정 송태근 목사님 설교 오디오 플레이어 (본문 스크롤하며 자유 청취) */}
+      {activeSermon && (
+        <div className="fixed bottom-[68px] sm:bottom-[60px] inset-x-0 z-40 px-3 py-2 sm:px-6 bg-[#0a0a10]/95 backdrop-blur-md border-t border-[#D4AF37]/40 shadow-2xl animate-in slide-in-from-bottom duration-200">
+          <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2">
+            <div className="flex items-center justify-between gap-2 min-w-0">
+              <div className="flex items-center gap-2 min-w-0">
+                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#D4AF37] text-black text-xs shrink-0 font-bold animate-pulse">
+                  🎙️
+                </span>
+                <div className="min-w-0">
+                  <p className="text-[10px] font-bold text-[#D4AF37] uppercase tracking-wider">
+                    송태근 목사님 설교 청취 중
+                  </p>
+                  <h4 className="text-xs sm:text-sm font-bold text-white truncate max-w-[200px] sm:max-w-md">
+                    {activeSermon.title}
+                  </h4>
+                </div>
+              </div>
+              <button
+                onClick={() => setActiveSermon(null)}
+                className="text-zinc-400 hover:text-white p-1 rounded-lg hover:bg-white/10 transition-colors sm:hidden"
+                title="설교 닫기"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            </div>
+
+            {/* 인앱 유튜브 오디오 플레이어 (화면 이탈 및 광고 방지) */}
+            <div className="flex items-center gap-2 justify-end">
+              {sermonVideoId && (
+                <div className="w-full sm:w-72 h-9 overflow-hidden rounded-lg border border-white/10 bg-black">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${sermonVideoId}?autoplay=1&playsinline=1`}
+                    title="송태근 목사님 설교 플레이어"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    className="w-full h-full border-0"
+                  />
+                </div>
+              )}
+              <button
+                onClick={() => setActiveSermon(null)}
+                className="hidden sm:inline-flex text-zinc-400 hover:text-white p-1.5 rounded-lg hover:bg-white/10 transition-colors cursor-pointer"
+                title="설교 닫기"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* 6. 하단 고정 플로팅 액션 바: 모바일 1줄 전폭 분리 */}
       <footer className="fixed bottom-0 inset-x-0 z-40 border-t border-white/10 bg-[#0a0a0c]/95 backdrop-blur-md px-4 py-2.5 sm:px-6 shadow-2xl">
         <div className="mx-auto flex max-w-4xl flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5">
           {/* 이전/다음 말씀 네비게이션 */}
