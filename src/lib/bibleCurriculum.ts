@@ -53,7 +53,7 @@ export const DAY_OF_WEEK_KO: Record<number, { dayName: string; full: string }> =
 };
 
 export function getSeedPlans(): BiblePlanItem[] {
-  const list = (seedRaw as { bible_plans: BiblePlanItem[] }).bible_plans || [];
+  const list = ((seedRaw as unknown) as { bible_plans: BiblePlanItem[] }).bible_plans || [];
   return list;
 }
 

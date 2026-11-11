@@ -114,18 +114,26 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
     return getAdjacentPlans(plan, all);
   }, [plan]);
 
-  // 단락별로 절 그룹화
-  const groupedVerses = useMemo(() => {
-    const map = new Map<string, BibleVerse[]>();
+  // 장(Chapter)별 -> 소제목(Paragraph)별 2단계 계층적 그룹화
+  const chapterSections = useMemo(() => {
+    const chMap = new Map<string, Map<string, BibleVerse[]>>();
     for (const v of plan.verses) {
+      const chName = (v as any).chapter || (plan.title.includes('장') ? plan.title : '본문');
       const pTitle = v.paragraph_title || '본문';
-      if (!map.has(pTitle)) {
-        map.set(pTitle, []);
+      if (!chMap.has(chName)) {
+        chMap.set(chName, new Map());
       }
-      map.get(pTitle)!.push(v);
+      const pMap = chMap.get(chName)!;
+      if (!pMap.has(pTitle)) {
+        pMap.set(pTitle, []);
+      }
+      pMap.get(pTitle)!.push(v);
     }
-    return Array.from(map.entries());
-  }, [plan.verses]);
+    return Array.from(chMap.entries()).map(([chapterName, pMap]) => ({
+      chapterName,
+      paragraphs: Array.from(pMap.entries()),
+    }));
+  }, [plan.verses, plan.title]);
 
   // 1회독 완독 토글
   const handleToggleComplete = () => {
@@ -440,7 +448,19 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
 
         {/* 3. 본문 단락 및 절 목록 */}
         <div className="space-y-6 sm:space-y-8">
-          {groupedVerses.map(([paragraphTitle, verses], pIdx) => (
+        {chapterSections.map(({ chapterName, paragraphs }, chIdx) => (
+            <div key={chapterName + chIdx} className="space-y-5 sm:space-y-7">
+              {/* 1. 크게 장 단위 중제목 구분선 */}
+              <div className="flex items-center gap-3 pt-3 pb-2 border-b-2 border-[#D4AF37]/50">
+                <span className="px-3 py-1 bg-[#D4AF37] text-black font-black text-sm sm:text-base tracking-wider shadow-md">
+                  {chapterName}
+                </span>
+                <div className="h-px flex-1 bg-gradient-to-r from-[#D4AF37]/50 via-[#D4AF37]/20 to-transparent" />
+              </div>
+
+              {/* 2. 장 내부 소제목별 단락 카드 */}
+              <div className="space-y-5 sm:space-y-6">
+                {paragraphs.map(([paragraphTitle, verses], pIdx) => (
             <section
               key={paragraphTitle + pIdx}
               className="border border-white/5 bg-[#121217]/60 p-3.5 sm:p-6 space-y-4"
@@ -543,6 +563,9 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
                 })}
               </div>
             </section>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </main>
