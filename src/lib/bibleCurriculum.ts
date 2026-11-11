@@ -49,7 +49,7 @@ export const DAY_OF_WEEK_KO: Record<number, { dayName: string; full: string }> =
   4: { dayName: '목', full: '목요일' },
   5: { dayName: '금', full: '금요일' },
   6: { dayName: '토', full: '토요일' },
-  7: { dayName: '주일', full: '주일 (일요일)' },
+  7: { dayName: '일', full: '일요일' },
 };
 
 export function getSeedPlans(): BiblePlanItem[] {

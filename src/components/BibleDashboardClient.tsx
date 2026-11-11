@@ -424,7 +424,7 @@ export default function BibleDashboardClient() {
  {viewTab === 'weekly' && (
  <div className="space-y-4">
  <p className="text-xs text-zinc-400">
- 💡 주차별 카드를 터치하여 월요일~금요일(주일) 요일별 성경 읽기 진도를 한눈에 확인하고 체크하세요.
+ 💡 주차별 카드를 터치하여 월요일~일요일 요일별 성경 읽기 진도를 한눈에 확인하고 체크하세요.
  </p>
 
  <div className="space-y-3">
