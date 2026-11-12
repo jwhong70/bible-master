@@ -123,12 +123,12 @@ export default function InstallPrompt() {
  <aside
  aria-label="성경 통독 앱 설치 안내"
  onClick={handleInstallClick}
- className="fixed bottom-3 left-3 right-3 sm:left-auto sm:right-5 sm:max-w-md z-50 border border-[#D4AF37]/40 bg-[#121218]/95 backdrop-blur-xl p-3 shadow-2xl transition-all duration-300 animate-in fade-in slide-in-from-bottom-4 cursor-pointer hover:border-[#D4AF37]/70"
+ className="fixed bottom-3 left-3 right-3 sm:left-auto sm:right-5 sm:max-w-md z-50 border border-[#EA580C]/40 bg-[#121218]/95 backdrop-blur-xl p-3 shadow-2xl transition-all duration-300 animate-in fade-in slide-in-from-bottom-4 cursor-pointer hover:border-[#EA580C]/70"
  >
  <div className="flex items-center justify-between gap-3">
  {/* 좌측 앱 아이콘 & 문구 */}
  <div className="flex items-center gap-2.5 min-w-0">
- <div className="relative h-11 w-11 shrink-0 overflow-hidden border border-[#D4AF37]/40 bg-[#0d0d12] shadow-inner p-1">
+ <div className="relative h-11 w-11 shrink-0 overflow-hidden border border-[#EA580C]/40 bg-[#0d0d12] shadow-inner p-1">
  <Image
  src="/icon-192x192.png"
  alt="성경 통독 앱 아이콘"
@@ -143,7 +143,7 @@ export default function InstallPrompt() {
  <span className="text-xs sm:text-sm font-black text-white truncate">
  성경 마스터 (1년 1독)
  </span>
- <span className="bg-[#D4AF37]/20 px-1.5 py-0.2 text-[10px] font-bold text-[#FDE68A]">
+ <span className="bg-[#EA580C]/20 px-1.5 py-0.2 text-[10px] font-bold text-[#FDE68A]">
  앱 추천
  </span>
  </div>
@@ -160,7 +160,7 @@ export default function InstallPrompt() {
  e.stopPropagation();
  handleInstallClick();
  }}
- className="bg-linear-to-r from-[#D4AF37] to-[#F59E0B] px-3.5 py-2 text-xs font-bold text-black shadow-lg transition-transform active:scale-95 hover:brightness-110 cursor-pointer"
+ className="bg-linear-to-r from-[#EA580C] to-[#EA580C] px-3.5 py-2 text-xs font-bold text-black shadow-lg transition-transform active:scale-95 hover:brightness-110 cursor-pointer"
  >
  {isKakao ? "브라우저로 열기" : "1초 설치"}
  </button>
@@ -187,11 +187,11 @@ export default function InstallPrompt() {
  >
  <div
  onClick={(e) => e.stopPropagation()}
- className="w-full max-w-sm border border-[#D4AF37]/40 bg-[#14141d] p-5 shadow-2xl space-y-4"
+ className="w-full max-w-sm border border-[#EA580C]/40 bg-[#14141d] p-5 shadow-2xl space-y-4"
  >
  <div className="flex items-center justify-between border-b border-white/10 pb-3">
  <div className="flex items-center gap-2">
- <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#D4AF37] text-black text-xs font-black">
+ <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#EA580C] text-black text-xs font-black">
  📖
  </span>
  <h3 className="text-base font-bold text-white">
@@ -213,7 +213,7 @@ export default function InstallPrompt() {
 
  <div className="space-y-2.5 text-xs text-zinc-200">
  <div className="flex items-start gap-2.5 bg-white/5 p-2.5 border border-white/5">
- <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#D4AF37]/20 font-bold text-[#FDE68A] text-[11px]">
+ <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#EA580C]/20 font-bold text-[#FDE68A] text-[11px]">
  1
  </span>
  <p className="leading-tight">
@@ -224,7 +224,7 @@ export default function InstallPrompt() {
  </div>
 
  <div className="flex items-start gap-2.5 bg-white/5 p-2.5 border border-white/5">
- <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#D4AF37]/20 font-bold text-[#FDE68A] text-[11px]">
+ <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#EA580C]/20 font-bold text-[#FDE68A] text-[11px]">
  2
  </span>
  <p className="leading-tight">
@@ -235,7 +235,7 @@ export default function InstallPrompt() {
  </div>
 
  <div className="flex items-start gap-2.5 bg-white/5 p-2.5 border border-white/5">
- <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#D4AF37]/20 font-bold text-[#FDE68A] text-[11px]">
+ <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#EA580C]/20 font-bold text-[#FDE68A] text-[11px]">
  3
  </span>
  <p className="leading-tight">
@@ -247,7 +247,7 @@ export default function InstallPrompt() {
 
  <button
  onClick={() => setShowIOSModal(false)}
- className="w-full bg-linear-to-r from-[#D4AF37] to-[#F59E0B] py-2.5 text-xs font-bold text-black shadow-lg hover:brightness-110 cursor-pointer"
+ className="w-full bg-linear-to-r from-[#EA580C] to-[#EA580C] py-2.5 text-xs font-bold text-black shadow-lg hover:brightness-110 cursor-pointer"
  >
  확인했습니다
  </button>

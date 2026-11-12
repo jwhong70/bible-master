@@ -156,7 +156,7 @@ export default function BibleDashboardClient() {
  if (!isHydrated) {
  return (
  <div className="flex min-h-[60vh] items-center justify-center">
- <div className="h-8 w-8 animate-spin rounded-full border-2 border-[#D4AF37] border-t-transparent" />
+ <div className="h-8 w-8 animate-spin rounded-full border-2 border-[#EA580C] border-t-transparent" />
  </div>
  );
  }
@@ -164,19 +164,19 @@ export default function BibleDashboardClient() {
  return (
  <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6 sm:py-8 space-y-6">
  {/* 1. 상단 브랜드 헤더 (모바일 2행 완전 분리: 텍스트 짤림 0%) */}
- <header className="border border-black/10 border-l-4 border-l-[#D4AF37] bg-gradient-to-b from-amber-50/80 via-white to-amber-50/30 p-5 sm:p-8 shadow-xs relative overflow-hidden">
- <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[#D4AF37]/10 blur-3xl pointer-events-none" />
+ <header className="border border-black/10 border-l-4 border-l-[#EA580C] bg-gradient-to-b from-amber-50/80 via-white to-amber-50/30 p-5 sm:p-8 shadow-xs relative overflow-hidden">
+ <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[#EA580C]/10 blur-3xl pointer-events-none" />
  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 relative z-10">
  {/* 1행: 로고 & 타이틀 */}
  <div className="w-full sm:w-auto">
  <div className="flex items-center gap-2 mb-2">
- <span className="inline-flex items-center gap-1.5 rounded-full bg-[#D4AF37]/15 px-3 py-1 text-xs font-semibold text-[#FDE68A] border border-[#D4AF37]/30">
- <Sparkles className="h-3.5 w-3.5 text-[#D4AF37]" />
+ <span className="inline-flex items-center gap-1.5 rounded-full bg-[#EA580C]/15 px-3 py-1 text-xs font-semibold text-[#FDE68A] border border-[#EA580C]/30">
+ <Sparkles className="h-3.5 w-3.5 text-[#EA580C]" />
  52주 1년 1독 성경 통독 & 송태근 목사 강해
  </span>
  </div>
  <h1 className="text-xl sm:text-2xl font-extrabold tracking-tight text-gray-900 select-none whitespace-nowrap">
- BIBLE MASTER <span className="text-[#D4AF37]">성경 통독 마스터</span>
+ BIBLE MASTER <span className="text-[#EA580C]">성경 통독 마스터</span>
  </h1>
  <p className="mt-1 text-xs text-gray-600 whitespace-nowrap">
  신약 277일 · 시가서 239일 · 구약 292일 | 일간 To-Do & 주간 요일별 진도표
@@ -187,9 +187,9 @@ export default function BibleDashboardClient() {
  <div className="w-full sm:w-auto pt-2 sm:pt-0 border-t sm:border-t-0 border-black/5">
  <button
  onClick={() => setShowSettingsModal(true)}
- className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-black/15 bg-[#1F1F1F] px-4 py-2.5 text-xs font-semibold text-gray-900 transition-all hover:bg-[#2B2B2B] hover:border-[#D4AF37] cursor-pointer shadow-xs"
+ className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-black/15 bg-[#1F1F1F] px-4 py-2.5 text-xs font-semibold text-gray-900 transition-all hover:bg-[#2B2B2B] hover:border-[#EA580C] cursor-pointer shadow-xs"
  >
- <Settings className="h-4 w-4 text-[#D4AF37]" />
+ <Settings className="h-4 w-4 text-[#EA580C]" />
  <span>일일 목표 분량 설정</span>
  </button>
  </div>
@@ -211,7 +211,7 @@ export default function BibleDashboardClient() {
  </div>
  <div className="bg-white p-3 border border-black/10 shadow-xs">
  <div className="text-xs text-gray-500">신약 완독</div>
- <div className="mt-1 text-lg font-black text-[#D4AF37]">
+ <div className="mt-1 text-lg font-black text-[#EA580C]">
  {ntStats.completedCount}/{ntStats.totalPlans}
  </div>
  <div className="mt-0.5 text-[11px] text-gray-400">277일 코스</div>
@@ -233,7 +233,7 @@ export default function BibleDashboardClient() {
  onClick={() => handleTrackChange('all')}
  className={`w-full flex items-center justify-between p-3.5 border transition-all text-left cursor-pointer ${
  selectedTrack === 'all'
- ? 'border-[#D4AF37] bg-[#D4AF37]/15 text-gray-900 shadow-lg'
+ ? 'border-[#EA580C] bg-[#EA580C]/15 text-gray-900 shadow-lg'
  : 'border-black/10 bg-[#131318] text-gray-600 hover:text-gray-900'
  }`}
  >
@@ -250,7 +250,7 @@ export default function BibleDashboardClient() {
  onClick={() => handleTrackChange('new_testament')}
  className={`w-full flex items-center justify-between p-3.5 border transition-all text-left cursor-pointer ${
  selectedTrack === 'new_testament'
- ? 'border-[#D4AF37] bg-[#D4AF37]/15 text-gray-900 shadow-lg'
+ ? 'border-[#EA580C] bg-[#EA580C]/15 text-gray-900 shadow-lg'
  : 'border-black/10 bg-[#131318] text-gray-600 hover:text-gray-900'
  }`}
  >
@@ -262,7 +262,7 @@ export default function BibleDashboardClient() {
  완독 {ntStats.completedCount}/{ntStats.totalPlans}
  </div>
  </div>
- <span className="text-xs font-black text-[#D4AF37]">신약 집중</span>
+ <span className="text-xs font-black text-[#EA580C]">신약 집중</span>
  </button>
 
  <button
@@ -310,7 +310,7 @@ export default function BibleDashboardClient() {
  onClick={() => setViewTab('daily')}
  className={`w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2.5 text-xs sm:text-sm font-bold transition-all cursor-pointer ${
  viewTab === 'daily'
- ? 'bg-[#D4AF37] text-black shadow-md'
+ ? 'bg-[#EA580C] text-black shadow-md'
  : 'text-gray-600 hover:text-gray-900 bg-white/5'
  }`}
  >
@@ -320,7 +320,7 @@ export default function BibleDashboardClient() {
  onClick={() => setViewTab('weekly')}
  className={`w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2.5 text-xs sm:text-sm font-bold transition-all cursor-pointer ${
  viewTab === 'weekly'
- ? 'bg-[#D4AF37] text-black shadow-md'
+ ? 'bg-[#EA580C] text-black shadow-md'
  : 'text-gray-600 hover:text-gray-900 bg-white/5'
  }`}
  >
@@ -351,7 +351,7 @@ export default function BibleDashboardClient() {
  return (
  <div
  key={plan.id}
- className="border border-black/10 bg-[#141419] p-4 sm:p-5 transition-all hover:border-[#D4AF37]/40 hover:bg-[#181820] flex flex-col gap-3"
+ className="border border-black/10 bg-[#141419] p-4 sm:p-5 transition-all hover:border-[#EA580C]/40 hover:bg-[#181820] flex flex-col gap-3"
  >
  {/* 상단 메타 배지 */}
  <div className="flex flex-wrap items-center gap-2">
@@ -369,7 +369,7 @@ export default function BibleDashboardClient() {
  {plan.week}주차 {plan.day}일차 ({dayKo})
  </span>
  {(plan.sermon_audio_url || plan.sermon_title) && (
- <span className="inline-flex items-center gap-1 bg-[#D4AF37]/10 px-1.5 py-0.5 text-[10px] font-semibold text-[#FDE68A] border border-[#D4AF37]/20">
+ <span className="inline-flex items-center gap-1 bg-[#EA580C]/10 px-1.5 py-0.5 text-[10px] font-semibold text-[#FDE68A] border border-[#EA580C]/20">
  🎙️ 송태근 목사 설교
  </span>
  )}
@@ -407,7 +407,7 @@ export default function BibleDashboardClient() {
  {/* 말씀 읽기 바로가기 버튼 */}
  <Link
  href={`/plan/${plan.category}/${plan.week}/${plan.day}`}
- className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 bg-gradient-to-r from-[#D4AF37] to-[#F59E0B] px-4 py-2.5 text-xs font-bold text-black shadow-md hover:brightness-110 cursor-pointer"
+ className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 bg-gradient-to-r from-[#EA580C] to-[#EA580C] px-4 py-2.5 text-xs font-bold text-black shadow-md hover:brightness-110 cursor-pointer"
  >
  <span>본문 말씀 읽기 & 강해</span>
  <ChevronRight className="h-3.5 w-3.5" />
@@ -448,7 +448,7 @@ export default function BibleDashboardClient() {
  className="w-full p-4 flex items-center justify-between text-left cursor-pointer hover:bg-white/5 transition-colors"
  >
  <div className="flex items-center gap-2.5">
- <span className="flex h-7 w-7 items-center justify-center bg-[#D4AF37]/15 border border-[#D4AF37]/30 text-xs font-bold text-[#FDE68A]">
+ <span className="flex h-7 w-7 items-center justify-center bg-[#EA580C]/15 border border-[#EA580C]/30 text-xs font-bold text-[#FDE68A]">
  {group.week}
  </span>
  <div>
@@ -469,7 +469,7 @@ export default function BibleDashboardClient() {
  <div className="flex items-center gap-2">
  <div className="hidden sm:block w-24 h-2 bg-white/10 rounded-full overflow-hidden">
  <div
- className="h-full bg-[#D4AF37] transition-all"
+ className="h-full bg-[#EA580C] transition-all"
  style={{ width: `${percent}%` }}
  />
  </div>
@@ -561,10 +561,10 @@ export default function BibleDashboardClient() {
  {/* 5. 진도 설정 모달 */}
  {showSettingsModal && (
  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm animate-in fade-in duration-200">
- <div className="w-full max-w-md border border-[#D4AF37]/40 bg-[#16161c] p-6 text-gray-900 shadow-2xl space-y-5 animate-in zoom-in-95 duration-200">
+ <div className="w-full max-w-md border border-[#EA580C]/40 bg-[#16161c] p-6 text-gray-900 shadow-2xl space-y-5 animate-in zoom-in-95 duration-200">
  <div className="flex items-center justify-between border-b border-black/10 pb-3">
  <h3 className="text-lg font-bold text-[#FDE68A] flex items-center gap-2">
- <Settings className="h-5 w-5 text-[#D4AF37]" />
+ <Settings className="h-5 w-5 text-[#EA580C]" />
  성경 통독 일일 분량 설정
  </h3>
  <button
@@ -586,7 +586,7 @@ export default function BibleDashboardClient() {
  max="10"
  value={draftDailyNt}
  onChange={(e) => setDraftDailyNt(Number(e.target.value))}
- className="w-full bg-[#0e0e12] border border-black/10 px-3.5 py-2.5 text-sm text-gray-900 focus:outline-none focus:border-[#D4AF37]"
+ className="w-full bg-[#0e0e12] border border-black/10 px-3.5 py-2.5 text-sm text-gray-900 focus:outline-none focus:border-[#EA580C]"
  />
  </div>
 
@@ -600,7 +600,7 @@ export default function BibleDashboardClient() {
  max="10"
  value={draftDailyWd}
  onChange={(e) => setDraftDailyWd(Number(e.target.value))}
- className="w-full bg-[#0e0e12] border border-black/10 px-3.5 py-2.5 text-sm text-gray-900 focus:outline-none focus:border-[#D4AF37]"
+ className="w-full bg-[#0e0e12] border border-black/10 px-3.5 py-2.5 text-sm text-gray-900 focus:outline-none focus:border-[#EA580C]"
  />
  </div>
 
@@ -614,7 +614,7 @@ export default function BibleDashboardClient() {
  max="10"
  value={draftDailyOt}
  onChange={(e) => setDraftDailyOt(Number(e.target.value))}
- className="w-full bg-[#0e0e12] border border-black/10 px-3.5 py-2.5 text-sm text-gray-900 focus:outline-none focus:border-[#D4AF37]"
+ className="w-full bg-[#0e0e12] border border-black/10 px-3.5 py-2.5 text-sm text-gray-900 focus:outline-none focus:border-[#EA580C]"
  />
  </div>
 
@@ -636,7 +636,7 @@ export default function BibleDashboardClient() {
  </button>
  <button
  type="submit"
- className="px-5 py-2 text-xs font-bold bg-[#D4AF37] text-black hover:brightness-110 cursor-pointer"
+ className="px-5 py-2 text-xs font-bold bg-[#EA580C] text-black hover:brightness-110 cursor-pointer"
  >
  설정 저장
  </button>
