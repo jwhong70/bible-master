@@ -164,7 +164,7 @@ export default function BibleDashboardClient() {
  return (
  <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6 sm:py-8 space-y-6">
  {/* 1. 상단 브랜드 헤더 (모바일 2행 완전 분리: 텍스트 짤림 0%) */}
- <header className="border border-[#D4AF37]/30 bg-gradient-to-b from-[#18181f] via-[#121217] to-[#0d0d10] p-5 sm:p-8 shadow-2xl relative overflow-hidden">
+ <header className="border border-black/10 border-l-4 border-l-[#D4AF37] bg-gradient-to-b from-amber-50/80 via-white to-amber-50/30 p-5 sm:p-8 shadow-xs relative overflow-hidden">
  <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[#D4AF37]/10 blur-3xl pointer-events-none" />
  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 relative z-10">
  {/* 1행: 로고 & 타이틀 */}
@@ -175,19 +175,19 @@ export default function BibleDashboardClient() {
  52주 1년 1독 성경 통독 & 송태근 목사 강해
  </span>
  </div>
- <h1 className="text-xl sm:text-2xl font-extrabold tracking-tight text-white select-none whitespace-nowrap">
+ <h1 className="text-xl sm:text-2xl font-extrabold tracking-tight text-gray-900 select-none whitespace-nowrap">
  BIBLE MASTER <span className="text-[#D4AF37]">성경 통독 마스터</span>
  </h1>
- <p className="mt-1 text-xs text-zinc-400 whitespace-nowrap">
+ <p className="mt-1 text-xs text-gray-600 whitespace-nowrap">
  신약 277일 · 시가서 239일 · 구약 292일 | 일간 To-Do & 주간 요일별 진도표
  </p>
  </div>
 
  {/* 2행: 설정 버튼 (모바일 전폭 단독 행) */}
- <div className="w-full sm:w-auto pt-2 sm:pt-0 border-t sm:border-t-0 border-white/5">
+ <div className="w-full sm:w-auto pt-2 sm:pt-0 border-t sm:border-t-0 border-black/5">
  <button
  onClick={() => setShowSettingsModal(true)}
- className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-white/10 bg-[#1f1f27] px-4 py-2.5 text-xs font-semibold text-zinc-200 transition-all hover:border-[#D4AF37]/40 hover:text-white cursor-pointer"
+ className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-black/15 bg-[#1F1F1F] px-4 py-2.5 text-xs font-semibold text-gray-900 transition-all hover:bg-[#2B2B2B] hover:border-[#D4AF37] cursor-pointer shadow-xs"
  >
  <Settings className="h-4 w-4 text-[#D4AF37]" />
  <span>일일 목표 분량 설정</span>
@@ -196,33 +196,33 @@ export default function BibleDashboardClient() {
  </div>
 
  {/* 종합 통독 진도율 바 */}
- <div className="mt-6 pt-5 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
- <div className="bg-[#0a0a0d] p-3 border border-white/5">
- <div className="text-xs text-zinc-400">전체 통독 진도</div>
+ <div className="mt-6 pt-5 border-t border-black/10 grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+ <div className="bg-white p-3 border border-black/10 shadow-xs">
+ <div className="text-xs text-gray-500">전체 통독 진도</div>
  <div className="mt-1 text-lg font-black text-[#FDE68A]">{overallPercent}%</div>
- <div className="mt-0.5 text-[11px] text-zinc-500">
+ <div className="mt-0.5 text-[11px] text-gray-400">
  {totalCompleted} / {totalPlansCount} 완독
  </div>
  </div>
- <div className="bg-[#0a0a0d] p-3 border border-white/5">
- <div className="text-xs text-zinc-400">오늘의 To-Do</div>
- <div className="mt-1 text-lg font-black text-white">{activeTodoList.length}개</div>
- <div className="mt-0.5 text-[11px] text-zinc-500">추천 진도</div>
+ <div className="bg-white p-3 border border-black/10 shadow-xs">
+ <div className="text-xs text-gray-500">오늘의 To-Do</div>
+ <div className="mt-1 text-lg font-black text-gray-900">{activeTodoList.length}개</div>
+ <div className="mt-0.5 text-[11px] text-gray-400">추천 진도</div>
  </div>
- <div className="bg-[#0a0a0d] p-3 border border-white/5">
- <div className="text-xs text-zinc-400">신약 완독</div>
+ <div className="bg-white p-3 border border-black/10 shadow-xs">
+ <div className="text-xs text-gray-500">신약 완독</div>
  <div className="mt-1 text-lg font-black text-[#D4AF37]">
  {ntStats.completedCount}/{ntStats.totalPlans}
  </div>
- <div className="mt-0.5 text-[11px] text-zinc-500">277일 코스</div>
+ <div className="mt-0.5 text-[11px] text-gray-400">277일 코스</div>
  </div>
- <div className="bg-[#0a0a0d] p-3 border border-white/5">
- <div className="text-xs text-zinc-400">구약·시가서 완독</div>
+ <div className="bg-white p-3 border border-black/10 shadow-xs">
+ <div className="text-xs text-gray-500">구약·시가서 완독</div>
  <div className="mt-1 text-lg font-black text-[#A78BFA]">
  {wdStats.completedCount + otStats.completedCount}/
  {wdStats.totalPlans + otStats.totalPlans}
  </div>
- <div className="mt-0.5 text-[11px] text-zinc-500">531일 코스</div>
+ <div className="mt-0.5 text-[11px] text-gray-400">531일 코스</div>
  </div>
  </div>
  </header>
@@ -233,15 +233,15 @@ export default function BibleDashboardClient() {
  onClick={() => handleTrackChange('all')}
  className={`w-full flex items-center justify-between p-3.5 border transition-all text-left cursor-pointer ${
  selectedTrack === 'all'
- ? 'border-[#D4AF37] bg-[#D4AF37]/15 text-white shadow-lg'
- : 'border-white/10 bg-[#131318] text-zinc-400 hover:text-white'
+ ? 'border-[#D4AF37] bg-[#D4AF37]/15 text-gray-900 shadow-lg'
+ : 'border-black/10 bg-[#131318] text-gray-600 hover:text-gray-900'
  }`}
  >
  <div>
  <div className="text-xs font-bold flex items-center gap-1.5">
  <span>🌟</span> 전체 다 (통합 통독)
  </div>
- <div className="text-[11px] text-zinc-400 mt-0.5">신약+시가서+구약 매일 동시</div>
+ <div className="text-[11px] text-gray-600 mt-0.5">신약+시가서+구약 매일 동시</div>
  </div>
  <span className="text-xs font-black text-[#FDE68A]">{totalPlansCount}개</span>
  </button>
@@ -250,15 +250,15 @@ export default function BibleDashboardClient() {
  onClick={() => handleTrackChange('new_testament')}
  className={`w-full flex items-center justify-between p-3.5 border transition-all text-left cursor-pointer ${
  selectedTrack === 'new_testament'
- ? 'border-[#D4AF37] bg-[#D4AF37]/15 text-white shadow-lg'
- : 'border-white/10 bg-[#131318] text-zinc-400 hover:text-white'
+ ? 'border-[#D4AF37] bg-[#D4AF37]/15 text-gray-900 shadow-lg'
+ : 'border-black/10 bg-[#131318] text-gray-600 hover:text-gray-900'
  }`}
  >
  <div>
  <div className="text-xs font-bold flex items-center gap-1.5">
  <span>✝️</span> 신약만 (277일)
  </div>
- <div className="text-[11px] text-zinc-400 mt-0.5">
+ <div className="text-[11px] text-gray-600 mt-0.5">
  완독 {ntStats.completedCount}/{ntStats.totalPlans}
  </div>
  </div>
@@ -269,15 +269,15 @@ export default function BibleDashboardClient() {
  onClick={() => handleTrackChange('wisdom')}
  className={`w-full flex items-center justify-between p-3.5 border transition-all text-left cursor-pointer ${
  selectedTrack === 'wisdom'
- ? 'border-[#38BDF8] bg-[#38BDF8]/15 text-white shadow-lg'
- : 'border-white/10 bg-[#131318] text-zinc-400 hover:text-white'
+ ? 'border-[#38BDF8] bg-[#38BDF8]/15 text-gray-900 shadow-lg'
+ : 'border-black/10 bg-[#131318] text-gray-600 hover:text-gray-900'
  }`}
  >
  <div>
  <div className="text-xs font-bold flex items-center gap-1.5">
  <span>📜</span> 시가서만 (239일)
  </div>
- <div className="text-[11px] text-zinc-400 mt-0.5">
+ <div className="text-[11px] text-gray-600 mt-0.5">
  완독 {wdStats.completedCount}/{wdStats.totalPlans}
  </div>
  </div>
@@ -288,15 +288,15 @@ export default function BibleDashboardClient() {
  onClick={() => handleTrackChange('old_testament')}
  className={`w-full flex items-center justify-between p-3.5 border transition-all text-left cursor-pointer ${
  selectedTrack === 'old_testament'
- ? 'border-[#A78BFA] bg-[#A78BFA]/15 text-white shadow-lg'
- : 'border-white/10 bg-[#131318] text-zinc-400 hover:text-white'
+ ? 'border-[#A78BFA] bg-[#A78BFA]/15 text-gray-900 shadow-lg'
+ : 'border-black/10 bg-[#131318] text-gray-600 hover:text-gray-900'
  }`}
  >
  <div>
  <div className="text-xs font-bold flex items-center gap-1.5">
  <span>🏛️</span> 구약만 (292일)
  </div>
- <div className="text-[11px] text-zinc-400 mt-0.5">
+ <div className="text-[11px] text-gray-600 mt-0.5">
  완독 {otStats.completedCount}/{otStats.totalPlans}
  </div>
  </div>
@@ -305,13 +305,13 @@ export default function BibleDashboardClient() {
  </div>
 
  {/* 3. 뷰 탭 전환 (📋 일간 To-Do vs 📅 주간 진도표) */}
- <div className="grid grid-cols-2 sm:flex items-center gap-2 border-b border-white/10 pb-3 w-full">
+ <div className="grid grid-cols-2 sm:flex items-center gap-2 border-b border-black/10 pb-3 w-full">
  <button
  onClick={() => setViewTab('daily')}
  className={`w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2.5 text-xs sm:text-sm font-bold transition-all cursor-pointer ${
  viewTab === 'daily'
  ? 'bg-[#D4AF37] text-black shadow-md'
- : 'text-zinc-400 hover:text-white bg-white/5'
+ : 'text-gray-600 hover:text-gray-900 bg-white/5'
  }`}
  >
  <span>📋 일간 단위 To-Do ({activeTodoList.length})</span>
@@ -321,7 +321,7 @@ export default function BibleDashboardClient() {
  className={`w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2.5 text-xs sm:text-sm font-bold transition-all cursor-pointer ${
  viewTab === 'weekly'
  ? 'bg-[#D4AF37] text-black shadow-md'
- : 'text-zinc-400 hover:text-white bg-white/5'
+ : 'text-gray-600 hover:text-gray-900 bg-white/5'
  }`}
  >
  <Calendar className="h-4 w-4" />
@@ -333,12 +333,12 @@ export default function BibleDashboardClient() {
  {viewTab === 'daily' && (
  <div className="space-y-3">
  {activeTodoList.length === 0 ? (
- <div className="border border-white/10 bg-[#131318] p-10 text-center space-y-3">
+ <div className="border border-black/10 bg-[#131318] p-10 text-center space-y-3">
  <BookmarkCheck className="h-12 w-12 text-[#10B981] mx-auto" />
- <h3 className="text-lg font-bold text-white">
+ <h3 className="text-lg font-bold text-gray-900">
  선택하신 트랙의 모든 말씀을 완독하셨습니다! 🎉
  </h3>
- <p className="text-xs text-zinc-400">
+ <p className="text-xs text-gray-500">
  [주간 단위 진도표] 탭에서 원하는 주차의 말씀을 언제든 다시 확인하실 수 있습니다.
  </p>
  </div>
@@ -351,7 +351,7 @@ export default function BibleDashboardClient() {
  return (
  <div
  key={plan.id}
- className="border border-white/10 bg-[#141419] p-4 sm:p-5 transition-all hover:border-[#D4AF37]/40 hover:bg-[#181820] flex flex-col gap-3"
+ className="border border-black/10 bg-[#141419] p-4 sm:p-5 transition-all hover:border-[#D4AF37]/40 hover:bg-[#181820] flex flex-col gap-3"
  >
  {/* 상단 메타 배지 */}
  <div className="flex flex-wrap items-center gap-2">
@@ -380,24 +380,24 @@ export default function BibleDashboardClient() {
  href={`/plan/${plan.category}/${plan.week}/${plan.day}`}
  className="block cursor-pointer group"
  >
- <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-[#FDE68A] transition-colors">
+ <h3 className="text-base sm:text-lg font-bold text-gray-900 group-hover:text-[#FDE68A] transition-colors">
  {plan.title}
  </h3>
- <p className="mt-1 text-xs text-zinc-400">
+ <p className="mt-1 text-xs text-gray-500">
  {plan.verse_count}개 절 · {plan.paragraph_count}개 단락
  {plan.sermon_title && ` · ${plan.sermon_title}`}
  </p>
  </Link>
 
  {/* 액션 버튼 바: 모바일 1줄에 1개씩 완전 분리 (줄바꿈 원천 차단) */}
- <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 pt-2 border-t border-white/5">
+ <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 pt-2 border-t border-black/5">
  {/* 통독 완료 토글 버튼 */}
  <button
  onClick={(e) => handleToggleComplete(e, plan)}
  className={`w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2.5 text-xs font-bold transition-all cursor-pointer ${
  isCompleted
  ? 'border border-[#10B981]/50 bg-[#10B981]/15 text-[#10B981]'
- : 'border border-white/10 bg-[#1c1c24] text-zinc-300 hover:text-white hover:border-[#10B981]/40'
+ : 'border border-black/10 bg-[#1c1c24] text-zinc-300 hover:text-gray-900 hover:border-[#10B981]/40'
  }`}
  >
  <Check className="h-4 w-4" />
@@ -423,7 +423,7 @@ export default function BibleDashboardClient() {
  {/* 4-B. 주간 단위 (1~52주차 요일별 묶음) 진도표 렌더링 */}
  {viewTab === 'weekly' && (
  <div className="space-y-4">
- <p className="text-xs text-zinc-400">
+ <p className="text-xs text-gray-500">
  💡 주차별 카드를 터치하여 월요일~일요일 요일별 성경 읽기 진도를 한눈에 확인하고 체크하세요.
  </p>
 
@@ -439,7 +439,7 @@ export default function BibleDashboardClient() {
  className={`border transition-all ${
  group.isAllCompleted
  ? 'border-[#10B981]/30 bg-[#10B981]/5'
- : 'border-white/10 bg-[#131318]'
+ : 'border-black/10 bg-[#131318]'
  }`}
  >
  {/* 주차 카드 헤더 (클릭 시 아코디언 토글) */}
@@ -452,7 +452,7 @@ export default function BibleDashboardClient() {
  {group.week}
  </span>
  <div>
- <h4 className="text-sm font-bold text-white flex items-center gap-2">
+ <h4 className="text-sm font-bold text-gray-900 flex items-center gap-2">
  제 {group.week} 주차 성경 통독
  {group.isAllCompleted && (
  <span className="text-[10px] bg-[#10B981]/20 px-1.5 py-0.2 text-[#10B981] font-semibold">
@@ -460,7 +460,7 @@ export default function BibleDashboardClient() {
  </span>
  )}
  </h4>
- <p className="text-[11px] text-zinc-400">
+ <p className="text-[11px] text-gray-600">
  {group.completedCount} / {group.totalCount} 완료 ({percent}%)
  </p>
  </div>
@@ -474,16 +474,16 @@ export default function BibleDashboardClient() {
  />
  </div>
  {isOpen ? (
- <ChevronUp className="h-4 w-4 text-zinc-400" />
+ <ChevronUp className="h-4 w-4 text-gray-600" />
  ) : (
- <ChevronDown className="h-4 w-4 text-zinc-400" />
+ <ChevronDown className="h-4 w-4 text-gray-600" />
  )}
  </div>
  </button>
 
  {/* 주차 내부 요일별 플랜 목록 */}
  {isOpen && (
- <div className="px-4 pb-4 pt-1 space-y-2 border-t border-white/5">
+ <div className="px-4 pb-4 pt-1 space-y-2 border-t border-black/5">
  {group.plans.map((plan) => {
  const isDone = (plan.completed_count || 0) >= 1;
  const dayMeta = DAY_OF_WEEK_KO[plan.day] || {
@@ -498,7 +498,7 @@ export default function BibleDashboardClient() {
  className={`flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 p-3 border transition-all ${
  isDone
  ? 'border-[#10B981]/20 bg-[#10B981]/5'
- : 'border-white/5 bg-[#171720]'
+ : 'border-black/5 bg-[#171720]'
  }`}
  >
  <Link
@@ -517,7 +517,7 @@ export default function BibleDashboardClient() {
  >
  {info.shortName}
  </span>
- <span className="text-xs sm:text-sm font-semibold text-white group-hover:text-[#FDE68A] truncate transition-colors">
+ <span className="text-xs sm:text-sm font-semibold text-gray-900 group-hover:text-[#FDE68A] truncate transition-colors">
  {plan.title}
  </span>
  {(plan.sermon_audio_url || plan.sermon_title) && (
@@ -531,7 +531,7 @@ export default function BibleDashboardClient() {
  className={`inline-flex items-center gap-1 px-2.5 py-1 text-xs font-bold transition-all cursor-pointer ${
  isDone
  ? 'bg-[#10B981]/20 text-[#10B981] border border-[#10B981]/40'
- : 'bg-white/5 text-zinc-400 hover:text-white border border-white/10'
+ : 'bg-white/5 text-gray-600 hover:text-gray-900 border border-black/10'
  }`}
  >
  <Check className="h-3 w-3" />
@@ -540,7 +540,7 @@ export default function BibleDashboardClient() {
 
  <Link
  href={`/plan/${plan.category}/${plan.week}/${plan.day}`}
- className="p-1 text-zinc-400 hover:text-white"
+ className="p-1 text-gray-600 hover:text-gray-900"
  title="말씀 읽기"
  >
  <ChevronRight className="h-4 w-4" />
@@ -561,15 +561,15 @@ export default function BibleDashboardClient() {
  {/* 5. 진도 설정 모달 */}
  {showSettingsModal && (
  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm animate-in fade-in duration-200">
- <div className="w-full max-w-md border border-[#D4AF37]/40 bg-[#16161c] p-6 text-white shadow-2xl space-y-5 animate-in zoom-in-95 duration-200">
- <div className="flex items-center justify-between border-b border-white/10 pb-3">
+ <div className="w-full max-w-md border border-[#D4AF37]/40 bg-[#16161c] p-6 text-gray-900 shadow-2xl space-y-5 animate-in zoom-in-95 duration-200">
+ <div className="flex items-center justify-between border-b border-black/10 pb-3">
  <h3 className="text-lg font-bold text-[#FDE68A] flex items-center gap-2">
  <Settings className="h-5 w-5 text-[#D4AF37]" />
  성경 통독 일일 분량 설정
  </h3>
  <button
  onClick={() => setShowSettingsModal(false)}
- className="text-zinc-400 hover:text-white p-1 cursor-pointer"
+ className="text-gray-600 hover:text-gray-900 p-1 cursor-pointer"
  >
  ✕
  </button>
@@ -586,7 +586,7 @@ export default function BibleDashboardClient() {
  max="10"
  value={draftDailyNt}
  onChange={(e) => setDraftDailyNt(Number(e.target.value))}
- className="w-full bg-[#0e0e12] border border-white/10 px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-[#D4AF37]"
+ className="w-full bg-[#0e0e12] border border-black/10 px-3.5 py-2.5 text-sm text-gray-900 focus:outline-none focus:border-[#D4AF37]"
  />
  </div>
 
@@ -600,7 +600,7 @@ export default function BibleDashboardClient() {
  max="10"
  value={draftDailyWd}
  onChange={(e) => setDraftDailyWd(Number(e.target.value))}
- className="w-full bg-[#0e0e12] border border-white/10 px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-[#D4AF37]"
+ className="w-full bg-[#0e0e12] border border-black/10 px-3.5 py-2.5 text-sm text-gray-900 focus:outline-none focus:border-[#D4AF37]"
  />
  </div>
 
@@ -614,11 +614,11 @@ export default function BibleDashboardClient() {
  max="10"
  value={draftDailyOt}
  onChange={(e) => setDraftDailyOt(Number(e.target.value))}
- className="w-full bg-[#0e0e12] border border-white/10 px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-[#D4AF37]"
+ className="w-full bg-[#0e0e12] border border-black/10 px-3.5 py-2.5 text-sm text-gray-900 focus:outline-none focus:border-[#D4AF37]"
  />
  </div>
 
- <div className="pt-2 flex items-center justify-between border-t border-white/10">
+ <div className="pt-2 flex items-center justify-between border-t border-black/10">
  <button
  type="button"
  onClick={handleResetProgress}
@@ -630,7 +630,7 @@ export default function BibleDashboardClient() {
  <button
  type="button"
  onClick={() => setShowSettingsModal(false)}
- className="px-4 py-2 text-xs font-bold text-zinc-400 hover:text-white bg-white/5 cursor-pointer"
+ className="px-4 py-2 text-xs font-bold text-gray-600 hover:text-gray-900 bg-white/5 cursor-pointer"
  >
  취소
  </button>

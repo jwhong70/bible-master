@@ -324,13 +324,13 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
       />
 
       {/* 1. 상단 고정 헤더: 모바일 2행 분리 (줄바꿈 원천 차단) */}
-      <header className="sticky top-0 z-30 border-b border-white/10 bg-[#0a0a0c]/95 backdrop-blur-md px-2.5 py-2 sm:px-6">
+      <header className="sticky top-0 z-30 border-b border-black/10 bg-[#F9F8F6]/95 backdrop-blur-md px-2.5 py-2 sm:px-6">
         <div className="mx-auto flex max-w-4xl flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5">
           {/* 1행: 진도표 뒤로가기 & 트랙/일차 배지 */}
           <div className="flex items-center justify-between w-full sm:w-auto">
             <Link
               href="/"
-              className="flex items-center gap-1.5 border border-white/10 bg-[#141419] px-3 py-1.5 text-xs font-semibold text-zinc-300 hover:border-[#D4AF37]/50 hover:text-white transition-all cursor-pointer"
+              className="flex items-center gap-1.5 border border-black/10 bg-[#141419] px-3 py-1.5 text-xs font-semibold text-gray-700 hover:border-[#D4AF37]/50 hover:text-gray-900 transition-all cursor-pointer"
             >
               <ArrowLeft className="h-3.5 w-3.5" />
               <span>진도표</span>
@@ -347,21 +347,21 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
               >
                 {trackInfo.icon} {trackInfo.shortName}
               </span>
-              <span className="text-xs font-semibold text-zinc-300 bg-white/5 px-2 py-0.5">
+              <span className="text-xs font-semibold text-gray-700 bg-white/5 px-2 py-0.5">
                 {plan.week}주 {plan.day}일 ({dayKo})
               </span>
             </div>
           </div>
 
           {/* 2행: 글자 크기 & 강해 일괄 펼침 */}
-          <div className="flex items-center justify-between sm:justify-end gap-2 w-full sm:w-auto pt-1 sm:pt-0 border-t sm:border-t-0 border-white/5">
+          <div className="flex items-center justify-between sm:justify-end gap-2 w-full sm:w-auto pt-1 sm:pt-0 border-t sm:border-t-0 border-black/5">
             <button
               onClick={() => {
                 const sizes: Array<'sm' | 'md' | 'lg' | 'xl'> = ['sm', 'md', 'lg', 'xl'];
                 const nextIdx = (sizes.indexOf(fontSize) + 1) % sizes.length;
                 setFontSize(sizes[nextIdx]);
               }}
-              className="flex-1 sm:flex-none inline-flex items-center justify-center border border-white/10 bg-[#141419] px-3 py-1.5 text-xs font-semibold text-zinc-300 hover:text-white cursor-pointer"
+              className="flex-1 sm:flex-none inline-flex items-center justify-center border border-black/10 bg-[#141419] px-3 py-1.5 text-xs font-semibold text-gray-700 hover:text-gray-900 cursor-pointer"
               title="글자 크기 변경"
             >
               글자 크기 <span className="ml-1 font-bold text-[#FDE68A] uppercase">{fontSize}</span>
@@ -372,7 +372,7 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
               className={`flex-1 sm:flex-none inline-flex items-center justify-center border px-3 py-1.5 text-xs font-semibold transition-all cursor-pointer ${
                 allNotesExpanded
                   ? 'border-[#D4AF37] bg-[#D4AF37]/20 text-[#FDE68A]'
-                  : 'border-white/10 bg-[#141419] text-zinc-400 hover:text-white'
+                  : 'border-black/10 bg-[#141419] text-gray-600 hover:text-gray-900'
               }`}
               title="모든 구절의 말씀 강해 열기/닫기"
             >
@@ -387,7 +387,7 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
         {/* 말씀 카드 대제목 */}
         <div className="border border-[#D4AF37]/30 bg-gradient-to-b from-[#181820] to-[#111116] p-4 sm:p-8 shadow-xl space-y-3 sm:space-y-4">
           <div className="space-y-1.5 w-full">
-            <div className="flex items-center gap-2 text-xs font-mono text-zinc-400">
+            <div className="flex items-center gap-2 text-xs font-mono text-gray-600">
               <span className="text-[#D4AF37] font-bold">{trackInfo.shortName} 통독</span>
               <span>•</span>
               <span>
@@ -396,7 +396,7 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
               <span>•</span>
               <span>총 {plan.verse_count}개 절</span>
             </div>
-            <h1 className="text-xl sm:text-3xl font-black tracking-tight text-white select-none">
+            <h1 className="text-xl sm:text-3xl font-black tracking-tight text-gray-900 select-none">
               {plan.title}
             </h1>
             {plan.sermon_title && (
@@ -407,13 +407,13 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
           </div>
 
           {/* 상단 컨트롤 버튼 바: 고음질 AI 성우 말씀 낭독 */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 pt-2 border-t border-white/5">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 pt-2 border-t border-black/5">
             <button
               onClick={handleToggleAudio}
               className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 border px-4 py-2.5 text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
                 isPlayingAudio || isPlayingTTS
                   ? 'border-[#D4AF37] bg-[#D4AF37]/20 text-[#FDE68A] animate-pulse'
-                  : 'border-[#D4AF37]/40 bg-[#1f1f28] text-zinc-200 hover:text-white hover:border-[#D4AF37]'
+                  : 'border-[#D4AF37]/40 bg-[#1f1f28] text-zinc-200 hover:text-gray-900 hover:border-[#D4AF37]'
               }`}
             >
               {isPlayingAudio || isPlayingTTS ? (
@@ -437,7 +437,7 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
                     url: plan.sermon_url!,
                   })
                 }
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-white/10 bg-[#16161c] px-4 py-2.5 text-xs sm:text-sm font-semibold text-zinc-300 hover:border-[#D4AF37]/50 hover:text-white transition-all cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-black/10 bg-[#16161c] px-4 py-2.5 text-xs sm:text-sm font-semibold text-gray-700 hover:border-[#D4AF37]/50 hover:text-gray-900 transition-all cursor-pointer"
               >
                 <Headphones className="h-4 w-4 text-[#D4AF37] shrink-0" />
                 <span>오늘의 강해 설교 듣기 (송태근 목사)</span>
@@ -463,10 +463,10 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
                 {paragraphs.map(([paragraphTitle, verses], pIdx) => (
             <section
               key={paragraphTitle + pIdx}
-              className="border border-white/5 bg-[#121217]/60 p-3.5 sm:p-6 space-y-4"
+              className="border border-black/5 bg-white/60 p-3.5 sm:p-6 space-y-4"
             >
               {paragraphTitle && paragraphTitle !== '본문' && (
-                <div className="border-b border-white/10 pb-2.5 flex items-center gap-2">
+                <div className="border-b border-black/10 pb-2.5 flex items-center gap-2">
                   <span className="h-2 w-2 bg-[#D4AF37]" />
                   <h2 className="text-sm sm:text-base font-bold text-[#FDE68A] tracking-wide">
                     {paragraphTitle}
@@ -483,10 +483,10 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
                   return (
                     <article
                       key={verse.id}
-                      className="group border border-white/5 bg-[#16161c]/80 p-3 sm:p-4 hover:border-white/15 transition-all"
+                      className="group border border-black/5 bg-[#16161c]/80 p-3 sm:p-4 hover:border-white/15 transition-all"
                     >
                       {/* 절 번호 배지 행 */}
-                      <div className="flex items-center justify-between pb-1.5 border-b border-white/5">
+                      <div className="flex items-center justify-between pb-1.5 border-b border-black/5">
                         <span className="font-mono text-xs font-bold text-[#D4AF37]">
                           [{verse.num}절]
                         </span>
@@ -500,7 +500,7 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
                                   url: verse.sermon_url!,
                                 })
                               }
-                              className="inline-flex items-center gap-1 border border-white/10 bg-[#1e1e26] px-2 py-0.5 text-[11px] font-semibold text-zinc-300 hover:border-[#D4AF37]/50 hover:text-white transition-all cursor-pointer"
+                              className="inline-flex items-center gap-1 border border-black/10 bg-[#1e1e26] px-2 py-0.5 text-[11px] font-semibold text-gray-700 hover:border-[#D4AF37]/50 hover:text-gray-900 transition-all cursor-pointer"
                               title={verse.sermon_title || '설교 듣기'}
                             >
                               <Headphones className="h-3 w-3 text-[#D4AF37]" />
@@ -517,7 +517,7 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
                               className={`inline-flex items-center gap-1 border px-2 py-0.5 text-[11px] font-semibold transition-all cursor-pointer ${
                                 isNoteOpen
                                   ? 'border-[#D4AF37] bg-[#D4AF37]/20 text-[#FDE68A]'
-                                  : 'border-white/10 bg-[#1e1e26] text-zinc-400 hover:text-white'
+                                  : 'border-black/10 bg-[#1e1e26] text-gray-600 hover:text-gray-900'
                               }`}
                             >
                               <BookOpen className="h-3 w-3" />
@@ -541,16 +541,16 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
 
                       {/* 절 강해 해설 아코디언 */}
                       {hasNotes && isNoteOpen && (
-                        <div className="mt-3 border-t border-white/10 pt-3 space-y-2 bg-black/20 p-3">
+                        <div className="mt-3 border-t border-black/10 pt-3 space-y-2 bg-black/20 p-3">
                           <div className="flex items-center gap-1.5 text-xs font-bold text-[#FDE68A]">
                             <Sparkles className="h-3.5 w-3.5" />
                             <span>말씀 강해 해설</span>
                           </div>
-                          <ul className="space-y-2 text-xs sm:text-sm text-zinc-300">
+                          <ul className="space-y-2 text-xs sm:text-sm text-gray-700">
                             {verse.notes.map((note, nIdx) => (
                               <li
                                 key={nIdx}
-                                className="pl-3 border-l-2 border-[#D4AF37]/40 leading-relaxed text-zinc-300"
+                                className="pl-3 border-l-2 border-[#D4AF37]/40 leading-relaxed text-gray-700"
                               >
                                 {note.replace(/^- \*\*(.*?)\*\*:/, '$1: ')}
                               </li>
@@ -592,14 +592,14 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
                 <div className="flex items-center gap-1">
                   <button
                     onClick={() => handleSkipTime(-10)}
-                    className="p-1.5 text-zinc-400 hover:text-white transition-colors cursor-pointer"
+                    className="p-1.5 text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
                     title="10초 뒤로"
                   >
                     <RotateCcw className="h-3.5 w-3.5" />
                   </button>
                   <button
                     onClick={() => handleSkipTime(10)}
-                    className="p-1.5 text-zinc-400 hover:text-white transition-colors cursor-pointer"
+                    className="p-1.5 text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
                     title="10초 앞으로"
                   >
                     <RotateCw className="h-3.5 w-3.5" />
@@ -609,10 +609,10 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
 
               {/* 제목 & 시간 정보 */}
               <div className="flex flex-col min-w-0">
-                <span className="text-xs font-bold text-white truncate">
+                <span className="text-xs font-bold text-gray-900 truncate">
                   🎧 {plan.title} (AI 성우 낭독)
                 </span>
-                <span className="text-[11px] font-mono text-zinc-400">
+                <span className="text-[11px] font-mono text-gray-600">
                   {formatAudioTime(audioCurrentTime)} / {formatAudioTime(audioDuration)}
                 </span>
               </div>
@@ -620,7 +620,7 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
               {/* 배속 토글 버튼 */}
               <button
                 onClick={handleRateCycle}
-                className="inline-flex items-center px-2 py-1 border border-white/10 bg-[#16161c] text-[11px] font-bold text-[#FDE68A] hover:border-[#D4AF37]/50 cursor-pointer"
+                className="inline-flex items-center px-2 py-1 border border-black/10 bg-[#16161c] text-[11px] font-bold text-[#FDE68A] hover:border-[#D4AF37]/50 cursor-pointer"
                 title="재생 속도 조절"
               >
                 {playbackRate}x
@@ -641,7 +641,7 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
                   }
                   setAudioCurrentTime(val);
                 }}
-                className="w-full h-1.5 bg-zinc-800 accent-[#D4AF37] cursor-pointer"
+                className="w-full h-1.5 bg-[#1F1F1F] accent-[#D4AF37] cursor-pointer"
               />
               <button
                 onClick={() => {
@@ -649,7 +649,7 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
                   setIsPlayingAudio(false);
                   setShowAudioPlayer(false);
                 }}
-                className="text-zinc-400 hover:text-white p-1 hover:bg-white/10 transition-colors cursor-pointer"
+                className="text-gray-600 hover:text-gray-900 p-1 hover:bg-white/10 transition-colors cursor-pointer"
                 title="오디오 바 닫기"
               >
                 <X className="h-4 w-4" />
@@ -675,7 +675,7 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
               </div>
               <button
                 onClick={() => setActiveSermon(null)}
-                className="sm:hidden text-zinc-400 hover:text-white p-1"
+                className="sm:hidden text-gray-600 hover:text-gray-900 p-1"
               >
                 <X className="h-4 w-4" />
               </button>
@@ -683,7 +683,7 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
 
             {sermonVideoId && (
               <div className="flex items-center gap-2 justify-end">
-                <div className="w-full sm:w-72 h-9 overflow-hidden border border-white/10 bg-black">
+                <div className="w-full sm:w-72 h-9 overflow-hidden border border-black/10 bg-black">
                   <iframe
                     src={`https://www.youtube.com/embed/${sermonVideoId}?autoplay=1&playsinline=1`}
                     title="송태근 목사님 설교 플레이어"
@@ -693,7 +693,7 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
                 </div>
                 <button
                   onClick={() => setActiveSermon(null)}
-                  className="hidden sm:inline-flex text-zinc-400 hover:text-white p-1.5 hover:bg-white/10 transition-colors cursor-pointer"
+                  className="hidden sm:inline-flex text-gray-600 hover:text-gray-900 p-1.5 hover:bg-white/10 transition-colors cursor-pointer"
                   title="설교 닫기"
                 >
                   <X className="h-4 w-4" />
@@ -705,14 +705,14 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
       )}
 
       {/* 6. 하단 고정 네비게이션 액션 바 */}
-      <footer className="fixed bottom-0 inset-x-0 z-40 border-t border-white/10 bg-[#0a0a0c]/95 backdrop-blur-md px-4 py-2.5 sm:px-6 shadow-2xl">
+      <footer className="fixed bottom-0 inset-x-0 z-40 border-t border-black/10 bg-[#F9F8F6]/95 backdrop-blur-md px-4 py-2.5 sm:px-6 shadow-2xl">
         <div className="mx-auto flex max-w-4xl flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5">
           {/* 이전/다음 말씀 네비게이션 */}
           <div className="flex items-center justify-between sm:justify-start gap-2 w-full sm:w-auto">
             {adjacent.prev ? (
               <Link
                 href={`/plan/${adjacent.prev.category}/${adjacent.prev.week}/${adjacent.prev.day}`}
-                className="inline-flex items-center gap-1 border border-white/10 bg-[#16161c] px-3 py-2 text-xs font-semibold text-zinc-300 hover:text-white hover:border-[#D4AF37]/50 transition-all cursor-pointer"
+                className="inline-flex items-center gap-1 border border-black/10 bg-[#16161c] px-3 py-2 text-xs font-semibold text-gray-700 hover:text-gray-900 hover:border-[#D4AF37]/50 transition-all cursor-pointer"
               >
                 <ChevronLeft className="h-4 w-4" />
                 <span>이전 말씀</span>
@@ -724,7 +724,7 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
             {adjacent.next ? (
               <Link
                 href={`/plan/${adjacent.next.category}/${adjacent.next.week}/${adjacent.next.day}`}
-                className="inline-flex items-center gap-1 border border-white/10 bg-[#16161c] px-3 py-2 text-xs font-semibold text-zinc-300 hover:text-white hover:border-[#D4AF37]/50 transition-all cursor-pointer"
+                className="inline-flex items-center gap-1 border border-black/10 bg-[#16161c] px-3 py-2 text-xs font-semibold text-gray-700 hover:text-gray-900 hover:border-[#D4AF37]/50 transition-all cursor-pointer"
               >
                 <span>다음 말씀</span>
                 <ChevronRight className="h-4 w-4" />
