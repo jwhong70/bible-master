@@ -22,7 +22,7 @@ export const TRACK_INFO: Record<
     icon: '✝️',
     count: 277,
     description: '복음서, 사도행전, 서신서, 요한계시록',
-    color: '#EA580C', // Gold
+    color: '#EA580C', // Hermes Amber Orange
   },
   wisdom: {
     name: '시가서 (Wisdom & Poetry)',

@@ -143,7 +143,7 @@ export default function InstallPrompt() {
  <span className="text-xs sm:text-sm font-black text-white truncate">
  성경 마스터 (1년 1독)
  </span>
- <span className="bg-[#EA580C]/20 px-1.5 py-0.2 text-[10px] font-bold text-[#FDE68A]">
+ <span className="bg-brand/20 px-1.5 py-0.2 text-[10px] font-bold text-orange-300">
  앱 추천
  </span>
  </div>
@@ -160,7 +160,7 @@ export default function InstallPrompt() {
  e.stopPropagation();
  handleInstallClick();
  }}
- className="bg-linear-to-r from-[#EA580C] to-[#EA580C] px-3.5 py-2 text-xs font-bold text-black shadow-lg transition-transform active:scale-95 hover:brightness-110 cursor-pointer"
+ className="bg-brand px-3.5 py-2 text-xs font-bold text-white shadow-lg transition-transform active:scale-95 hover:bg-brand-hover cursor-pointer"
  >
  {isKakao ? "브라우저로 열기" : "1초 설치"}
  </button>
@@ -191,7 +191,7 @@ export default function InstallPrompt() {
  >
  <div className="flex items-center justify-between border-b border-white/10 pb-3">
  <div className="flex items-center gap-2">
- <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#EA580C] text-black text-xs font-black">
+ <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand text-white text-xs font-black">
  📖
  </span>
  <h3 className="text-base font-bold text-white">
@@ -213,41 +213,41 @@ export default function InstallPrompt() {
 
  <div className="space-y-2.5 text-xs text-zinc-200">
  <div className="flex items-start gap-2.5 bg-white/5 p-2.5 border border-white/5">
- <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#EA580C]/20 font-bold text-[#FDE68A] text-[11px]">
+ <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/20 font-bold text-orange-300 text-[11px]">
  1
  </span>
  <p className="leading-tight">
  브라우저 하단(또는 상단)의{" "}
- <strong className="text-[#FDE68A] font-bold">공유 버튼</strong>
+ <strong className="text-orange-300 font-bold">공유 버튼</strong>
  (네모에 위쪽 화살표 기호)을 터치합니다.
  </p>
  </div>
 
  <div className="flex items-start gap-2.5 bg-white/5 p-2.5 border border-white/5">
- <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#EA580C]/20 font-bold text-[#FDE68A] text-[11px]">
+ <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/20 font-bold text-orange-300 text-[11px]">
  2
  </span>
  <p className="leading-tight">
  메뉴를 아래로 스크롤하여{" "}
- <strong className="text-[#FDE68A] font-bold">[홈 화면에 추가]</strong>
+ <strong className="text-orange-300 font-bold">[홈 화면에 추가]</strong>
  (⊕ 아이콘)를 선택합니다.
  </p>
  </div>
 
  <div className="flex items-start gap-2.5 bg-white/5 p-2.5 border border-white/5">
- <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#EA580C]/20 font-bold text-[#FDE68A] text-[11px]">
+ <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand/20 font-bold text-orange-300 text-[11px]">
  3
  </span>
  <p className="leading-tight">
- 우측 상단의 <strong className="text-[#FDE68A] font-bold">[추가]</strong>를
- 누르면 바탕화면에 골드 성경 아이콘이 생성됩니다!
+ 우측 상단의 <strong className="text-orange-300 font-bold">[추가]</strong>를
+ 누르면 바탕화면에 성경 아이콘이 생성됩니다!
  </p>
  </div>
  </div>
 
  <button
  onClick={() => setShowIOSModal(false)}
- className="w-full bg-linear-to-r from-[#EA580C] to-[#EA580C] py-2.5 text-xs font-bold text-black shadow-lg hover:brightness-110 cursor-pointer"
+ className="w-full bg-brand py-2.5 text-xs font-bold text-white shadow-lg hover:bg-brand-hover cursor-pointer"
  >
  확인했습니다
  </button>
