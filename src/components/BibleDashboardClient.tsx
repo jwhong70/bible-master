@@ -187,7 +187,7 @@ export default function BibleDashboardClient() {
           <div className="w-full sm:w-auto pt-2 sm:pt-0 border-t sm:border-t-0 border-black/5">
             <button
               onClick={() => setShowSettingsModal(true)}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-black/15 bg-[#1F1F1F] px-4 py-2.5 text-xs font-semibold text-white transition-all hover:bg-[#2B2B2B] hover:border-brand cursor-pointer shadow-xs"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-black/15 bg-dark-surface px-4 py-2.5 text-xs font-semibold text-white transition-all hover:bg-dark-surface-hover hover:border-brand cursor-pointer shadow-xs"
             >
               <Settings className="h-4 w-4 text-brand" />
               <span>일일 목표 분량 설정</span>
