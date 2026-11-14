@@ -36,12 +36,6 @@ interface BibleReaderClientProps {
   plan: BiblePlanItem;
 }
 
-function extractYouTubeVideoId(url?: string): string | null {
-  if (!url) return null;
-  const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([a-zA-Z0-9_-]{11})/);
-  return match ? match[1] : null;
-}
-
 function formatSermonTitle(title?: string): string {
   if (!title) return '본문 강해';
   return title.replace(/\[강해\(송태근\s*목사\)\]\s*/, '').trim();
@@ -73,7 +67,6 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
 
   // 구절별 송태근 목사님 설교 오디오 재생 상태
   const [activeSermon, setActiveSermon] = useState<{ title: string; url: string } | null>(null);
-  const sermonVideoId = useMemo(() => extractYouTubeVideoId(activeSermon?.url), [activeSermon?.url]);
 
   // 플랜별 Supabase Storage 오디오 URL
   const audioUrl = useMemo(
@@ -382,21 +375,6 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
                 </>
               )}
             </button>
-
-            {plan.sermon_url && (
-              <button
-                onClick={() =>
-                  setActiveSermon({
-                    title: plan.sermon_title || `${plan.title} 설교 강해`,
-                    url: plan.sermon_url!,
-                  })
-                }
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-black/10 bg-white px-4 py-2.5 text-xs sm:text-sm font-semibold text-gray-700 hover:border-brand/50 hover:text-gray-900 transition-all cursor-pointer"
-              >
-                <Headphones className="h-4 w-4 text-brand shrink-0" />
-                <span>오늘의 강해 설교 듣기 (송태근 목사)</span>
-              </button>
-            )}
           </div>
         </div>
 
@@ -429,14 +407,48 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
               )}
 
               <div className="space-y-3 sm:space-y-4">
-                {verses.map((verse) => {
+                {verses.map((verse, vIdx) => {
                   const hasNotes = verse.notes && verse.notes.length > 0;
-                  const hasSermon = !!verse.sermon_url;
+                  const isFirstVerseOfPlan = chIdx === 0 && pIdx === 0 && vIdx === 0;
+                  const bannerSermon = verse.sermon_url
+                    ? {
+                        title: verse.sermon_title || `${verse.num}절 설교`,
+                        url: verse.sermon_url,
+                      }
+                    : isFirstVerseOfPlan && plan.sermon_url
+                      ? {
+                          title: plan.sermon_title || `${plan.title} 설교 강해`,
+                          url: plan.sermon_url,
+                        }
+                      : null;
                   const isNoteOpen = openNotes[verse.id];
 
                   return (
+                    <div key={`${verse.id}_${vIdx}`} className="space-y-2">
+                      {bannerSermon && (
+                        <button
+                          onClick={() => {
+                            if (audioRef.current && isPlayingAudio) {
+                              audioRef.current.pause();
+                              setIsPlayingAudio(false);
+                            }
+                            setActiveSermon(bannerSermon);
+                          }}
+                          className="w-full flex items-center justify-between gap-2 border border-brand/30 bg-brand-surface/80 hover:bg-brand/10 hover:border-brand px-3.5 py-2.5 text-left transition-all cursor-pointer"
+                        >
+                          <span className="inline-flex items-center gap-2 min-w-0">
+                            <Headphones className="h-4 w-4 text-brand shrink-0" />
+                            <span className="text-xs sm:text-sm font-bold text-brand-dark break-keep">
+                              {bannerSermon.title}
+                            </span>
+                          </span>
+                          <span className="text-[11px] font-semibold text-gray-500 shrink-0">
+                            설교 듣기 ▶
+                          </span>
+                        </button>
+                      )}
+
                     <article
-                      key={verse.id}
                       className="group border border-black/10 bg-[#FAF9F5] p-3 sm:p-4 hover:border-brand/30 transition-all"
                     >
                       {/* 절 번호 배지 행 */}
@@ -446,25 +458,6 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
                         </span>
 
                         <div className="flex items-center gap-1.5">
-                          {hasSermon && (
-                            <button
-                              onClick={() =>
-                                setActiveSermon({
-                                  title: verse.sermon_title || `${verse.num}절 설교`,
-                                  url: verse.sermon_url!,
-                                })
-                              }
-                              className="inline-flex items-center gap-1 border border-black/10 bg-white px-2 py-0.5 text-[11px] font-semibold text-gray-700 hover:border-brand/50 hover:text-gray-900 transition-all cursor-pointer"
-                              title={verse.sermon_title || '설교 듣기'}
-                            >
-                              <Headphones className="h-3 w-3 text-brand" />
-                              <span className="hidden sm:inline">
-                                {formatSermonTitle(verse.sermon_title)}
-                              </span>
-                              <span className="sm:hidden">설교</span>
-                            </button>
-                          )}
-
                           {hasNotes && (
                             <button
                               onClick={() => toggleNote(verse.id)}
@@ -513,6 +506,7 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
                         </div>
                       )}
                     </article>
+                    </div>
                   );
                 })}
               </div>
@@ -635,25 +629,24 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
               </button>
             </div>
 
-            {sermonVideoId && (
-              <div className="flex items-center gap-2 justify-end">
-                <div className="w-full sm:w-72 h-9 overflow-hidden border border-black/10 bg-black">
-                  <iframe
-                    src={`https://www.youtube.com/embed/${sermonVideoId}?autoplay=1&playsinline=1`}
-                    title="송태근 목사님 설교 플레이어"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    className="w-full h-full border-0"
-                  />
-                </div>
-                <button
-                  onClick={() => setActiveSermon(null)}
-                  className="hidden sm:inline-flex text-gray-600 hover:text-gray-900 p-1.5 hover:bg-black/5 transition-colors cursor-pointer"
-                  title="설교 닫기"
-                >
-                  <X className="h-4 w-4" />
-                </button>
-              </div>
-            )}
+            <div className="flex items-center gap-2 justify-end">
+              <audio
+                key={activeSermon.url}
+                src={activeSermon.url}
+                controls
+                autoPlay
+                preload="auto"
+                onError={() => toast.error('설교 음성을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.')}
+                className="w-full sm:w-80 h-9"
+              />
+              <button
+                onClick={() => setActiveSermon(null)}
+                className="hidden sm:inline-flex text-gray-600 hover:text-gray-900 p-1.5 hover:bg-black/5 transition-colors cursor-pointer"
+                title="설교 닫기"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            </div>
           </div>
         </div>
       )}
