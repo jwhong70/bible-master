@@ -3,8 +3,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import {
- BookOpen,
- CheckCircle2,
  ChevronRight,
  Settings,
  Sparkles,
@@ -13,14 +11,13 @@ import {
  ChevronDown,
  ChevronUp,
  BookmarkCheck,
- RotateCcw,
 } from 'lucide-react';
 import { toast } from 'sonner';
 import {
  buildAllBiblePlans,
  buildWeeklyBibleGroups,
  computeBibleDailyTodo,
- DAY_OF_WEEK_KO,
+ getDayLabel,
  DEFAULT_BIBLE_SETTINGS,
  loadLocalBibleProgress,
  loadLocalBibleSettings,
@@ -346,7 +343,7 @@ export default function BibleDashboardClient() {
             activeTodoList.map((plan) => {
               const info = TRACK_INFO[plan.category];
               const isCompleted = (plan.completed_count || 0) >= 1;
-              const dayKo = DAY_OF_WEEK_KO[plan.day]?.dayName || `${plan.day}일`;
+              const dayKo = getDayLabel(plan.day);
 
               return (
                 <div
@@ -486,10 +483,7 @@ export default function BibleDashboardClient() {
                     <div className="px-4 pb-4 pt-1 space-y-2 border-t border-black/5">
                       {group.plans.map((plan) => {
                         const isDone = (plan.completed_count || 0) >= 1;
-                        const dayMeta = DAY_OF_WEEK_KO[plan.day] || {
-                          dayName: `${plan.day}일`,
-                          full: `${plan.day}일차`,
-                        };
+                        const dayLabel = getDayLabel(plan.day);
                         const info = TRACK_INFO[plan.category];
 
                         return (
@@ -506,7 +500,7 @@ export default function BibleDashboardClient() {
                               className="flex items-center gap-2.5 flex-1 overflow-hidden cursor-pointer group"
                             >
                               <span className="shrink-0 w-12 text-center bg-brand/10 px-1.5 py-0.5 text-xs font-bold text-brand-dark">
-                                {dayMeta.dayName}요일
+                                {dayLabel}요일
                               </span>
                               <span
                                 className="text-[10px] font-bold px-1.5 py-0.5 shrink-0"

@@ -52,6 +52,10 @@ export const DAY_OF_WEEK_KO: Record<number, { dayName: string; full: string }> =
   7: { dayName: '일', full: '일요일' },
 };
 
+export function getDayLabel(day: number): string {
+  return DAY_OF_WEEK_KO[day]?.dayName || `${day}일`;
+}
+
 export function getSeedPlans(): BiblePlanItem[] {
   const list = ((seedRaw as unknown) as { bible_plans: BiblePlanItem[] }).bible_plans || [];
   return list;

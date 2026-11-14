@@ -10,14 +10,11 @@ import {
   BookOpen,
   CheckCircle2,
   Volume2,
-  VolumeX,
   Play,
   Pause,
-  ExternalLink,
   Sparkles,
   ChevronDown,
   ChevronUp,
-  BookmarkCheck,
   Check,
   Headphones,
   X,
@@ -25,13 +22,12 @@ import {
   RotateCw,
 } from 'lucide-react';
 import { toast } from 'sonner';
-import { BibleCategory, BiblePlanItem, BibleVerse } from '@/types/bible';
+import { BiblePlanItem, BibleVerse } from '@/types/bible';
 import {
   buildAllBiblePlans,
-  DAY_OF_WEEK_KO,
+  getDayLabel,
   getAdjacentPlans,
   loadLocalBibleProgress,
-  loadLocalBibleSettings,
   TRACK_INFO,
   updatePlanCompletion,
 } from '@/lib/bibleCurriculum';
@@ -74,8 +70,6 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
   const [showAudioPlayer, setShowAudioPlayer] = useState(false);
   const [isLoadingAudio, setIsLoadingAudio] = useState(false);
 
-  // 브라우저 TTS 폴백 상태
-  const [isPlayingTTS, setIsPlayingTTS] = useState(false);
 
   // 구절별 송태근 목사님 설교 오디오 재생 상태
   const [activeSermon, setActiveSermon] = useState<{ title: string; url: string } | null>(null);
@@ -106,7 +100,7 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
 
   const isCompleted = (plan.completed_count || 0) >= 1;
   const trackInfo = TRACK_INFO[plan.category];
-  const dayKo = DAY_OF_WEEK_KO[plan.day]?.dayName || `${plan.day}일`;
+  const dayKo = getDayLabel(plan.day);
 
   // 인접 플랜 (이전 / 다음)
   const adjacent = useMemo(() => {
@@ -173,42 +167,6 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
     setOpenNotes(nextMap);
   };
 
-  // 브라우저 기본 TTS 폴백 실행
-  const startFallbackTTS = () => {
-    if (typeof window === 'undefined' || !window.speechSynthesis) {
-      toast.error('음성 낭독을 지원하지 않는 브라우저입니다.');
-      return;
-    }
-    const verses = plan.verses;
-    if (verses.length === 0) return;
-
-    let index = 0;
-    setIsPlayingTTS(true);
-
-    const speakVerse = (idx: number) => {
-      if (idx >= verses.length) {
-        setIsPlayingTTS(false);
-        toast.info('오늘 분량 말씀 낭독을 완료했습니다.');
-        return;
-      }
-      const targetVerse = verses[idx];
-      const utterance = new SpeechSynthesisUtterance(targetVerse.text);
-      utterance.lang = 'ko-KR';
-      utterance.rate = 0.95;
-
-      utterance.onend = () => {
-        index++;
-        speakVerse(index);
-      };
-      utterance.onerror = () => {
-        setIsPlayingTTS(false);
-      };
-      window.speechSynthesis.speak(utterance);
-    };
-
-    speakVerse(index);
-  };
-
   // 고음질 AI 성우 오디오 토글
   const handleToggleAudio = () => {
     if (!audioRef.current) return;
@@ -226,11 +184,10 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
           setIsLoadingAudio(false);
         })
         .catch((err) => {
-          console.warn('AI 오디오 재생 실패, 브라우저 TTS로 전환:', err);
+          console.warn('AI 오디오 재생 실패:', err);
           setIsLoadingAudio(false);
           setIsPlayingAudio(false);
-          toast.info('고음질 음성 스트리밍 준비 중이어서 브라우저 실시간 음성으로 낭독합니다.');
-          startFallbackTTS();
+          toast.error('오디오를 재생할 수 없습니다. 잠시 후 다시 시도해 주세요.');
         });
     }
   };
@@ -280,9 +237,6 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
     return () => {
       if (audioRef.current) {
         audioRef.current.pause();
-      }
-      if (typeof window !== 'undefined' && window.speechSynthesis) {
-        window.speechSynthesis.cancel();
       }
     };
   }, []);
@@ -411,12 +365,12 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
             <button
               onClick={handleToggleAudio}
               className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 border px-4 py-2.5 text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
-                isPlayingAudio || isPlayingTTS
+                isPlayingAudio
                   ? 'border-brand bg-brand/15 text-brand-dark animate-pulse'
                   : 'border-brand/40 bg-[#FAF9F5] text-gray-800 hover:text-gray-900 hover:border-brand'
               }`}
             >
-              {isPlayingAudio || isPlayingTTS ? (
+              {isPlayingAudio ? (
                 <>
                   <Pause className="h-4 w-4 shrink-0 text-brand-dark" />
                   <span>말씀 낭독 일시정지</span>
