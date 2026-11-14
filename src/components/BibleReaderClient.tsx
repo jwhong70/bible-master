@@ -346,11 +346,6 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
             <h1 className="text-xl sm:text-3xl font-black tracking-tight select-none">
               {plan.title}
             </h1>
-            {plan.sermon_title && (
-              <p className="text-xs sm:text-sm font-semibold text-brand-dark">
-                📖 {plan.sermon_title}
-              </p>
-            )}
           </div>
 
           {/* 상단 컨트롤 버튼 바: 고음질 AI 성우 말씀 낭독 */}
