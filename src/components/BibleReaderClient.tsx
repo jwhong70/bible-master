@@ -506,7 +506,7 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
                                 key={nIdx}
                                 className="pl-3 border-l-2 border-brand/40 leading-relaxed text-gray-700"
                               >
-                                {note.replace(/^- \*\*(.*?)\*\*:/, '$1: ')}
+                                {note.replace(/^- \*\*(.*?)\*\*:\s*/, '$1: ').replace(/^- /, '')}
                               </li>
                             ))}
                           </ul>
