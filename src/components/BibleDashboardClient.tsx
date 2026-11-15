@@ -39,19 +39,19 @@ export default function BibleDashboardClient() {
  >('all');
  const [openWeeks, setOpenWeeks] = useState<Record<number, boolean>>({ 1: true });
 
- // 설정 임시 폼 상태
- const [draftDailyNt, setDraftDailyNt] = useState(1);
- const [draftDailyWd, setDraftDailyWd] = useState(1);
- const [draftDailyOt, setDraftDailyOt] = useState(1);
+ // 설정 임시 폼 상태 (문자열로 관리해 앞자리 0 잔류 방지 및 빈 값 허용)
+ const [draftDailyNt, setDraftDailyNt] = useState('1');
+ const [draftDailyWd, setDraftDailyWd] = useState('1');
+ const [draftDailyOt, setDraftDailyOt] = useState('1');
 
  useEffect(() => {
  const localSet = loadLocalBibleSettings();
  const localProg = loadLocalBibleProgress();
  setSettings(localSet);
  setPlans(buildAllBiblePlans(localProg));
- setDraftDailyNt(localSet.daily_nt_count);
- setDraftDailyWd(localSet.daily_wd_count);
- setDraftDailyOt(localSet.daily_ot_count);
+ setDraftDailyNt(String(localSet.daily_nt_count));
+ setDraftDailyWd(String(localSet.daily_wd_count));
+ setDraftDailyOt(String(localSet.daily_ot_count));
  if (localSet.active_track) {
  setSelectedTrack(localSet.active_track);
  }
@@ -98,20 +98,27 @@ export default function BibleDashboardClient() {
  saveLocalBibleSettings(next);
  };
 
+ const parseGoalCount = (raw: string): number => {
+ if (!raw.trim()) return 0;
+ const n = Number(raw);
+ if (Number.isNaN(n)) return 0;
+ return Math.max(0, Math.min(10, Math.floor(n)));
+ };
+
  const handleSaveSettings = (e: React.FormEvent) => {
  e.preventDefault();
  const next: BibleStudySettings = {
  ...settings,
- daily_nt_count: Math.max(1, Math.min(10, Number(draftDailyNt) || 1)),
- daily_wd_count: Math.max(1, Math.min(10, Number(draftDailyWd) || 1)),
- daily_ot_count: Math.max(1, Math.min(10, Number(draftDailyOt) || 1)),
+ daily_nt_count: parseGoalCount(draftDailyNt),
+ daily_wd_count: parseGoalCount(draftDailyWd),
+ daily_ot_count: parseGoalCount(draftDailyOt),
  active_track: selectedTrack,
  };
  setSettings(next);
  saveLocalBibleSettings(next);
  setShowSettingsModal(false);
  toast.success(
- `통독 목표 설정 완료: 하루 신약 ${next.daily_nt_count}개 · 시가서 ${next.daily_wd_count}개 · 구약 ${next.daily_ot_count}개`
+ `연간 통독 목표 설정 완료: 신약 ${next.daily_nt_count}회독 · 시가서 ${next.daily_wd_count}회독 · 구약 ${next.daily_ot_count}회독 (하루 총 ${next.daily_nt_count + next.daily_wd_count + next.daily_ot_count}개)`
  );
  };
 
@@ -183,11 +190,16 @@ export default function BibleDashboardClient() {
           {/* 2행: 설정 버튼 (모바일 전폭 단독 행) */}
           <div className="w-full sm:w-auto pt-2 sm:pt-0 border-t sm:border-t-0 border-black/5">
             <button
-              onClick={() => setShowSettingsModal(true)}
+              onClick={() => {
+                setDraftDailyNt(String(settings.daily_nt_count));
+                setDraftDailyWd(String(settings.daily_wd_count));
+                setDraftDailyOt(String(settings.daily_ot_count));
+                setShowSettingsModal(true);
+              }}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-black/15 bg-dark-surface px-4 py-2.5 text-xs font-semibold text-white transition-all hover:bg-dark-surface-hover hover:border-brand cursor-pointer shadow-xs"
             >
               <Settings className="h-4 w-4 text-brand" />
-              <span>일일 목표 분량 설정</span>
+              <span>연간 회독 목표 설정</span>
             </button>
           </div>
         </div>
@@ -559,7 +571,7 @@ export default function BibleDashboardClient() {
             <div className="flex items-center justify-between border-b border-black/10 pb-3">
               <h3 className="text-lg font-bold flex items-center gap-2">
                 <Settings className="h-5 w-5 text-brand" />
-                성경 통독 일일 분량 설정
+                연간 성경 통독 목표 설정 (52주 기준)
               </h3>
               <button
                 onClick={() => setShowSettingsModal(false)}
@@ -569,48 +581,61 @@ export default function BibleDashboardClient() {
               </button>
             </div>
 
+            <p className="text-xs text-gray-600 break-keep leading-relaxed">
+              52주 커리큘럼 기준으로 연간 몇 회독할지 설정합니다. (<strong className="text-gray-900">1회독 = 하루 1개</strong>, <strong className="text-gray-900">0회독 = 추천 안 함</strong>)
+            </p>
+
             <form onSubmit={handleSaveSettings} className="space-y-4">
-              <div>
-                <label className="block text-xs font-semibold text-gray-700 mb-1">
-                  ✝️ 하루 신약 목표 (기본 1개)
-                </label>
-                <input
-                  type="number"
-                  min="1"
-                  max="10"
-                  value={draftDailyNt}
-                  onChange={(e) => setDraftDailyNt(Number(e.target.value))}
-                  className="w-full bg-[#FAF9F5] border border-black/15 px-3.5 py-2.5 text-sm text-gray-900 focus:outline-none focus:border-brand"
-                />
-              </div>
-
-              <div>
-                <label className="block text-xs font-semibold text-gray-700 mb-1">
-                  📜 하루 시가서 목표 (기본 1개)
-                </label>
-                <input
-                  type="number"
-                  min="1"
-                  max="10"
-                  value={draftDailyWd}
-                  onChange={(e) => setDraftDailyWd(Number(e.target.value))}
-                  className="w-full bg-[#FAF9F5] border border-black/15 px-3.5 py-2.5 text-sm text-gray-900 focus:outline-none focus:border-brand"
-                />
-              </div>
-
-              <div>
-                <label className="block text-xs font-semibold text-gray-700 mb-1">
-                  🏛️ 하루 구약 목표 (기본 1개)
-                </label>
-                <input
-                  type="number"
-                  min="1"
-                  max="10"
-                  value={draftDailyOt}
-                  onChange={(e) => setDraftDailyOt(Number(e.target.value))}
-                  className="w-full bg-[#FAF9F5] border border-black/15 px-3.5 py-2.5 text-sm text-gray-900 focus:outline-none focus:border-brand"
-                />
-              </div>
+              {[
+                { label: '신약 목표 (연간 52주 기준 · 기본 1회독)', value: draftDailyNt, setter: setDraftDailyNt },
+                { label: '시가서 목표 (연간 52주 기준 · 기본 1회독)', value: draftDailyWd, setter: setDraftDailyWd },
+                { label: '구약 목표 (연간 52주 기준 · 기본 1회독)', value: draftDailyOt, setter: setDraftDailyOt },
+              ].map((item) => {
+                const count = parseGoalCount(item.value);
+                return (
+                  <div key={item.label}>
+                    <label className="block text-xs font-semibold text-gray-700 mb-1.5 break-keep">
+                      {item.label}
+                    </label>
+                    <div className="flex items-center gap-2">
+                      <button
+                        type="button"
+                        aria-label={`${item.label} 감소`}
+                        onClick={() => item.setter(String(Math.max(0, count - 1)))}
+                        className="min-h-[44px] min-w-[44px] flex items-center justify-center border border-black/15 bg-[#FAF9F5] text-base font-bold text-gray-800 hover:bg-black/5 active:bg-black/10 cursor-pointer select-none"
+                      >
+                        -
+                      </button>
+                      <input
+                        type="text"
+                        inputMode="numeric"
+                        value={item.value}
+                        onChange={(e) => {
+                          const cleaned = e.target.value.replace(/[^0-9]/g, '').replace(/^0+(?=\d)/, '');
+                          if (cleaned === '') {
+                            item.setter('');
+                          } else {
+                            item.setter(String(Math.min(10, Number(cleaned))));
+                          }
+                        }}
+                        onBlur={() => item.setter(String(parseGoalCount(item.value)))}
+                        className="w-20 min-h-[44px] text-center bg-[#FAF9F5] border border-black/15 px-2 py-2 text-sm font-bold text-gray-900 focus:outline-none focus:border-brand"
+                      />
+                      <button
+                        type="button"
+                        aria-label={`${item.label} 증가`}
+                        onClick={() => item.setter(String(Math.min(10, count + 1)))}
+                        className="min-h-[44px] min-w-[44px] flex items-center justify-center border border-black/15 bg-[#FAF9F5] text-base font-bold text-gray-800 hover:bg-black/5 active:bg-black/10 cursor-pointer select-none"
+                      >
+                        +
+                      </button>
+                      <span className="text-xs text-gray-600 font-medium break-keep">
+                        {count === 0 ? '0회독 / 년 (추천 안 함)' : `${count}회독 / 년 (하루 ${count}개)`}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
 
               <div className="pt-2 flex items-center justify-between border-t border-black/10">
                 <button

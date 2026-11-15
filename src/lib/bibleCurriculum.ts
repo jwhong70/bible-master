@@ -139,9 +139,9 @@ export function computeBibleDailyTodo(
       ? settings.daily_wd_count
       : settings.daily_ot_count;
 
-  // 아직 안 읽은 분량 중에서 오늘의 목표 개수(quota)만큼 추천
+  // 아직 안 읽은 분량 중에서 오늘의 목표 개수(quota, 연간 회독 수)만큼 추천
   const unreadPlans = categoryPlans.filter((p) => p.completed_count === 0);
-  const todoPlans = unreadPlans.slice(0, Math.max(1, quota));
+  const todoPlans = unreadPlans.slice(0, Math.max(0, quota));
 
   return {
     todoPlans,
