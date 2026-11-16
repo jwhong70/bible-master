@@ -5915,38 +5915,6 @@
       ]
     },
     {
-      "id": "new_testament_w03_d6",
-      "category": "new_testament",
-      "category_name": "신약",
-      "week": 3,
-      "day": 6,
-      "title": "제자훈련 1장",
-      "sermon_title": null,
-      "sermon_url": null,
-      "sermon_audio_url": null,
-      "paragraph_count": 0,
-      "verse_count": 0,
-      "completed_count": 0,
-      "last_read_at": null,
-      "verses": []
-    },
-    {
-      "id": "new_testament_w03_d7",
-      "category": "new_testament",
-      "category_name": "신약",
-      "week": 3,
-      "day": 7,
-      "title": "제자훈련 2장",
-      "sermon_title": null,
-      "sermon_url": null,
-      "sermon_audio_url": null,
-      "paragraph_count": 0,
-      "verse_count": 0,
-      "completed_count": 0,
-      "last_read_at": null,
-      "verses": []
-    },
-    {
       "id": "new_testament_w04_d1",
       "category": "new_testament",
       "category_name": "신약",
@@ -7616,38 +7584,6 @@
           "notes": []
         }
       ]
-    },
-    {
-      "id": "new_testament_w04_d6",
-      "category": "new_testament",
-      "category_name": "신약",
-      "week": 4,
-      "day": 6,
-      "title": "제자훈련 3장",
-      "sermon_title": null,
-      "sermon_url": null,
-      "sermon_audio_url": null,
-      "paragraph_count": 0,
-      "verse_count": 0,
-      "completed_count": 0,
-      "last_read_at": null,
-      "verses": []
-    },
-    {
-      "id": "new_testament_w04_d7",
-      "category": "new_testament",
-      "category_name": "신약",
-      "week": 4,
-      "day": 7,
-      "title": "제자훈련 4장",
-      "sermon_title": null,
-      "sermon_url": null,
-      "sermon_audio_url": null,
-      "paragraph_count": 0,
-      "verse_count": 0,
-      "completed_count": 0,
-      "last_read_at": null,
-      "verses": []
     },
     {
       "id": "new_testament_w05_d1",
@@ -14089,38 +14025,6 @@
       ]
     },
     {
-      "id": "new_testament_w07_d6",
-      "category": "new_testament",
-      "category_name": "신약",
-      "week": 7,
-      "day": 6,
-      "title": "제자훈련 5장",
-      "sermon_title": null,
-      "sermon_url": null,
-      "sermon_audio_url": null,
-      "paragraph_count": 0,
-      "verse_count": 0,
-      "completed_count": 0,
-      "last_read_at": null,
-      "verses": []
-    },
-    {
-      "id": "new_testament_w07_d7",
-      "category": "new_testament",
-      "category_name": "신약",
-      "week": 7,
-      "day": 7,
-      "title": "제자훈련 6장",
-      "sermon_title": null,
-      "sermon_url": null,
-      "sermon_audio_url": null,
-      "paragraph_count": 0,
-      "verse_count": 0,
-      "completed_count": 0,
-      "last_read_at": null,
-      "verses": []
-    },
-    {
       "id": "new_testament_w08_d1",
       "category": "new_testament",
       "category_name": "신약",
@@ -18567,22 +18471,6 @@
           "notes": []
         }
       ]
-    },
-    {
-      "id": "new_testament_w09_d7",
-      "category": "new_testament",
-      "category_name": "신약",
-      "week": 9,
-      "day": 7,
-      "title": "제자훈련 7장",
-      "sermon_title": null,
-      "sermon_url": null,
-      "sermon_audio_url": null,
-      "paragraph_count": 0,
-      "verse_count": 0,
-      "completed_count": 0,
-      "last_read_at": null,
-      "verses": []
     },
     {
       "id": "new_testament_w10_d1",
@@ -25689,38 +25577,6 @@
           "notes": []
         }
       ]
-    },
-    {
-      "id": "new_testament_w12_d6",
-      "category": "new_testament",
-      "category_name": "신약",
-      "week": 12,
-      "day": 6,
-      "title": "제자훈련 8장",
-      "sermon_title": null,
-      "sermon_url": null,
-      "sermon_audio_url": null,
-      "paragraph_count": 0,
-      "verse_count": 0,
-      "completed_count": 0,
-      "last_read_at": null,
-      "verses": []
-    },
-    {
-      "id": "new_testament_w12_d7",
-      "category": "new_testament",
-      "category_name": "신약",
-      "week": 12,
-      "day": 7,
-      "title": "제자훈련 9장",
-      "sermon_title": null,
-      "sermon_url": null,
-      "sermon_audio_url": null,
-      "paragraph_count": 0,
-      "verse_count": 0,
-      "completed_count": 0,
-      "last_read_at": null,
-      "verses": []
     },
     {
       "id": "new_testament_w13_d1",
@@ -33453,38 +33309,6 @@
       ]
     },
     {
-      "id": "new_testament_w15_d6",
-      "category": "new_testament",
-      "category_name": "신약",
-      "week": 15,
-      "day": 6,
-      "title": "제자훈련 10장",
-      "sermon_title": null,
-      "sermon_url": null,
-      "sermon_audio_url": null,
-      "paragraph_count": 0,
-      "verse_count": 0,
-      "completed_count": 0,
-      "last_read_at": null,
-      "verses": []
-    },
-    {
-      "id": "new_testament_w15_d7",
-      "category": "new_testament",
-      "category_name": "신약",
-      "week": 15,
-      "day": 7,
-      "title": "제자훈련 11장",
-      "sermon_title": null,
-      "sermon_url": null,
-      "sermon_audio_url": null,
-      "paragraph_count": 0,
-      "verse_count": 0,
-      "completed_count": 0,
-      "last_read_at": null,
-      "verses": []
-    },
-    {
       "id": "new_testament_w16_d1",
       "category": "new_testament",
       "category_name": "신약",
@@ -37916,22 +37740,6 @@
           ]
         }
       ]
-    },
-    {
-      "id": "new_testament_w17_d7",
-      "category": "new_testament",
-      "category_name": "신약",
-      "week": 17,
-      "day": 7,
-      "title": "제자훈련 12장",
-      "sermon_title": null,
-      "sermon_url": null,
-      "sermon_audio_url": null,
-      "paragraph_count": 0,
-      "verse_count": 0,
-      "completed_count": 0,
-      "last_read_at": null,
-      "verses": []
     },
     {
       "id": "new_testament_w18_d1",

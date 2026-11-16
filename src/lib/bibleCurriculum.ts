@@ -20,7 +20,7 @@ export const TRACK_INFO: Record<
     name: '신약 (New Testament)',
     shortName: '신약',
     icon: '✝️',
-    count: 277,
+    count: 266,
     description: '복음서, 사도행전, 서신서, 요한계시록',
     color: '#EA580C', // Hermes Amber Orange
   },

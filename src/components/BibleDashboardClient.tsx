@@ -202,7 +202,7 @@ export default function BibleDashboardClient() {
               BIBLE MASTER <span className="text-brand-dark">성경 통독 마스터</span>
             </h1>
             <p className="mt-1 text-xs text-gray-600 whitespace-nowrap">
-              신약 277일 · 시가서 239일 · 구약 292일 | 일간 To-Do & 주간 요일별 진도표
+              신약 {ntStats.totalPlans}일 · 시가서 {wdStats.totalPlans}일 · 구약 {otStats.totalPlans}일 | 일간 To-Do & 주간 요일별 진도표
             </p>
           </div>
 
@@ -242,7 +242,7 @@ export default function BibleDashboardClient() {
  <div className="mt-1 text-lg font-black text-[#EA580C]">
  {ntStats.completedCount}/{ntStats.totalPlans}
  </div>
- <div className="mt-0.5 text-[11px] text-gray-400">277일 코스</div>
+ <div className="mt-0.5 text-[11px] text-gray-400">{ntStats.totalPlans}일 코스</div>
  </div>
  <div className="bg-white p-3 border border-black/10 shadow-xs">
  <div className="text-xs text-gray-500">구약·시가서 완독</div>
@@ -284,7 +284,7 @@ export default function BibleDashboardClient() {
         >
           <div>
             <div className="text-xs font-bold flex items-center gap-1.5">
-              <span>✝️</span> 신약만 (277일)
+              <span>✝️</span> 신약만 ({ntStats.totalPlans}일)
             </div>
             <div className="text-[11px] text-gray-600 mt-0.5">
               완독 {ntStats.completedCount}/{ntStats.totalPlans}

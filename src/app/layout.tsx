@@ -5,9 +5,9 @@ import InstallPrompt from '@/components/InstallPrompt';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'BIBLE MASTER | 성경 통독 마스터 (신약 277일 · 시가서 239일 · 구약 292일)',
+  title: 'BIBLE MASTER | 성경 통독 마스터 (신약 266일 · 시가서 239일 · 구약 292일)',
   description:
-    '신약 277일 · 시가서 239일 · 구약 292일 3대 트랙 누적 복습 슬라이딩 진도표 및 송태근 목사 강해 연동 성경 읽기 웹',
+    '신약 266일 · 시가서 239일 · 구약 292일 3대 트랙 누적 복습 슬라이딩 진도표 및 송태근 목사 강해 연동 성경 읽기 웹',
   manifest: '/manifest.json',
   appleWebApp: {
     capable: true,
