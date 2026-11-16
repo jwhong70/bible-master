@@ -463,7 +463,7 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
                               }`}
                             >
                               <BookOpen className="h-3 w-3" />
-                              <span>강해 {verse.notes.length}</span>
+                              <span>강해</span>
                               {isNoteOpen ? (
                                 <ChevronUp className="h-3 w-3" />
                               ) : (
