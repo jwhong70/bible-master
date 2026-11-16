@@ -582,7 +582,7 @@ export default function BibleDashboardClient() {
             </div>
 
             <p className="text-xs text-gray-600 break-keep leading-relaxed">
-              52주 커리큘럼 기준으로 연간 몇 회독할지 설정합니다. (<strong className="text-gray-900">1회독 = 하루 1개</strong>, <strong className="text-gray-900">0회독 = 추천 안 함</strong>)
+              52주 커리큘럼 기준으로 연간 몇 회독할지 설정합니다. (<strong className="text-gray-900">1회독 = 하루 1개</strong>, <strong className="text-gray-900">0회독 = 읽지 않음</strong>)
             </p>
 
             <form onSubmit={handleSaveSettings} className="space-y-4">
@@ -630,7 +630,7 @@ export default function BibleDashboardClient() {
                         +
                       </button>
                       <span className="text-xs text-gray-600 font-medium break-keep">
-                        {count === 0 ? '0회독 / 년 (추천 안 함)' : `${count}회독 / 년 (하루 ${count}개)`}
+                        {count === 0 ? '0회독 / 년 (읽지 않음)' : `${count}회독 / 년 (하루 ${count}개)`}
                       </span>
                     </div>
                   </div>

@@ -2,7 +2,7 @@ import seedRaw from '@/data/bible_seed.json';
 import { BibleCategory, BiblePlanItem, BibleStudySettings, WeeklyBiblePlanGroup } from '@/types/bible';
 
 const STORAGE_PROGRESS_KEY = 'bible_master_progress_v1';
-const STORAGE_SETTINGS_KEY = 'bible_master_settings_v1';
+const STORAGE_SETTINGS_KEY = 'bible_master_settings_v2';
 
 export const DEFAULT_BIBLE_SETTINGS: BibleStudySettings = {
   daily_nt_count: 1,
