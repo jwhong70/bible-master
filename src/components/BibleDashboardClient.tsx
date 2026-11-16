@@ -37,24 +37,36 @@ export default function BibleDashboardClient() {
  const [selectedTrack, setSelectedTrack] = useState<
  'all' | 'new_testament' | 'wisdom' | 'old_testament'
  >('all');
- const [openWeeks, setOpenWeeks] = useState<Record<number, boolean>>({ 1: true });
+ const [openWeeks, setOpenWeeks] = useState<Record<number, boolean>>({});
 
  // 설정 임시 폼 상태 (문자열로 관리해 앞자리 0 잔류 방지 및 빈 값 허용)
  const [draftDailyNt, setDraftDailyNt] = useState('1');
  const [draftDailyWd, setDraftDailyWd] = useState('1');
  const [draftDailyOt, setDraftDailyOt] = useState('1');
 
+ const getDefaultOpenWeeks = (
+   planList: BiblePlanItem[],
+   track: 'all' | 'new_testament' | 'wisdom' | 'old_testament'
+ ): Record<number, boolean> => {
+   const groups = buildWeeklyBibleGroups(planList, track === 'all' ? undefined : track);
+   const firstIncomplete = groups.find((g) => !g.isAllCompleted);
+   return firstIncomplete ? { [firstIncomplete.week]: true } : {};
+ };
+
  useEffect(() => {
  const localSet = loadLocalBibleSettings();
  const localProg = loadLocalBibleProgress();
+ const initialPlans = buildAllBiblePlans(localProg);
+ const initialTrack = localSet.active_track || 'all';
  setSettings(localSet);
- setPlans(buildAllBiblePlans(localProg));
+ setPlans(initialPlans);
  setDraftDailyNt(String(localSet.daily_nt_count));
  setDraftDailyWd(String(localSet.daily_wd_count));
  setDraftDailyOt(String(localSet.daily_ot_count));
  if (localSet.active_track) {
  setSelectedTrack(localSet.active_track);
  }
+ setOpenWeeks(getDefaultOpenWeeks(initialPlans, initialTrack));
  setIsHydrated(true);
  }, []);
 
@@ -93,6 +105,7 @@ export default function BibleDashboardClient() {
 
  const handleTrackChange = (track: 'all' | 'new_testament' | 'wisdom' | 'old_testament') => {
  setSelectedTrack(track);
+ setOpenWeeks(getDefaultOpenWeeks(plans, track));
  const next = { ...settings, active_track: track };
  setSettings(next);
  saveLocalBibleSettings(next);
@@ -129,10 +142,16 @@ export default function BibleDashboardClient() {
  const isCurrentlyDone = (plan.completed_count || 0) >= 1;
  const nextState = !isCurrentlyDone;
  const updatedMap = updatePlanCompletion(plan.id, nextState);
- setPlans(buildAllBiblePlans(updatedMap));
+ const nextPlans = buildAllBiblePlans(updatedMap);
+ setPlans(nextPlans);
 
  if (nextState) {
  toast.success(`🎉 '${plan.title}' 통독 완료!`);
+ const cat = selectedTrack === 'all' ? undefined : selectedTrack;
+ const updatedGroup = buildWeeklyBibleGroups(nextPlans, cat).find((g) => g.week === plan.week);
+ if (updatedGroup?.isAllCompleted) {
+   setOpenWeeks((prev) => ({ ...prev, [plan.week]: false }));
+ }
  } else {
  toast.info(`'${plan.title}' 통독 완료를 취소했습니다.`);
  }
