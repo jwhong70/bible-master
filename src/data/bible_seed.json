@@ -199940,7 +199940,7 @@
       "sermon_url": "https://sqsmqipyqwnblabtihnm.supabase.co/storage/v1/object/public/bible-audio/sermons/VJq6rdhXQ4k.mp3",
       "sermon_audio_url": "https://sqsmqipyqwnblabtihnm.supabase.co/storage/v1/object/public/bible-audio/sermons/VJq6rdhXQ4k.mp3",
       "paragraph_count": 2,
-      "verse_count": 53,
+      "verse_count": 51,
       "completed_count": 0,
       "last_read_at": null,
       "verses": [
@@ -199953,7 +199953,7 @@
           "sermon_url": null,
           "text": "모세의 장인이며, 미디안 제사장인 이드로가 하나님이 모세에게와 자기 백성 이스라엘에게 하신 일 곧 여호와께서 이스라엘을 애굽에서 인도하여 내신 모든 일을 들으니라.",
           "notes": [
-            "- 이드로의 방문 1)(1절): 모세를 통해 일하신 하나님의 역사를 들음"
+            "- 이드로의 방문 1(1절): 모세를 통해 일하신 하나님의 역사를 들음"
           ]
         },
         {
@@ -200029,7 +200029,7 @@
           "sermon_url": null,
           "text": "모세가 여호와께서 이스라엘을 위하여 바로와 애굽 사람에게 행하신 모든 일과 길에서 그들이 당한 모든 고난과 여호와께서 그들을 구원하신 일을 다 그 장인에게 말하매,",
           "notes": [
-            "- 이드로의 방문 2)(7~8절): 증인의 간증"
+            "- 이드로의 방문 2(7~8절): 증인의 간증"
           ]
         },
         {
@@ -200071,7 +200071,7 @@
           "sermon_url": null,
           "text": "모세의 장인 이드로가 번제물과 희생제물들을 하나님께 가져오매, 아론과 이스라엘 모든 장로가 와서 모세의 장인과 함께 하나님 앞에서 떡을 먹으니라.",
           "notes": [
-            "- 이드로의 방문 3)(9~12절): 한 공동체가 됨"
+            "- 이드로의 방문 3(9~12절): 한 공동체가 됨"
           ]
         },
         {
@@ -200231,31 +200231,10 @@
           "paragraph_title": "Paragraph 2: 19장",
           "sermon_title": "[강해(송태근 목사)] 제사장 나라란(19:1~6)",
           "sermon_url": "https://sqsmqipyqwnblabtihnm.supabase.co/storage/v1/object/public/bible-audio/sermons/8BrRHSGAllI.mp3",
-          "text": "이스라엘 자손이 애굽 땅을 떠난 지 삼 개월이 되던 날 셋째 달",
+          "text": "이스라엘 자손이 애굽 땅을 떠난 지 삼 개월이 되던 날 셋째 달 1일 그들이 시내 광야에 이르니라.",
           "notes": [
-            "- 지: 첫째 달 15일 출발",
-            "- 날: 바른번역"
+            "- 1) 45일 경과"
           ]
-        },
-        {
-          "id": "old_testament_w06_d2_p2_v1",
-          "num": "1",
-          "paragraph_index": 2,
-          "paragraph_title": "Paragraph 2: 19장",
-          "sermon_title": null,
-          "sermon_url": null,
-          "text": "일 →",
-          "notes": []
-        },
-        {
-          "id": "old_testament_w06_d2_p2_v45",
-          "num": "45",
-          "paragraph_index": 2,
-          "paragraph_title": "Paragraph 2: 19장",
-          "sermon_title": null,
-          "sermon_url": null,
-          "text": "일 경과 그들이 시내 광야에 이르니라.",
-          "notes": []
         },
         {
           "id": "old_testament_w06_d2_p2_v2",
@@ -200287,8 +200266,8 @@
           "text": "내가 애굽 사람에게 어떻게 행하였음과, 내가 어떻게 독수리 날개로 너희를 업어 내게로 인도하였음을 너희가 보았느니라.",
           "notes": [
             "- 성화의 신앙(5~6절): 제사장 나라, 거룩한 백성",
-            "- 출애굽의 목적: 정치적 해방사건을 통해 예배 공동체를 만들고, 그것을 통해 성화 공동체(sanctification community)로 나아가는데 있음",
-            "- 교회의 역할: 하나님과 세상 사이에서 생명의 복의 통로 역할"
+            "- 1) 출애굽의 목적: 정치적 해방사건을 통해 예배 공동체를 만들고, 그것을 통해 성화 공동체(sanctification community)로 나아가는데 있음",
+            "- 2) 교회의 역할: 하나님과 세상 사이에서 생명의 복의 통로 역할"
           ]
         },
         {
@@ -200300,7 +200279,7 @@
           "sermon_url": null,
           "text": "모세가 내려와서 백성의 장로들을 불러, 여호와께서 자기에게 명령하신 그 모든 말씀을 그들 앞에 진술하니,",
           "notes": [
-            "- 내려와서: 1) + 1일 → 46일 경과(2))"
+            "- 모세가 내려와서: 1) + 1일 → 2) 46일 경과"
           ]
         },
         {
@@ -200382,7 +200361,7 @@
           "sermon_url": null,
           "text": "모세가 산에서 내려와 백성에게 이르러 백성을 성결하게 하니, 그들이 자기 옷을 빨더라.",
           "notes": [
-            "- 내려와: 2) + 1일 → 47일 경과(3))"
+            "- 모세가 산에서 내려와: 2) + 1일 → 3) 47일 경과"
           ]
         },
         {
@@ -200394,7 +200373,7 @@
           "sermon_url": null,
           "text": "모세가 백성에게 이르되 준비하여 셋째 날 을 기다리고, 여인을 가까이 하지 말라 하니라.",
           "notes": [
-            "- 3) + 3일 → 50일 경과: 오순절 or 교회의 탄생"
+            "- 3) + 3일 → 50일 경과(오순절 or 교회의 탄생)"
           ]
         },
         {
