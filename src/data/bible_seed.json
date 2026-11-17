@@ -208825,7 +208825,7 @@
       "sermon_url": "https://sqsmqipyqwnblabtihnm.supabase.co/storage/v1/object/public/bible-audio/sermons/PA09K-8YWfg.mp3",
       "sermon_audio_url": "https://sqsmqipyqwnblabtihnm.supabase.co/storage/v1/object/public/bible-audio/sermons/PA09K-8YWfg.mp3",
       "paragraph_count": 2,
-      "verse_count": 51,
+      "verse_count": 52,
       "completed_count": 0,
       "last_read_at": null,
       "verses": [
@@ -208836,7 +208836,17 @@
           "paragraph_title": "Paragraph 1: 3장",
           "sermon_title": null,
           "sermon_url": null,
-          "text": "사람이 만일 화목제의 제물을 예물로 드리되 소로 드리려면, 수컷이나 암컷이나 흠 없는 것으로 여호와 앞에 드릴지니, 2⑴ 그 예물의 머리에 안수하고, ⑵ 회막 문에서 잡을 것이요, ⑶ 아론의 자손 제사장들은 그 피를 제단 사방에 뿌릴 것이며, ⑷",
+          "text": "사람이 만일 화목제의 제물을 예물로 드리되 소로 드리려면, 수컷이나 암컷이나 흠 없는 것으로 여호와 앞에 드릴지니,",
+          "notes": []
+        },
+        {
+          "id": "old_testament_w08_d2_p1_v2",
+          "num": "2",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 3장",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "그 예물의 머리에 안수하고, 회막 문에서 잡을 것이요, 아론의 자손 제사장들은 그 피를 제단 사방에 뿌릴 것이며,",
           "notes": []
         },
         {
@@ -209407,7 +209417,7 @@
           "paragraph_title": "Paragraph 1: 5장",
           "sermon_title": null,
           "sermon_url": null,
-          "text": "만일 ④-⒜ 누구든지 저주하는 소리를 듣고서도 증인이 되어 그가 본 것이나 알고 있는 것을 알리지 아니하면, 그는 자기의 죄를 져야 할 것이요, 그 허물이 그에게로 돌아갈 것이며,",
+          "text": "만일 누구든지 저주하는 소리를 듣고서도 증인이 되어 그가 본 것이나 알고 있는 것을 알리지 아니하면, 그는 자기의 죄를 져야 할 것이요, 그 허물이 그에게로 돌아갈 것이며,",
           "notes": [
             "- 누구든지: (네페쉬) 개인 or 숨, 생기, 생명"
           ]
@@ -209419,7 +209429,7 @@
           "paragraph_title": "Paragraph 1: 5장",
           "sermon_title": null,
           "sermon_url": null,
-          "text": "만일 ④-⒝ 누구든지 부정한 것들 곧 부정한 들짐승의 사체나 부정한 가축의 사체나 부정한 곤충의 사체를 만졌으면, 부지중이라고 할지라도 그 몸이 더러워져서 허물이 있을 것이요,",
+          "text": "만일 누구든지 부정한 것들 곧 부정한 들짐승의 사체나 부정한 가축의 사체나 부정한 곤충의 사체를 만졌으면, 부지중이라고 할지라도 그 몸이 더러워져서 허물이 있을 것이요,",
           "notes": []
         },
         {
@@ -209429,7 +209439,7 @@
           "paragraph_title": "Paragraph 1: 5장",
           "sermon_title": null,
           "sermon_url": null,
-          "text": "만일 ④-⒞ 부지중에 어떤 사람의 부정에 닿았는데, 그 사람의 부정이 어떠한 부정이든지 그것을 깨달았을 때에는 허물이 있을 것이요,",
+          "text": "만일 부지중에 어떤 사람의 부정에 닿았는데, 그 사람의 부정이 어떠한 부정이든지 그것을 깨달았을 때에는 허물이 있을 것이요,",
           "notes": []
         },
         {
@@ -209439,7 +209449,7 @@
           "paragraph_title": "Paragraph 1: 5장",
           "sermon_title": null,
           "sermon_url": null,
-          "text": "만일 ④-⒟ 누구든지 입술로 맹세하여 악한 일이든지 선한 일이든지 하리라고 함부로 말하면, 그 사람이 함부로 말하여 맹세한 것이 무엇이든지 그가 깨닫지 못하다가 그것을 깨닫게 되었을 때에는 그 중 하나에 그에게 허물이 있을 것이니,",
+          "text": "만일 누구든지 입술로 맹세하여 악한 일이든지 선한 일이든지 하리라고 함부로 말하면, 그 사람이 함부로 말하여 맹세한 것이 무엇이든지 그가 깨닫지 못하다가 그것을 깨닫게 되었을 때에는 그 중 하나에 그에게 허물이 있을 것이니,",
           "notes": []
         },
         {
@@ -209639,7 +209649,7 @@
           "paragraph_title": "Paragraph 2: 6장",
           "sermon_title": null,
           "sermon_url": null,
-          "text": "누구든지 ③ 여호와께 신실하지 못하여 범죄하되, 곧 이웃이 맡긴 물건이나 전당물을 속이거나 도둑질하거나 착취하고도 사실을 부인하거나,",
+          "text": "누구든지 여호와께 신실하지 못하여 범죄하되, 곧 이웃이 맡긴 물건이나 전당물을 속이거나 도둑질하거나 착취하고도 사실을 부인하거나,",
           "notes": []
         },
         {
