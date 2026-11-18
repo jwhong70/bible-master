@@ -21996,7 +21996,7 @@
       "sermon_url": "https://sqsmqipyqwnblabtihnm.supabase.co/storage/v1/object/public/bible-audio/sermons/Wrh4_7lOdsQ.mp3",
       "sermon_audio_url": "https://sqsmqipyqwnblabtihnm.supabase.co/storage/v1/object/public/bible-audio/sermons/Wrh4_7lOdsQ.mp3",
       "paragraph_count": 1,
-      "verse_count": 47,
+      "verse_count": 50,
       "completed_count": 0,
       "last_read_at": null,
       "verses": [
@@ -22319,8 +22319,39 @@
           "sermon_url": null,
           "text": "비유하건대, 아이들이 장터에 앉아 서로 불러 이르되 우리가 너희를 향하여 피리를 불어도 너희가 춤추지 않고, 우리가 곡하여도 너희가 울지 아니하였다 함과 같도다.",
           "notes": [
-            "- 세상을 거스르는 세례 요한과 예수 그리스도를 의미하는 비유: (31~32절)",
-            "- 하나님께 영광을 돌림: (33~35절)"
+            "- 세상을 거스르는 세례 요한과 예수 그리스도를 의미하는 비유(31~32절)"
+          ]
+        },
+        {
+          "id": "new_testament_w11_d1_p1_v33",
+          "num": "33",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 7장",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "세례 요한이 와서 떡도 먹지 아니하며 포도주도 마시지 아니하매, 너희 말이 귀신이 들렸다 하더니,",
+          "notes": []
+        },
+        {
+          "id": "new_testament_w11_d1_p1_v34",
+          "num": "34",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 7장",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "인자는 와서 먹고 마시매, 너희 말이 보라, 먹기를 탐하고 포도주를 즐기는 사람이요, 세리와 죄인의 친구로다 하니,",
+          "notes": []
+        },
+        {
+          "id": "new_testament_w11_d1_p1_v35",
+          "num": "35",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 7장",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "지혜는 자기의 모든 자녀로 인하여 옳다 함을 얻느니라.",
+          "notes": [
+            "- 하나님께 영광을 돌림(33~35절)"
           ]
         },
         {
