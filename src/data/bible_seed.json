@@ -24227,7 +24227,7 @@
       "sermon_url": "https://sqsmqipyqwnblabtihnm.supabase.co/storage/v1/object/public/bible-audio/sermons/vjXWZ0b1uXc.mp3",
       "sermon_audio_url": "https://sqsmqipyqwnblabtihnm.supabase.co/storage/v1/object/public/bible-audio/sermons/vjXWZ0b1uXc.mp3",
       "paragraph_count": 1,
-      "verse_count": 51,
+      "verse_count": 52,
       "completed_count": 0,
       "last_read_at": null,
       "verses": [
@@ -24390,7 +24390,17 @@
           "paragraph_title": "Paragraph 1: 11장",
           "sermon_title": null,
           "sermon_url": null,
-          "text": "또 더러는 예수를 시험하여 하늘로부터 오는 표적을 구하니, 17~19예수께서 그들의 생각을 아시고 이르시되 스스로 분쟁하는 나라마다 황폐하여지며 스스로 분쟁하는 집은 무너지느니라. 너희 말이 내가 바알세불을 힘입어 귀신을 쫓아낸다 하니, 만일 사탄이 스스로 분쟁하면 그의 나라가 어떻게 서겠느냐. 내가 바알세불을 힘입어 귀신을 쫓아내면 너희 아들들은 누구를 힘입어 쫓아내느냐. 그러므로 그들이 너희 재판관이 되리라.",
+          "text": "또 더러는 예수를 시험하여 하늘로부터 오는 표적을 구하니,",
+          "notes": []
+        },
+        {
+          "id": "new_testament_w11_d5_p1_v17~19",
+          "num": "17~19",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 11장",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "예수께서 그들의 생각을 아시고 이르시되 스스로 분쟁하는 나라마다 황폐하여지며 스스로 분쟁하는 집은 무너지느니라. 너희 말이 내가 바알세불을 힘입어 귀신을 쫓아낸다 하니, 만일 사탄이 스스로 분쟁하면 그의 나라가 어떻게 서겠느냐. 내가 바알세불을 힘입어 귀신을 쫓아내면 너희 아들들은 누구를 힘입어 쫓아내느냐. 그러므로 그들이 너희 재판관이 되리라.",
           "notes": []
         },
         {
