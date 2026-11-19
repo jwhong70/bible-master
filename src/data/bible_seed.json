@@ -115279,7 +115279,7 @@
       "sermon_url": null,
       "sermon_audio_url": null,
       "paragraph_count": 1,
-      "verse_count": 30,
+      "verse_count": 31,
       "completed_count": 0,
       "last_read_at": null,
       "verses": [
@@ -115388,16 +115388,27 @@
           ]
         },
         {
-          "id": "wisdom_w17_d1_p1_v6",
-          "num": "6",
+          "id": "wisdom_w17_d1_p1_v6a",
+          "num": "6a",
           "paragraph_index": 1,
           "paragraph_title": "Paragraph 1: 36편",
           "sermon_title": null,
           "sermon_url": null,
-          "text": "주의 의는 하나님의 산들과 같고, 주의 심판은 큰 바다와 같으니이다.",
+          "text": "주의 의는 하나님의 산들과 같고,",
           "notes": [
             "- 주의 의: (체다카)",
-            "- 같고: 1) 높이를 강조",
+            "- 같고: 1) 높이를 강조"
+          ]
+        },
+        {
+          "id": "wisdom_w17_d1_p1_v6b",
+          "num": "6b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 36편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주의 심판은 큰 바다와 같으니이다.",
+          "notes": [
             "- 주의 심판: (미쉬파트)",
             "- 같으니이다: 2) 깊이를 강조",
             "- 1), 2): 주의 의와 심판이 헤아릴 수 없을 만큼 방대하다는 뜻으로 해석됨"
