@@ -40308,7 +40308,7 @@
       "sermon_url": "https://sqsmqipyqwnblabtihnm.supabase.co/storage/v1/object/public/bible-audio/sermons/F5ekUBWx0jk.mp3",
       "sermon_audio_url": "https://sqsmqipyqwnblabtihnm.supabase.co/storage/v1/object/public/bible-audio/sermons/F5ekUBWx0jk.mp3",
       "paragraph_count": 1,
-      "verse_count": 24,
+      "verse_count": 25,
       "completed_count": 0,
       "last_read_at": null,
       "verses": [
@@ -40473,11 +40473,22 @@
           "paragraph_title": "Paragraph 1: 21장",
           "sermon_title": null,
           "sermon_url": null,
-          "text": "또 두 번째 이르시되 요한의 아들 시몬아, 네가 나를 사랑하느냐 하시니, 이르되 주님, 그러하나이다. 내가 주님을 사랑하는 줄 주님께서 아시나이다. 이르시되 내 양을 치라 하시고, 17세 번째 이르시되 요한의 아들 시몬아, 네가 나를 사랑하느냐 하시니, 주께서 세 번째 네가 나를 사랑하느냐 하시므로, 베드로가 근심하여 이르되 주님, 모든 것을 아시오매, 내가 주님을 사랑하는 줄을 주님께서 아시나이다. 예수께서 이르시되 내 양을 먹이라.",
+          "text": "또 두 번째 이르시되 요한의 아들 시몬아, 네가 나를 사랑하느냐 하시니, 이르되 주님, 그러하나이다. 내가 주님을 사랑하는 줄 주님께서 아시나이다. 이르시되 내 양을 치라 하시고,",
+          "notes": []
+        },
+        {
+          "id": "new_testament_w18_d4_p1_v17",
+          "num": "17",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 21장",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "세 번째 이르시되 요한의 아들 시몬아, 네가 나를 사랑하느냐 하시니, 주께서 세 번째 네가 나를 사랑하느냐 하시므로, 베드로가 근심하여 이르되 주님, 모든 것을 아시오매, 내가 주님을 사랑하는 줄을 주님께서 아시나이다. 예수께서 이르시되 내 양을 먹이라.",
           "notes": [
-            "- 예수 그리스도를 사랑하는 것은 그분께서 양무리의 양으로 비유하신 교회의 신자들을 사랑하는 것임",
-            "- 예수 그리스도는 목자가 자기 양떼를 돌보듯, 베드로에게 교회 신자들을 잘 돌보도록 말씀하셨음",
-            "- 요컨대 하나님의 말씀으로 그들을 양육하고, 말씀의 길에서 벗어나면 도로 찾아오고, 다치면 치료해 줌으로써, 신자들을 잘 인도하고 보호해 줄 것을 부탁하셨음"
+            "- 내 양을 먹이라(15~17절):",
+            "1) 예수 그리스도를 사랑하는 것은 그분께서 양무리의 양으로 비유하신 교회의 신자들을 사랑하는 것임",
+            "2) 예수 그리스도는 목자가 자기 양떼를 돌보듯, 베드로에게 교회 신자들을 잘 돌보도록 말씀하셨음",
+            "3) 요컨대 하나님의 말씀으로 그들을 양육하고, 말씀의 길에서 벗어나면 도로 찾아오고, 다치면 치료해 줌으로써, 신자들을 잘 인도하고 보호해 줄 것을 부탁하셨음"
           ]
         },
         {
