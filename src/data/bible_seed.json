@@ -113379,7 +113379,7 @@
       "sermon_url": null,
       "sermon_audio_url": null,
       "paragraph_count": 1,
-      "verse_count": 43,
+      "verse_count": 44,
       "completed_count": 0,
       "last_read_at": null,
       "verses": [
@@ -113491,6 +113491,16 @@
             "- 이 시의 핵심 부분: (4~5절)",
             "- 사람들이 찬양을 올려야 하는 근본적인 이유는 여호와의 성품(공의, 정의, 인자하심) 때문임"
           ]
+        },
+        {
+          "id": "wisdom_w16_d3_p1_v5b",
+          "num": "5b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 33편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "세상에는 여호와의 인자하심이 충만하도다.",
+          "notes": []
         },
         {
           "id": "wisdom_w16_d3_p1_v6a",
