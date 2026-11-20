@@ -42827,38 +42827,6 @@
       ]
     },
     {
-      "id": "new_testament_w19_d6",
-      "category": "new_testament",
-      "category_name": "신약",
-      "week": 19,
-      "day": 6,
-      "title": "동행일기 1~3장",
-      "sermon_title": null,
-      "sermon_url": null,
-      "sermon_audio_url": null,
-      "paragraph_count": 0,
-      "verse_count": 0,
-      "completed_count": 0,
-      "last_read_at": null,
-      "verses": []
-    },
-    {
-      "id": "new_testament_w19_d7",
-      "category": "new_testament",
-      "category_name": "신약",
-      "week": 19,
-      "day": 7,
-      "title": "동행일기 4~6장",
-      "sermon_title": null,
-      "sermon_url": null,
-      "sermon_audio_url": null,
-      "paragraph_count": 0,
-      "verse_count": 0,
-      "completed_count": 0,
-      "last_read_at": null,
-      "verses": []
-    },
-    {
       "id": "new_testament_w20_d1",
       "category": "new_testament",
       "category_name": "신약",
@@ -47291,38 +47259,6 @@
           "notes": []
         }
       ]
-    },
-    {
-      "id": "new_testament_w21_d6",
-      "category": "new_testament",
-      "category_name": "신약",
-      "week": 21,
-      "day": 6,
-      "title": "동행일기 7~9장",
-      "sermon_title": null,
-      "sermon_url": null,
-      "sermon_audio_url": null,
-      "paragraph_count": 0,
-      "verse_count": 0,
-      "completed_count": 0,
-      "last_read_at": null,
-      "verses": []
-    },
-    {
-      "id": "new_testament_w21_d7",
-      "category": "new_testament",
-      "category_name": "신약",
-      "week": 21,
-      "day": 7,
-      "title": "동행일기 10~12장",
-      "sermon_title": null,
-      "sermon_url": null,
-      "sermon_audio_url": null,
-      "paragraph_count": 0,
-      "verse_count": 0,
-      "completed_count": 0,
-      "last_read_at": null,
-      "verses": []
     },
     {
       "id": "new_testament_w22_d1",
@@ -52669,22 +52605,6 @@
           "notes": []
         }
       ]
-    },
-    {
-      "id": "new_testament_w24_d7",
-      "category": "new_testament",
-      "category_name": "신약",
-      "week": 24,
-      "day": 7,
-      "title": "동행일기 13~15장",
-      "sermon_title": null,
-      "sermon_url": null,
-      "sermon_audio_url": null,
-      "paragraph_count": 0,
-      "verse_count": 0,
-      "completed_count": 0,
-      "last_read_at": null,
-      "verses": []
     },
     {
       "id": "new_testament_w25_d1",
