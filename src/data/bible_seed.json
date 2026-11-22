@@ -46482,7 +46482,7 @@
       "sermon_url": "https://sqsmqipyqwnblabtihnm.supabase.co/storage/v1/object/public/bible-audio/sermons/zKq2W88cAlQ.mp3",
       "sermon_audio_url": "https://sqsmqipyqwnblabtihnm.supabase.co/storage/v1/object/public/bible-audio/sermons/zKq2W88cAlQ.mp3",
       "paragraph_count": 1,
-      "verse_count": 38,
+      "verse_count": 39,
       "completed_count": 0,
       "last_read_at": null,
       "verses": [
@@ -46723,7 +46723,17 @@
           "paragraph_title": "Paragraph 1: 15장",
           "sermon_title": null,
           "sermon_url": null,
-          "text": "들은즉 우리 가운데서 어떤 사람들이 우리의 지시도 없이 나가서 말로 너희를 괴롭게 하고, 마음을 혼란하게 한다 하기로, 25-26사람을 택하여 우리 주 예수 그리스도의 이름을 위하여 생명을 아끼지 아니하는 자인 우리가 사랑하는 바나바와 바울과 함께 너희에게 보내기를 만장일치로 결정하였노라.",
+          "text": "들은즉 우리 가운데서 어떤 사람들이 우리의 지시도 없이 나가서 말로 너희를 괴롭게 하고, 마음을 혼란하게 한다 하기로,",
+          "notes": []
+        },
+        {
+          "id": "new_testament_w21_d4_p1_v25~26",
+          "num": "25~26",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 15장",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "사람을 택하여 우리 주 예수 그리스도의 이름을 위하여 생명을 아끼지 아니하는 자인 우리가 사랑하는 바나바와 바울과 함께 너희에게 보내기를 만장일치로 결정하였노라.",
           "notes": []
         },
         {
