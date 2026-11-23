@@ -132121,7 +132121,7 @@
       "sermon_url": null,
       "sermon_audio_url": null,
       "paragraph_count": 1,
-      "verse_count": 63,
+      "verse_count": 64,
       "completed_count": 0,
       "last_read_at": null,
       "verses": [
@@ -132244,6 +132244,18 @@
           "sermon_url": null,
           "text": "강포가 그들의 옷이며,",
           "notes": []
+        },
+        {
+          "id": "wisdom_w24_d1_p1_v7a",
+          "num": "7a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 73편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "살찜으로 그들의 눈이 솟아나며,",
+          "notes": [
+            "- [바른번역] 그들의 눈은 살이 비대해 빠져 나왔으며"
+          ]
         },
         {
           "id": "wisdom_w24_d1_p1_v7b",
