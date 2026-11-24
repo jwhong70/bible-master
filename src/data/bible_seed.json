@@ -139292,6 +139292,2772 @@
       ]
     },
     {
+      "id": "wisdom_w26_d1",
+      "category": "wisdom",
+      "category_name": "시가서",
+      "week": 26,
+      "day": 1,
+      "title": "시편 85편",
+      "sermon_title": null,
+      "sermon_url": null,
+      "sermon_audio_url": null,
+      "paragraph_count": 1,
+      "verse_count": 29,
+      "completed_count": 0,
+      "last_read_at": null,
+      "verses": [
+        {
+          "id": "wisdom_w26_d1_p1_v1a",
+          "num": "1a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 85편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "여호와여,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d1_p1_v1b",
+          "num": "1b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 85편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주께서 주의 땅에 은혜를 베푸사,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d1_p1_v1c",
+          "num": "1c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 85편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "야곱의 포로 된 자들이 돌아오게 하셨으며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d1_p1_v2a",
+          "num": "2a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 85편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주의 백성의 죄악을 사하시고,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d1_p1_v2b",
+          "num": "2b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 85편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "그들의 모든 죄를 덮으셨나이다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d1_p1_v3a",
+          "num": "3a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 85편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주의 모든 분노를 거두시며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d1_p1_v3b",
+          "num": "3b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 85편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주의 진노를 돌이키셨나이다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d1_p1_v4a",
+          "num": "4a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 85편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "우리 구원의 하나님이여,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d1_p1_v4b",
+          "num": "4b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 85편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "우리를 돌이키시고,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d1_p1_v4c",
+          "num": "4c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 85편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "우리에게 향하신 주의 분노를 거두소서.",
+          "notes": [
+            "- 주의 분노: (카아스)"
+          ]
+        },
+        {
+          "id": "wisdom_w26_d1_p1_v5a",
+          "num": "5a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 85편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주께서 우리에게 영원히 노하시며,",
+          "notes": [
+            "- 노: (아나프)"
+          ]
+        },
+        {
+          "id": "wisdom_w26_d1_p1_v5b",
+          "num": "5b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 85편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "대대에 진노하시겠나이까.",
+          "notes": [
+            "- 진노: (아프)"
+          ]
+        },
+        {
+          "id": "wisdom_w26_d1_p1_v6a",
+          "num": "6a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 85편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주께서 우리를 다시 살리사,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d1_p1_v6b",
+          "num": "6b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 85편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주의 백성이 주를 기뻐하도록 하지 아니하시겠나이까.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d1_p1_v7a",
+          "num": "7a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 85편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "여호와여,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d1_p1_v7b",
+          "num": "7b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 85편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주의 인자하심을 우리에게 보이시며,",
+          "notes": [
+            "- 보이시며: 하나님의 강력한 개입"
+          ]
+        },
+        {
+          "id": "wisdom_w26_d1_p1_v7c",
+          "num": "7c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 85편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주의 구원을 우리에게 주소서.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d1_p1_v8a",
+          "num": "8a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 85편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "내가 하나님 여호와께서 하실 말씀을 들으리니,",
+          "notes": [
+            "- 들으리니: 하나님의 신탁을 소개하는 문구"
+          ]
+        },
+        {
+          "id": "wisdom_w26_d1_p1_v8b",
+          "num": "8b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 85편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "무릇 그의 백성, 그의 성도들에게 화평을 말씀하실 것이라.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d1_p1_v8c",
+          "num": "8c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 85편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "그들은 다시 어리석은 데로 돌아가지 말지로다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d1_p1_v9a",
+          "num": "9a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 85편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "진실로 그의 구원이 그를 경외하는 자에게 가까우니,",
+          "notes": [
+            "- 가까우니: 하나님이 그들에게 다가오시니"
+          ]
+        },
+        {
+          "id": "wisdom_w26_d1_p1_v9b",
+          "num": "9b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 85편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "영광이 우리 땅에 머무르리이다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d1_p1_v10",
+          "num": "10",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 85편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "인애와 진리가 같이 만나고,의와 화평이 서로 입맞추었으며,",
+          "notes": [
+            "- 인애: ① (헤세드)",
+            "- 진리: ② (에메트)",
+            "- ①, ②: 하나님의 특성 → 하나님과 백성의 신앙적 관계",
+            "- 의: ③ (체데크)",
+            "- 화평: ④ (샬롬)",
+            "- ③, ④: 법과 질서 측면에서 본 사람 사이의 윤리적 관계",
+            "- 입맞추었으며: 하나님의 완전한 구원은 인애와 진실이 연합한 토대 위에 정의와 평화가 조화를 이룰 때 성취됨"
+          ]
+        },
+        {
+          "id": "wisdom_w26_d1_p1_v11a",
+          "num": "11a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 85편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "진리는 땅에서 솟아나고,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d1_p1_v11b",
+          "num": "11b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 85편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "의는 하늘에서 굽어보도다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d1_p1_v12a",
+          "num": "12a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 85편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "여호와께서 좋은 것을 주시리니,",
+          "notes": [
+            "- 것: 풍년의 축복"
+          ]
+        },
+        {
+          "id": "wisdom_w26_d1_p1_v12b",
+          "num": "12b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 85편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "우리 땅이 그 산물을 내리로다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d1_p1_v13a",
+          "num": "13a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 85편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "의가 주의 앞에 앞서 가며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d1_p1_v13b",
+          "num": "13b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 85편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주의 길을 닦으리로다.",
+          "notes": []
+        }
+      ]
+    },
+    {
+      "id": "wisdom_w26_d2",
+      "category": "wisdom",
+      "category_name": "시가서",
+      "week": 26,
+      "day": 2,
+      "title": "시편 86편",
+      "sermon_title": null,
+      "sermon_url": null,
+      "sermon_audio_url": null,
+      "paragraph_count": 1,
+      "verse_count": 51,
+      "completed_count": 0,
+      "last_read_at": null,
+      "verses": [
+        {
+          "id": "wisdom_w26_d2_p1_v1a",
+          "num": "1a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "여호와여,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v1b",
+          "num": "1b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "나는 가난하고, 궁핍하오니,",
+          "notes": [
+            "- 궁핍하오니: 자신이 하나님의 돌봄을 절실히 필요하는 사람임을 드러냄"
+          ]
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v1c",
+          "num": "1c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주의 귀를 기울여 내게 응답하소서.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v2a",
+          "num": "2a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "나는 경건하오니, 내 영혼을 보존하소서.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v2b",
+          "num": "2b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "내 주 하나님이여,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v2c",
+          "num": "2c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주를 의지하는 종을 구원하소서.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v3a",
+          "num": "3a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주여,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v3b",
+          "num": "3b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "내게 은혜를 베푸소서.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v3c",
+          "num": "3c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "내가 종일 주께 부르짖나이다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v4a",
+          "num": "4a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주여,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v4b",
+          "num": "4b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "내 영혼이 주를 우러러보오니,",
+          "notes": [
+            "- 우러러보오니: 구원을 목말라하며, 전적으로 하나님만 바라보는 모습"
+          ]
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v4c",
+          "num": "4c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주여,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v4d",
+          "num": "4d",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "내 영혼을 기쁘게 하소서.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v5a",
+          "num": "5a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주는 선하사 사죄하기를 즐거워하시며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v5b",
+          "num": "5b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주께 부르짖는 자에게 인자함이 후하심이니이다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v6a",
+          "num": "6a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "여호와여,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v6b",
+          "num": "6b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "나의 기도에 귀를 기울이시고,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v6c",
+          "num": "6c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "내가 간구하는 소리를 들으소서.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v7a",
+          "num": "7a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "나의 환난 날에 내가 주께 부르짖으리니,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v7b",
+          "num": "7b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주께서 내게 응답하시리이다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v8a",
+          "num": "8a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주여,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v8b",
+          "num": "8b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "신들 중에 주와 같은 자 없사오며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v8c",
+          "num": "8c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주의 행하심과 같은 일도 없나이다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v9a",
+          "num": "9a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주여,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v9b",
+          "num": "9b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주께서 지으신 모든 민족이 와서 주의 앞에 경배하며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v9c",
+          "num": "9c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주의 이름에 영광을 돌리리이다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v10a",
+          "num": "10a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "무릇 주는 위대하사 기이한 일들을 행하시오니,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v10b",
+          "num": "10b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주만이 하나님이시니이다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v11a",
+          "num": "11a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "여호와여,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v11b",
+          "num": "11b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주의 도를 내게 가르치소서.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v11c",
+          "num": "11c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "내가 주의 진리에 행하오리니,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v11d",
+          "num": "11d",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "일심으로 주의 이름을 경외하게 하소서.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v12a",
+          "num": "12a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주 나의 하나님이여,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v12b",
+          "num": "12b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "내가 전심으로 주를 찬송하고,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v12c",
+          "num": "12c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "영원토록 주의 이름에 영광을 돌리오리니,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v13a",
+          "num": "13a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "이는 내게 향하신 주의 인자하심이 크사,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v13b",
+          "num": "13b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "내 영혼을 깊은 스올에서 건지셨음이니이다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v14a",
+          "num": "14a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "하나님이여,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v14b",
+          "num": "14b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "교만한 자들이 일어나 나를 치고,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v14c",
+          "num": "14c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "포악한 자의 무리가 내 영혼을 찾았사오며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v14d",
+          "num": "14d",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "자기 앞에 주를 두지 아니하였나이다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v15a",
+          "num": "15a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "그러나 주여, 주는 긍휼히 여기시며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v15b",
+          "num": "15b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "은혜를 베푸시며, 노하기를 더디하시며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v15c",
+          "num": "15c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "인자와 진실이 풍성하신 하나님이시오니,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v16a",
+          "num": "16a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "내게로 돌이키사 내게 은혜를 베푸소서.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v16b",
+          "num": "16b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주의 종에게 힘을 주시고,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v16c",
+          "num": "16c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주의 여종의 아들을 구원하소서.",
+          "notes": [
+            "- 아들: 주인의 집에서 태어났기 때문에 풀려날 수 없는 노예 → 이를 통해 자신이 하나님께 속해 있으며, 하나님께 전적으로 의존할 수 밖에 없는 존재임을 강조"
+          ]
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v17a",
+          "num": "17a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "은총의 표적을 내게 보이소서.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v17b",
+          "num": "17b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "그러면 나를 미워하는 그들이 보고 부끄러워하오리니,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v17c",
+          "num": "17c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "여호와여,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d2_p1_v17d",
+          "num": "17d",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 86편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주는 나를 돕고 위로하시는 이시니이다.",
+          "notes": []
+        }
+      ]
+    },
+    {
+      "id": "wisdom_w26_d3",
+      "category": "wisdom",
+      "category_name": "시가서",
+      "week": 26,
+      "day": 3,
+      "title": "시편 87편",
+      "sermon_title": null,
+      "sermon_url": null,
+      "sermon_audio_url": null,
+      "paragraph_count": 1,
+      "verse_count": 18,
+      "completed_count": 0,
+      "last_read_at": null,
+      "verses": [
+        {
+          "id": "wisdom_w26_d3_p1_v1a",
+          "num": "1a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 87편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "그의 터전이",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d3_p1_v1b",
+          "num": "1b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 87편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "성산에 있음이여,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d3_p1_v2a",
+          "num": "2a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 87편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "여호와께서 야곱의 모든 거처보다",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d3_p1_v2b",
+          "num": "2b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 87편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "시온의 문들을 사랑하시는도다.",
+          "notes": [
+            "- 사랑하시는도다: (아하브) 선택하다라는 의미를 내포"
+          ]
+        },
+        {
+          "id": "wisdom_w26_d3_p1_v3a",
+          "num": "3a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 87편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "하나님의 성이여,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d3_p1_v3b",
+          "num": "3b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 87편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "너를 가리켜 영광스럽다 말하는도다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d3_p1_v4a",
+          "num": "4a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 87편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "나는 라합과 바벨론이",
+          "notes": [
+            "- 나: 하나님",
+            "- 라합: 이집트 → 시온의 남쪽",
+            "- 바벨론: 시온의 동쪽"
+          ]
+        },
+        {
+          "id": "wisdom_w26_d3_p1_v4b",
+          "num": "4b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 87편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "나를 아는 자 중에 있다 말하리라.",
+          "notes": [
+            "- 있다: 하나님의 백성이 되었다는 의미"
+          ]
+        },
+        {
+          "id": "wisdom_w26_d3_p1_v4c",
+          "num": "4c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 87편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "보라, 블레셋과 두로와 구스여,",
+          "notes": [
+            "- 블레셋: 시온의 서쪽",
+            "- 두로: 시온의 북쪽",
+            "- 구스: 시온의 남쪽"
+          ]
+        },
+        {
+          "id": "wisdom_w26_d3_p1_v4d",
+          "num": "4d",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 87편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "이것들도 거기서 났다 하리로다.",
+          "notes": [
+            "- 시온이: 세계의 중심(4절)",
+            "- 각 나라는 동서남북 4가지 방향을 나타내고 있는데, 이를 합치면 온 세상이 됨",
+            "- 시온은 지구의 배꼽으로서 전 세계의 중심이 됨"
+          ]
+        },
+        {
+          "id": "wisdom_w26_d3_p1_v5a",
+          "num": "5a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 87편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "시온에 대하여 말하기를",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d3_p1_v5b",
+          "num": "5b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 87편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "이 사람, 저 사람이 거기서 났다고 말하리니,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d3_p1_v5c",
+          "num": "5c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 87편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "지존자가 친히 시온을 세우리라 하는도다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d3_p1_v6a",
+          "num": "6a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 87편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "여호와께서 민족들을 등록하실 때에는",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d3_p1_v6b",
+          "num": "6b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 87편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "그 수를 세시며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d3_p1_v6c",
+          "num": "6c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 87편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "이 사람이 거기서 났다 하시리로다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d3_p1_v7a",
+          "num": "7a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 87편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "노래하는 자와 뛰어 노는 자들이 말하기를,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d3_p1_v7b",
+          "num": "7b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 87편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "나의 모든 근원이 네게 있다 하리로다.",
+          "notes": []
+        }
+      ]
+    },
+    {
+      "id": "wisdom_w26_d4",
+      "category": "wisdom",
+      "category_name": "시가서",
+      "week": 26,
+      "day": 4,
+      "title": "시편 88편",
+      "sermon_title": null,
+      "sermon_url": null,
+      "sermon_audio_url": null,
+      "paragraph_count": 1,
+      "verse_count": 43,
+      "completed_count": 0,
+      "last_read_at": null,
+      "verses": [
+        {
+          "id": "wisdom_w26_d4_p1_v1a",
+          "num": "1a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "여호와 내 구원의 하나님이여,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v1b",
+          "num": "1b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "내가 주야로 주 앞에서 부르짖었사오니,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v2a",
+          "num": "2a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "나의 기도가 주 앞에 이르게 하시며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v2b",
+          "num": "2b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "나의 부르짖음에 주의 귀를 기울여 주소서.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v3a",
+          "num": "3a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "무릇 나의 영혼에는 재난이 가득하며,",
+          "notes": [
+            "- 무릇: 왜냐하면"
+          ]
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v3b",
+          "num": "3b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "나의 생명은 스올에 가까웠사오니,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v4a",
+          "num": "4a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "나는 무덤에 내려가는 자 같이 인정되고,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v4b",
+          "num": "4b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "힘없는 용사와 같으며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v5a",
+          "num": "5a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "죽은 자 중에 던져진 바 되었으며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v5b",
+          "num": "5b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "죽임을 당하여 무덤에 누운 자 같으니이다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v5c",
+          "num": "5c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주께서 그들을 다시 기억하지 아니하시니,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v5d",
+          "num": "5d",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "그들은 주의 손에서 끊어진 자니이다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v6a",
+          "num": "6a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주께서 나를 깊은 웅덩이와",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v6b",
+          "num": "6b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "어둡고 음침한 곳에 두셨사오며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v7a",
+          "num": "7a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주의 노가 나를 심히 누르시고,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v7b",
+          "num": "7b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주의 모든 파도가 나를 괴롭게 하셨나이다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v8a",
+          "num": "8a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주께서 내가 아는 자를 내게서 멀리 떠나게 하시고,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v8b",
+          "num": "8b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "나를 그들에게 가증한 것이 되게 하셨사오니,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v8c",
+          "num": "8c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "나는 갇혀서 나갈 수 없게 되었나이다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v9a",
+          "num": "9a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "곤란으로 말미암아 내 눈이 쇠하였나이다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v9b",
+          "num": "9b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "여호와여,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v9c",
+          "num": "9c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "내가 매일 주를 부르며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v9d",
+          "num": "9d",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주를 향하여 나의 두 손을 들었나이다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v10a",
+          "num": "10a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주께서 죽은 자에게 기이한 일을 보이시겠나이까.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v10b",
+          "num": "10b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "유령들이 일어나 주를 찬송하리이까.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v11a",
+          "num": "11a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주의 인자하심을 무덤에서,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v11b",
+          "num": "11b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주의 성실하심을 멸망 중에서 선포할 수 있으리이까.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v12a",
+          "num": "12a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "흑암 중에서 주의 기적과 잊음의 땅에서,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v12b",
+          "num": "12b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주의 공의를 알 수 있으리이까.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v13a",
+          "num": "13a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "여호와여,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v13b",
+          "num": "13b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "오직 내가 주께 부르짖었사오니,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v13c",
+          "num": "13c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "아침에 나의 기도가 주의 앞에 이르리이다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v14a",
+          "num": "14a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "여호와여,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v14b",
+          "num": "14b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "어찌하여 나의 영혼을 버리시며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v14c",
+          "num": "14c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "어찌하여 주의 얼굴을 내게서 숨기시나이까.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v15a",
+          "num": "15a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "내가 어릴 적부터 고난을 당하여 죽게 되었사오며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v15b",
+          "num": "15b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주께서 두렵게 하실 때에 당황하였나이다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v16a",
+          "num": "16a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주의 진노가 내게 넘치고,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v16b",
+          "num": "16b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주의 두려움이 나를 끊었나이다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v17a",
+          "num": "17a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "이런 일이 물 같이 종일 나를 에우며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v17b",
+          "num": "17b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "함께 나를 둘러쌌나이다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v18a",
+          "num": "18a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주는 내게서 사랑하는 자와 친구를 멀리 떠나게 하시며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d4_p1_v18b",
+          "num": "18b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 88편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "내가 아는 자를 흑암에 두셨나이다.",
+          "notes": []
+        }
+      ]
+    },
+    {
+      "id": "wisdom_w26_d5",
+      "category": "wisdom",
+      "category_name": "시가서",
+      "week": 26,
+      "day": 5,
+      "title": "시편 89편",
+      "sermon_title": null,
+      "sermon_url": null,
+      "sermon_audio_url": null,
+      "paragraph_count": 1,
+      "verse_count": 120,
+      "completed_count": 0,
+      "last_read_at": null,
+      "verses": [
+        {
+          "id": "wisdom_w26_d5_p1_v1a",
+          "num": "1a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "내가 여호와의 인자하심을 영원히 노래하며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v1b",
+          "num": "1b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주의 성실하심을 내 입으로 대대에 알게 하리이다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v2a",
+          "num": "2a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "내가 말하기를",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v2b",
+          "num": "2b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "인자하심을 영원히 세우시며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v2c",
+          "num": "2c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주의 성실하심을",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v2d",
+          "num": "2d",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "하늘에서 견고히 하시리라 하였나이다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v3a",
+          "num": "3a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주께서 이르시되,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v3b",
+          "num": "3b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "나는 내가 택한 자와 언약을 맺으며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v3c",
+          "num": "3c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "내 종 다윗에게 맹세하기를,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v4a",
+          "num": "4a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "내가 네 자손을 영원히 견고히 하며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v4b",
+          "num": "4b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "네 왕위를 대대에 세우리라 하셨나이다.",
+          "notes": [
+            "- 찬양 ①: (1~4절)",
+            "- 여호와의 인자하심과 성실하심을 찬양하기로 약속함, ② 하나님이 다윗과 맺은 영원한 언약을 소개"
+          ]
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v5a",
+          "num": "5a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "여호와여,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v5b",
+          "num": "5b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주의 기이한 일을 하늘이 찬양할 것이요,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v5c",
+          "num": "5c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주의 성실도 거룩한 자들의 모임 가운데에서 찬양하리이다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v6a",
+          "num": "6a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "무릇 구름 위에서",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v6b",
+          "num": "6b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "능히 여호와와 비교할 자 누구며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v6c",
+          "num": "6c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "신들 중에서",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v6d",
+          "num": "6d",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "여호와와 같은 자 누구리이까.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v7a",
+          "num": "7a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "하나님은 거룩한 자의 모임 가운데에서,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v7b",
+          "num": "7b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "매우 무서워할 이시오며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v7c",
+          "num": "7c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "둘러 있는 모든 자 위에",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v7d",
+          "num": "7d",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "더욱 두려워할 이시니이다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v8a",
+          "num": "8a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "여호와 만군의 하나님이여,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v8b",
+          "num": "8b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주와 같이 능력 있는 이가 누구리이까.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v8c",
+          "num": "8c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "여호와여,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v8d",
+          "num": "8d",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주의 성실하심이 주를 둘렀나이다.",
+          "notes": [
+            "- 찬양 ②(5~8절): 천상의 보좌에 앉아 계시는 야웨의 높은 위치"
+          ]
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v9a",
+          "num": "9a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주께서 바다의 파도를 다스리시며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v9b",
+          "num": "9b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "그 파도가 일어날 때에 잔잔하게 하시나이다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v10a",
+          "num": "10a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주께서 라합을 죽임 당한 자 같이 깨뜨리시고,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v10b",
+          "num": "10b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주의 원수를 주의 능력의 팔로 흩으셨나이다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v11a",
+          "num": "11a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "하늘이 주의 것이요,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v11b",
+          "num": "11b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "땅도 주의 것이라.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v11d",
+          "num": "11d",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주께서 건설하셨나이다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v12a",
+          "num": "12a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "남북을 주께서 창조하셨으니,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v12b",
+          "num": "12b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "다볼과 헤르몬이 주의 이름으로 말미암아 즐거워하나이다.",
+          "notes": [
+            "- 찬양 ③(9~12절): 땅 위에서 하나님이 하시는 활동"
+          ]
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v13a",
+          "num": "13a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주의 팔에 능력이 있사오며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v13b",
+          "num": "13b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주의 손은 강하고,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v13c",
+          "num": "13c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주의 오른손은 높이 들리우셨나이다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v14a",
+          "num": "14a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "의와 공의가 주의 보좌의 기초라.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v14b",
+          "num": "14b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "인자함과 진실함이 주 앞에 있나이다.",
+          "notes": [
+            "- 찬양 ④(13~14절): 역사 속에 나타나신 하나님의 활동"
+          ]
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v15a",
+          "num": "15a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "즐겁게 소리칠 줄 아는 백성은 복이 있나니,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v15b",
+          "num": "15b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "여호와여,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v15c",
+          "num": "15c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "그들이 주의 얼굴 빛 안에서 다니리로다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v16a",
+          "num": "16a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "그들은 종일 주의 이름 때문에 기뻐하며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v16b",
+          "num": "16b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주의 공의로 말미암아 높아지오니,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v17a",
+          "num": "17a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주는 그들의 힘의 영광이심이라.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v17b",
+          "num": "17b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "우리의 뿔이 주의 은총으로 높아지오리니,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v18a",
+          "num": "18a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "우리의 방패는 여호와께 속하였고,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v18b",
+          "num": "18b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "우리의 왕은 이스라엘의 거룩한 이에게 속하였기 때문이니이다.",
+          "notes": [
+            "- 찬양 ⑤(15~18절): 하나님 백성의 입장에서 야웨가 세상의 왕이심을 기뻐하며 외치는 내용"
+          ]
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v19a",
+          "num": "19a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "그 때에 주께서 환상 중에 주의 성도들에게 말씀하여 이르시기를",
+          "notes": [
+            "- 이르시기를: 환상 중에 하나님의 말씀을 전달받은 주의 성도들은 나단, 다윗, 사무엘을 가리킴 → 하나님이 환상 속에서 말씀하셨다는 사실은 다윗 왕조의 정당성을 강화함"
+          ]
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v19b",
+          "num": "19b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "내가 능력 있는 용사에게는 돕는 힘을 더하며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v19c",
+          "num": "19c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "백성 중에서 택함 받은 자를 높였으되,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v20a",
+          "num": "20a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "내가 내 종 다윗을 찾아내어,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v20b",
+          "num": "20b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "나의 거룩한 기름을 그에게 부었도다.",
+          "notes": [
+            "- 다윗의 선택과 기름 부음: (19~20절)"
+          ]
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v21a",
+          "num": "21a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "내 손이 그와 함께 하여 견고하게 하고,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v21b",
+          "num": "21b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "내 팔이 그를 힘이 있게 하리로다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v22a",
+          "num": "22a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "원수가 그에게서 강탈하지 못하며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v22b",
+          "num": "22b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "악한 자가 그를 곤고하게 못하리로다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v23a",
+          "num": "23a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "내가 그의 앞에서 그 대적들을 박멸하며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v23b",
+          "num": "23b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "그를 미워하는 자들을 치려니와,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v24a",
+          "num": "24a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "나의 성실함과 인자함이 그와 함께 하리니,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v24b",
+          "num": "24b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "내 이름으로 말미암아 그의 뿔이 높아지리로다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v25a",
+          "num": "25a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "내가 또 그의 손을 바다 위에 놓으며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v25b",
+          "num": "25b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "오른손을 강들 위에 놓으리니,",
+          "notes": [
+            "- 하나님이 다윗을 위해 행하신 일: (21~25절)"
+          ]
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v26a",
+          "num": "26a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "그가 내게 부르기를,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v26b",
+          "num": "26b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주는 나의 아버지시요, 나의 하나님이시요,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v26c",
+          "num": "26c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "나의 구원의 바위시라 하리로다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v27a",
+          "num": "27a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "내가 또 그를 장자로 삼고,",
+          "notes": [
+            "- 하나님이 전하시는 신탁의 중심: (26~27절)"
+          ]
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v28a",
+          "num": "28a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "그를 위하여 나의 인자함을 영원히 지키고,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v28b",
+          "num": "28b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "그와 맺은 나의 언약을 굳게 세우며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v29a",
+          "num": "29a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "또 그의 후손을 영구하게 하여,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v29b",
+          "num": "29b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "그의 왕위를 하늘의 날과 같게 하리로다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v30a",
+          "num": "30a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "만일 그의 자손이 내 법을 버리며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v30b",
+          "num": "30b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "내 규례대로 행하지 아니하며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v31a",
+          "num": "31a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "내 율례를 깨뜨리며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v31b",
+          "num": "31b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "내 계명을 지키지 아니하면,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v32a",
+          "num": "32a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "내가 회초리로 그들의 죄를 다스리며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v32b",
+          "num": "32b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "채찍으로 그들의 죄악을 벌하리로다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v33a",
+          "num": "33a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "그러나 나의 인자함을 그에게서 다 거두지는 아니하며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v33b",
+          "num": "33b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "나의 성실함도 폐하지 아니하며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v34a",
+          "num": "34a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "내 언약을 깨뜨리지 아니하고,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v34b",
+          "num": "34b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "내 입술에서 낸 것은 변하지 아니하리로다.",
+          "notes": [
+            "- 앞선 언약의 선언을 자세히 풀어줌: (28~34절)"
+          ]
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v35a",
+          "num": "35a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "내가 나의 거룩함으로 한 번 맹세하였은즉,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v35b",
+          "num": "35b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "다윗에게 거짓말을 하지 아니할 것이라.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v36a",
+          "num": "36a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "그의 후손이 장구하고,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v36b",
+          "num": "36b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "그의 왕위는 해 같이 내 앞에 항상 있으며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v37a",
+          "num": "37a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "또 궁창의 확실한 증인인 달 같이,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v37b",
+          "num": "37b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "영원히 견고하게 되리라 하셨도다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v38a",
+          "num": "38a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "그러나 주께서 주의 기름 부음 받은 자에게 노하사,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v38b",
+          "num": "38b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "물리치셔서 버리셨으며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v39a",
+          "num": "39a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주의 종의 언약을 미워하사,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v39b",
+          "num": "39b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "그의 관을 땅에 던져 욕되게 하셨으며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v40a",
+          "num": "40a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "그의 모든 울타리를 파괴하시며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v40b",
+          "num": "40b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "그 요새를 무너뜨리셨으므로,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v41a",
+          "num": "41a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "길로 지나가는 자들에게 다 탈취를 당하며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v41b",
+          "num": "41b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "그의 이웃에게 욕을 당하나이다.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v42a",
+          "num": "42a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주께서 그의 대적들의 오른손을 높이시고,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v42b",
+          "num": "42b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "그들의 모든 원수들은 기쁘게 하셨으나,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v43a",
+          "num": "43a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "그의 칼날은 둔하게 하사,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v43b",
+          "num": "43b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "그가 전장에서 더 이상 버티지 못하게 하셨으며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v44a",
+          "num": "44a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "그의 영광을 그치게 하시고,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v44b",
+          "num": "44b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "그의 왕위를 땅에 엎으셨으며,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v45a",
+          "num": "45a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "그의 젊은 날들을 짧게 하시고,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v45b",
+          "num": "45b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "그를 수치로 덮으셨나이다.",
+          "notes": [
+            "- 하나님을 향한 고발: (38~45절)"
+          ]
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v46a",
+          "num": "46a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "여호와여,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v46b",
+          "num": "46b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "언제까지니이까. 스스로 영원히 숨기시리이까.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v46c",
+          "num": "46c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주의 노가 언제까지 불붙듯 하시겠나이까.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v47a",
+          "num": "47a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "나의 때가 얼마나 짧은지 기억하소서.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v47b",
+          "num": "47b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주께서 모든 사람을 어찌 그리 허무하게 창조하셨는지요.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v48a",
+          "num": "48a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "누가 살아서 죽음을 보지 아니하고,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v48b",
+          "num": "48b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "자기의 영혼을 스올의 권세에서 건지리이까.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v49a",
+          "num": "49a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주여,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v49b",
+          "num": "49b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주의 성실하심으로 다윗에게 맹세하신 그 전의 인자하심이",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v49c",
+          "num": "49c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "어디 있나이까.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v50a",
+          "num": "50a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주는 주의 종들이 받은 비방을 기억하소서.",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v50b",
+          "num": "50b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "많은 민족의 비방이 내 품에 있사오니,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v51a",
+          "num": "51a",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "여호와여,",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v51b",
+          "num": "51b",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "이 비방은 주의 원수들이",
+          "notes": []
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v51c",
+          "num": "51c",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "주의 기름 부음 받은 자의 행동을 비방한 것이로소이다.",
+          "notes": [
+            "- 탄원조의 질문: (46~51절)"
+          ]
+        },
+        {
+          "id": "wisdom_w26_d5_p1_v52",
+          "num": "52",
+          "paragraph_index": 1,
+          "paragraph_title": "Paragraph 1: 89편",
+          "sermon_title": null,
+          "sermon_url": null,
+          "text": "여호와를 영원히 찬송할지어다. 아멘. 아멘.",
+          "notes": []
+        }
+      ]
+    },
+    {
       "id": "wisdom_w27_d1",
       "category": "wisdom",
       "category_name": "시가서",
