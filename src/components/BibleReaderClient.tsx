@@ -446,22 +446,55 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
                     <article
                       className="group border border-black/10 bg-[#FAF9F5] p-3 sm:p-4 hover:border-brand/30 transition-all"
                     >
-                      {/* 절 번호 배지 행 */}
-                      {(verse.num || hasNotes) && (
-                      <div className="flex items-center justify-between pb-1.5 border-b border-black/5">
-                        {verse.num ? (
-                          <span className="font-mono text-xs font-bold text-brand">
-                            [{verse.num}절]
-                          </span>
-                        ) : (
-                          <span />
-                        )}
+                      {verse.num ? (
+                        <>
+                          {/* 절 번호 배지 행 */}
+                          <div className="flex items-center justify-between pb-1.5 border-b border-black/5">
+                            <span className="font-mono text-xs font-bold text-brand">
+                              [{verse.num}절]
+                            </span>
 
-                        <div className="flex items-center gap-1.5">
+                            <div className="flex items-center gap-1.5">
+                              {hasNotes && (
+                                <button
+                                  onClick={() => toggleNote(verse.id)}
+                                  className={`inline-flex items-center gap-1 border px-2 py-0.5 text-[11px] font-semibold transition-all cursor-pointer ${
+                                    isNoteOpen
+                                      ? 'border-brand bg-brand/15 text-brand-dark'
+                                      : 'border-black/10 bg-white text-gray-600 hover:text-gray-900'
+                                  }`}
+                                >
+                                  <BookOpen className="h-3 w-3" />
+                                  <span>강해</span>
+                                  {isNoteOpen ? (
+                                    <ChevronUp className="h-3 w-3" />
+                                  ) : (
+                                    <ChevronDown className="h-3 w-3" />
+                                  )}
+                                </button>
+                              )}
+                            </div>
+                          </div>
+
+                          {/* 본문 텍스트 행 */}
+                          <p
+                            className={`text-gray-900 font-normal pt-2 break-keep ${fontSizeClasses}`}
+                          >
+                            {verse.text}
+                          </p>
+                        </>
+                      ) : (
+                        /* 절 번호가 없는 항목: 소제목과 [강해] 버튼을 한 줄에 배치 */
+                        <div className="flex items-center justify-between gap-2">
+                          <p
+                            className={`text-gray-900 font-normal break-keep ${fontSizeClasses}`}
+                          >
+                            {verse.text}
+                          </p>
                           {hasNotes && (
                             <button
                               onClick={() => toggleNote(verse.id)}
-                              className={`inline-flex items-center gap-1 border px-2 py-0.5 text-[11px] font-semibold transition-all cursor-pointer ${
+                              className={`shrink-0 inline-flex items-center gap-1 border px-2 py-0.5 text-[11px] font-semibold transition-all cursor-pointer ${
                                 isNoteOpen
                                   ? 'border-brand bg-brand/15 text-brand-dark'
                                   : 'border-black/10 bg-white text-gray-600 hover:text-gray-900'
@@ -477,15 +510,7 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
                             </button>
                           )}
                         </div>
-                      </div>
                       )}
-
-                      {/* 본문 텍스트 행 */}
-                      <p
-                        className={`text-gray-900 font-normal pt-2 break-keep ${fontSizeClasses}`}
-                      >
-                        {verse.text}
-                      </p>
 
                       {/* 절 강해 해설 아코디언 */}
                       {hasNotes && isNoteOpen && (
