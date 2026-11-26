@@ -447,10 +447,15 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
                       className="group border border-black/10 bg-[#FAF9F5] p-3 sm:p-4 hover:border-brand/30 transition-all"
                     >
                       {/* 절 번호 배지 행 */}
+                      {(verse.num || hasNotes) && (
                       <div className="flex items-center justify-between pb-1.5 border-b border-black/5">
-                        <span className="font-mono text-xs font-bold text-brand">
-                          [{verse.num}절]
-                        </span>
+                        {verse.num ? (
+                          <span className="font-mono text-xs font-bold text-brand">
+                            [{verse.num}절]
+                          </span>
+                        ) : (
+                          <span />
+                        )}
 
                         <div className="flex items-center gap-1.5">
                           {hasNotes && (
@@ -473,6 +478,7 @@ export default function BibleReaderClient({ plan: initialPlan }: BibleReaderClie
                           )}
                         </div>
                       </div>
+                      )}
 
                       {/* 본문 텍스트 행 */}
                       <p
